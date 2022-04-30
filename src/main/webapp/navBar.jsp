@@ -24,7 +24,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;600;800&family=Fredoka:wght@300;400;500;600&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
     <!-- FontAwseme icons -->
     
-<title>Insert title here</title>
+<title>BINOME</title>
+<link rel="icon" href="images/logo.png">
 </head>
 <body>
 
@@ -49,9 +50,9 @@
 				
 				<div class="social_phone">
 					<div class="social">
-						<i class="fa-brands fa-facebook-f"></i>
-						<i class="fa-brands fa-instagram"></i>
-						<i class="fa-brands fa-twitter"></i>
+						<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+						<a href="#"><i class="fa-brands fa-instagram"></i></a>
+						<a href="#"><i class="fa-brands fa-twitter"></i></a>
 					</div>	
 					<div class="phone">
 						<i class="green fa-solid fa-phone"></i>
@@ -70,11 +71,23 @@
 			<div class="list">
 				<ul>
 					<li><a href="#">ACCUEIL</a></li>
-					<li><a href="#">CABINET BINOME</a></li>
-					<li><a href="#">FORMATION</a></li>
+					<li><a href="#">CABINET BINOME</a> <i class="fa-solid fa-caret-down"></i>
+						<ul>
+							<li><a href="#">BIOGRAPHIE</a></li>
+							<li><a href="#">SAVOIR FAIRE</a></li>
+							<li><a href="#">NOS SERVICES</a></li>
+						</ul>
+					</li>
+					<li><a href="#">FORMATION</a><i class="fa-solid fa-caret-down"></i></li>
 					<li><a href="#">BLOG</a></li>
 					<li><a href="#">CONTACT</a></li>
-					<li><a href="#">PLUS</a></li>
+					<li><a href="#">PLUS</a><i class="fa-solid fa-caret-down" onclick="dropDown()"></i>
+						<ul>
+							<li><a href="#">ESPACE CLIENT</a></li>
+							<li><a href="#">RECRUTEMENT</a></li>
+							<li><a href="#">NOS REFERENCES</a></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 			<div class="profile_search">
@@ -95,7 +108,3 @@
 </div>
 
 <!-- end navigation Bar -->
-
-<div class="test">
-<p>test</p>
-</div>

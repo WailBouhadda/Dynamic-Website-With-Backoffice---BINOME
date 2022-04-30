@@ -27,6 +27,25 @@
 	
 }
 
+@media (max-width: 1450px){
+    .container{
+       width: 900px;
+   }
+ 
+}
+@media (max-width: 900px){
+    .container{
+       width: 750px;
+   }
+
+}
+@media (max-width: 767px){
+    .container{
+       width: 100%;
+   }
+    
+}
+
 
 /*Start navbar*/
 
@@ -43,11 +62,12 @@
 	height:70px;
 	background-color:#fffffffa;
 	position:absolute;
+	z-index:50;
 }
 
 .navBar .topBar{
 	
-	width:1400px;
+	width:100%;
 	height:35px;
 	display:flex;
 	flex-wrap:nowrap;
@@ -204,13 +224,67 @@
     position: relative;
 
 }
+.navBar .navList .list ul li{
+	
+	height:100%;
+	display:flex;
+	align-items:center;
+}
+
+.navBar .navList .list ul li i{
+	
+	padding-left:5px;
+	color: var(--green-color);
+}
 .navBar .navList .list ul li a{
 	
 	text-decoration: none;
 	font-weight: 600;
     color: #00000094;
+    position: relative;
 	
 }
+.navBar .navList .list ul li a::before{
+	
+	content: "";
+	position: absolute;
+	height:100%;
+	width:2px;
+	background-color: var(--green-color);
+	left: -8px;
+	display: none;
+}
+.navBar .navList .list ul li{
+	
+	position: relative;
+}
+
+.navBar .navList .list ul li:hover > a{
+	
+	color: var(--green-color);
+}
+.navBar .navList .list ul li:hover > a::before{
+
+	display: block;
+}
+.navBar .navList .list ul ul{
+	
+	position: absolute;
+    background-color: #ffffff;
+    width: 150px;
+    height: 112px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    top: 60px;
+    left: -15px;
+    
+}
+.navBar .navList .list ul li:hover ul{
+	
+	display:flex;
+}
+
 /*End list*/
 
 /*Start profile_search*/
@@ -249,15 +323,137 @@
 /*End navbar*/
 
 
-.test{
+
+/*Start accueil */
+
+.accueil{
+    background-image: url(../images/accueilBackground.jpg);
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    flex-direction:column;
+    font-family: var(--font-fredoka);
+    
+  
+}
+.accueil::before{
+    content: "";
+    background-color: rgb(0 0 0 / 70%);
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    z-index: -1;
+}
+.accueil .container{
 	
-	widht:100%;
-	height:80vh;	
-	background-color:black;
+	display:flex;
+    flex-direction:column; 
+    align-items:center;
+    margin-top: 350px;
+    
+}
+
+.accueil .container .headContent{
+	
+	display: flex;
+	position:relative;
+	flex-direction: column;
+	align-items: center;
+	text-align:center;	
+	width:750px;
+}
+.accueil .container .headContent:before{
+	
+	content: "";
+    position: absolute;
+    width: 25%;
+    height: 65%;
+    border-left: 10px solid #ffffff8a;
+    border-top: 10px solid #ffffff8a;
+    left: -10%;
+    top: 5%;
+}
+.accueil .container .headContent:after{
+	
+	content: "";
+    position: absolute;
+    width: 25%;
+    height: 65%;
+    border-right: 10px solid #ffffff8a;
+    border-bottom: 10px solid #ffffff8a;
+    right: -10%;
+    bottom: 5%;
+}
+.accueil .container .headContent .img img{
+
+	height:55px;
+}
+.accueil .container .headContent .img {
+	
+	height:100%;
+	padding:15px;
+	border: 2px solid var(--green-color);
+	border-radius:50%;
+}
+.accueil .container .headContent > h1{
+
+	color:#ffffff;
+	font-family: var(--font-cairo);
+	font-size: 50px;
+    font-weight: bolder;
+    margin-top:50px;
+}
+.accueil .container .headContent > p{
+	
+	font-family: var(--font-cairo);
+	color: #ffffff;
+	
+	margin:20px;
 	
 }
 
+.accueil a{
+    margin: auto;
+    margin-bottom: 50px;
+}
+.accueil a i{
 
+    color: var(--green-color);
+    font-size: 25px;
+    animation-name: bounce;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-delay: 0.5s;
+}
+@keyframes bounce {
+
+    0%{
+       transform: translateY(0);
+    }
+    20%{
+        transform: translateY(-15px);
+    }
+    40%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    60%{
+        transform: translateY(0);
+
+    }
+    100%{
+         transform: translateY(0);
+    }
+    
+}
+
+/*End accueil */
 
 /*Start footer */
 
