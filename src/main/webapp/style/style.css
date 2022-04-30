@@ -455,6 +455,200 @@
 
 /*End accueil */
 
+/*Start cabinetBinome */
+
+.cabinetBinome{
+	
+	width:100%;
+	font-family: var(--font-cairo);
+	
+}
+
+.cabinetBinome .container{
+	
+	display: flex;
+	flex-direction:column;
+	align-items:center;
+	margin-top:50px;
+	margin-bottom:100px;
+}
+
+.cabinetBinome .container h1{
+	
+	margin-top: 20px;
+    margin-bottom: 90px;
+    font-size: 40px;
+}
+.cabinetBinome .container a{
+	width: 100%;
+    text-decoration: none;
+}
+/*Start biographie */
+
+.cabinetBinome .container .biographie{
+
+	background-image: url(../images/history.jpg);
+	background-size: cover;
+	background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content:center;
+    height: 180px;
+    text-align: center;
+    margin-top:20px;
+    margin-bottom:20px;
+    width:100%;
+    border-radius: 20px;
+    position: relative;
+     z-index: 0;
+}
+
+.cabinetBinome .container .biographie:before{
+	
+   content: "";
+    background-color: rgb(0 0 0 / 55%);
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    border-radius: 20px;
+    z-index: -1;
+	
+}
+.cabinetBinome .container .biographie .BContent{
+	
+	width:500px;
+	height:70%;
+	background-color: #7ba74c85;
+	display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 15px;
+	
+}
+
+.cabinetBinome .container .biographie .BContent > *{
+	
+	color:#ffffff;
+}
+
+/*End biographie*/
+
+/*Start savoireFaire*/
+
+.cabinetBinome .container .savoirFaire{
+
+    	background-image: url(../images/savoirfaire.jpg);
+	background-size: cover;
+	background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content:center;
+    height: 180px;
+    text-align: center;
+ 	margin-top:20px;
+    margin-bottom:20px; 
+    width:100%;
+    border-radius: 20px;
+     position: relative;
+     z-index: 0;
+    
+}
+.cabinetBinome .container .savoirFaire:before{
+	
+   content: "";
+    background-color: rgb(0 0 0 / 55%);
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    border-radius: 20px;
+    z-index: -1;
+	
+}
+
+.cabinetBinome .container .savoirFaire .SFContent{
+	
+	width:500px;
+	height:70%;
+	background-color: #503d76bd;
+	display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 15px;
+	
+}
+
+.cabinetBinome .container .savoirFaire .SFContent > *{
+	
+	color:#ffffff;
+}
+
+/*End savoireFaire*/
+  
+  
+/*Start services*/
+  
+    
+.cabinetBinome .container .services{
+
+  	background-image: url(../images/services.jpg);
+	background-size: cover;
+	background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content:center;
+    height: 180px;
+    text-align: center;
+    margin-top:20px;
+    margin-top:20px;
+    width:100%;
+    border-radius: 20px;
+     position: relative;
+     z-index: 0;
+
+}    
+
+.cabinetBinome .container .services:before{
+	
+   content: "";
+    background-color: rgb(0 0 0 / 55%);
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    border-radius: 20px;
+    z-index: -1;
+	
+}
+
+.cabinetBinome .container .services .SContent{
+	
+	width:500px;
+	height:70%;
+	background-color: #7ba74c85;
+	display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 15px;
+	
+}
+
+.cabinetBinome .container .services .SContent > *{
+	
+	color:#ffffff;
+}
+
+
+/*End services*/
+
+/*End cabinetBinome */
+
+
+
+
+
+
+
+
+
 /*Start footer */
 
 .footer{

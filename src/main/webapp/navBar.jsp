@@ -70,8 +70,8 @@
 			</div>
 			<div class="list">
 				<ul>
-					<li><a href="#">ACCUEIL</a></li>
-					<li><a href="#">CABINET BINOME</a> <i class="fa-solid fa-caret-down"></i>
+					<li><a href="#accueil">ACCUEIL</a></li>
+					<li><a href="#cabinetBinome">CABINET BINOME</a> <i class="fa-solid fa-caret-down"></i>
 						<ul>
 							<li><a href="#">BIOGRAPHIE</a></li>
 							<li><a href="#">SAVOIR FAIRE</a></li>
