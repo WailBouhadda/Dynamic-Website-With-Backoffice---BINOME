@@ -51,6 +51,7 @@
 <!-- End cabbinetBinome -->
 
 <!--Start formation-->
+
     <div class="formations" id="formation">
         <div class="box">
         			<h1>FORMATION</h1>
@@ -83,7 +84,48 @@
             </div>    
         </div>
     </div>
-    <!--end formation-->
+    
+<!--end formation-->
+    
+<!--Start contact-->
+	<div class="contact" id="contact">
+		<h1>CONTACT</h1>
+		<div class="background">
+			<div class="container">
+				<div class="contactMethods">
+					<div class="phoneMethod">
+						<i class="fa-solid fa-phone"></i>
+						<p>TELEHPONE</p>
+						<p>+212661494028</p>
+					</div>
+					<div class="emailMethod">
+						<i class="fa-regular fa-envelope"></i>
+						<p>EMAIL</p>
+						<p>i.deschamps@binome.ma</p>
+					</div>
+					<div class="adressMethod">
+						<i class="fa-solid fa-location-dot"></i>
+						<p>ADRESS</p>
+						<p>Avenue Yacoub el Mansour - 28810 Mohammedia</p>
+					</div>
+				</div>
+				<div class="contactForm">
+					<div class="text">
+						<p>N'hésitez pas à nous contacter que vous cherchiez des réponses.</p>
+					</div>
+					<div class="form">
+						 	<form action="">
+				            <input type="text" class="cont" placeholder="Nom..." name="" id="">
+				            <input type="email" class="cont" placeholder="Email..." name="" id="">
+				            <textarea name="MEssage" id="" placeholder="Message..." cols="30" rows="10"></textarea>
+				            <input type="submit" value="ENVOYER">
+				        	</form>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+<!--End contact-->
 
 
 <jsp:include page="footer.jsp"></jsp:include>

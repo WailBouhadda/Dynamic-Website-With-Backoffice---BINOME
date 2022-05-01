@@ -4,8 +4,8 @@
 		
 			<div class="links">
 				<div class="container">
-					<div class="contact">
-						<h2>CONTACT</h2>
+					<div class="contactUS">
+						<h2>CONTACT US</h2>
 						<p>Avenue Yacoub el Mansour <br>
 						- 28810 Mohammedia</p>
 						<button>Nous contacter</button>
