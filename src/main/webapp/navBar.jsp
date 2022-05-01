@@ -69,7 +69,8 @@
 				<img class="logo" src="images/logo.png">
 			</div>
 			<div class="list">
-				<ul>
+				<i class="fa-solid fa-bars" id="burger"></i>
+				<ul class="test" id="Nlist">
 					<li><a href="#accueil">ACCUEIL</a></li>
 					<li><a href="#cabinetBinome">CABINET BINOME</a> <i class="fa-solid fa-caret-down"></i>
 						<ul>
@@ -78,7 +79,7 @@
 							<li><a href="#">NOS SERVICES</a></li>
 						</ul>
 					</li>
-					<li><a href="#">FORMATION</a><i class="fa-solid fa-caret-down"></i></li>
+					<li><a href="#formation">FORMATION</a><i class="fa-solid fa-caret-down"></i></li>
 					<li><a href="#">BLOG</a></li>
 					<li><a href="#">CONTACT</a></li>
 					<li><a href="#">PLUS</a><i class="fa-solid fa-caret-down" onclick="dropDown()"></i>

@@ -1,7 +1,24 @@
 
 
 
+/*Start --- Change navigation Bar to responsive on small screen --- */
+
+let burger = document.getElementById("burger");
+let navlist = document.getElementById("Nlist");
+burger.onclick = function(){
+	
+	
+	console.log(burger);
+	
+	navlist.classList.toggle("test");
+	navlist.classList.toggle("Nlist");
+	}
+
+/*End --- Change navigation Bar to responsive on small screen --- */
+
+
 /*Start --- Change navigation Bar on scroll --- */
+
 
 window.addEventListener("scroll", function (){
 	
@@ -11,11 +28,12 @@ let navlist = document.querySelector(".navList");
 
 let scroll = window.scrollY;
 
+
 if(scroll >0){
 	
 	navbar.style ="background-color:#ffffff;border-bottom:5px solid var(--green-color);position: fixed;top: 0;";
 	topbar.style = "display:none;";
-	navlist.style = "background-color: transparent;border-bottom:none;	box-shadow:none;";
+	navlist.style = "background-color:transparent;border-bottom:none;box-shadow:none;";
 	
 	
 }else{
