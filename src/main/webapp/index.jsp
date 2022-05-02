@@ -20,7 +20,9 @@
 
 	<div class="cabinetBinome" id="cabinetBinome">
 		<div class="container">
-			<h1>CABINET BINOME</h1>
+				<div class="title">
+					<h1>CABINET BINOME</h1>
+				</div>
 				<a href="#">
 					<div class="parent biographie">
 						<div class="BContent">
@@ -54,8 +56,9 @@
 
     <div class="formations" id="formation">
         <div class="box">
+        	<div class="title">
         			<h1>FORMATION</h1>
-        	
+        	</div>
             <div class="container">
                 <div class="formation">
                     <div class="img-holder">
@@ -89,7 +92,9 @@
     
 <!--Start contact-->
 	<div class="contact" id="contact">
-		<h1>CONTACT</h1>
+		<div class="title">
+			<h1>CONTACT</h1>
+		</div>
 		<div class="background">
 			<div class="container">
 				<div class="contactMethods">
@@ -126,6 +131,19 @@
 		</div>	
 	</div>
 <!--End contact-->
+
+<!--Start noReferences-->
+	<div class="noReferences" id="nosReferences">
+		<div class="title">
+			<h1>NOS REFERENCES</h1>
+		</div>
+		<div class="container">
+			<div class="reference">
+			</div>
+		</div>
+	</div>
+
+<!--End noReferences-->
 
 
 <jsp:include page="footer.jsp"></jsp:include>

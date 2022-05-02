@@ -1,6 +1,18 @@
 
 
 
+let search = document.getElementById("SE");
+let input = document.getElementById("si");
+search.onclick = function(){
+		
+	search.classList.toggle("se");
+	search.classList.toggle("seClicked");
+	
+	input.classList.toggle("SI");
+	input.classList.toggle("SIH");
+	}
+
+
 /*Start --- Change navigation Bar to responsive on small screen --- */
 
 let burger = document.getElementById("burger");
@@ -8,7 +20,6 @@ let navlist = document.getElementById("Nlist");
 burger.onclick = function(){
 	
 	
-	console.log(burger);
 	
 	navlist.classList.toggle("test");
 	navlist.classList.toggle("Nlist");

@@ -50,9 +50,9 @@
 				
 				<div class="social_phone">
 					<div class="social">
-						<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-						<a href="#"><i class="fa-brands fa-instagram"></i></a>
-						<a href="#"><i class="fa-brands fa-twitter"></i></a>
+						<a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+						<a href="https://m.youtube.com/"><i class="fa-brands fa-instagram"></i></a>
+						<a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
 					</div>	
 					<div class="phone">
 						<i class="green fa-solid fa-phone"></i>
@@ -74,19 +74,19 @@
 					<li><a href="#accueil">ACCUEIL</a></li>
 					<li><a href="#cabinetBinome">CABINET BINOME</a> <i class="fa-solid fa-caret-down"></i>
 						<ul>
-							<li><a href="#">BIOGRAPHIE</a></li>
-							<li><a href="#">SAVOIR FAIRE</a></li>
-							<li><a href="#">NOS SERVICES</a></li>
+							<li><a href="#biographie">BIOGRAPHIE</a></li>
+							<li><a href="#savoirFaire">SAVOIR FAIRE</a></li>
+							<li><a href="#nosServices">NOS SERVICES</a></li>
 						</ul>
 					</li>
 					<li><a href="#formation">FORMATION</a><i class="fa-solid fa-caret-down"></i></li>
-					<li><a href="#">BLOG</a></li>
-					<li><a href="#">CONTACT</a></li>
-					<li><a href="#">PLUS</a><i class="fa-solid fa-caret-down" onclick="dropDown()"></i>
+					<li><a href="#blog">BLOG</a></li>
+					<li><a href="#contact">CONTACT</a></li>
+					<li><a href="#plus">PLUS</a><i class="fa-solid fa-caret-down" onclick="dropDown()"></i>
 						<ul>
-							<li><a href="#">ESPACE CLIENT</a></li>
-							<li><a href="#">RECRUTEMENT</a></li>
-							<li><a href="#">NOS REFERENCES</a></li>
+							<li><a href="#espaceClient">ESPACE CLIENT</a></li>
+							<li><a href="#recrutement">RECRUTEMENT</a></li>
+							<li><a href="#nosReferences">NOS REFERENCES</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -94,9 +94,11 @@
 			<div class="profile_search">
 				<div class="profile">
 					<i class="fa-solid fa-user"></i>
+					
 				</div>
 				<div class="search">
-					<i class="fa-solid fa-magnifying-glass"></i>
+					<i class="se fa-solid fa-magnifying-glass" id="SE"></i>
+					<input class="SIH" type="text" placeholder="search..." id="si">
 				</div>
 			</div>
 		

@@ -30,22 +30,52 @@
 	
 }
 
+.title{
+	margin-top:50px;
+	text-align:center;
+	font-family: var(--font-cairo);
+	
+}
+.title > *{
+	font-size: 50px;
+}
+
 @media (max-width: 1450px){
     .container{
        width: 900px;
    }
- 
+ .title{
+	margin:40px;	
+}
+.title > *{
+	padding: 15px;
+	font-size: 40px;
+}
 }
 @media (max-width: 900px){
     .container{
        width: 750px;
    }
+    .title{
+	margin:30px;	
+}
+.title > *{
+	padding: 10px;
+	font-size: 30px;
+}
 
 }
 @media (max-width: 767px){
     .container{
        width: 100%;
    }
+    .title{
+	margin:20px;	
+}
+.title > *{
+	padding: 10px;
+	font-size: 30px;
+}
     
 }
 
@@ -115,6 +145,11 @@
 	flex-wrap:nowrap;
 	align-items: center;
 }
+@media (max-width: 767px){
+   .navBar .topBar .loc_mail .loc{
+   	display:none;
+   }
+}
 .navBar .topBar .loc_mail .loc p{
 	
 	color:black;
@@ -169,6 +204,17 @@
 .navBar .topBar .social_phone .social > *{
 	
 		padding-right:10px;
+}
+.navBar .topBar .social_phone .social a i{
+	
+	text-decoration:none;
+	color:black;
+	
+}
+.navBar .topBar .social_phone .social a:hover > i{
+	
+	color: var(--green-color);
+	
 }
 .navBar .topBar .social_phone .phone {
 	
@@ -402,21 +448,24 @@
 
 .navBar .navList .profile_search{
 	
-	width: 50px;
+	width: 180px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-right: 20px;	
-	
+    justify-content: flex-end;
+    align-content: flex-start;
+    float: right;
+    margin-right: 20px;
 }
 
 /*Start profile*/
 
 .navBar .navList .profile{	
 	
-	padding:5px;
-	padding-right:10px;
-	border-right:1px solid #c8c8c8;
+	padding: 5px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    height: 100%;
 	
 }
 /*End profile*/
@@ -425,9 +474,63 @@
 
 .navBar .navList .search{
 	
-	paddin:5px;
+	    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: fit-content;
+    border-left: 1px solid #c8c8c8;
+    
 	
 }
+.navBar .navList .search input::placeholder{
+	
+	font-family: var(--font-fredoka);
+	font-size:10px;
+}
+.navBar .navList .search .SIH{
+
+	width:0px;
+	border: 3px solid var(--green-color);
+	display:block;
+	opacity:0;
+	transition-duration:0.3s;
+	transition-timing-function: ease-in-out;
+	outline: none;
+}
+.navBar .navList .search .SI{
+
+	width:120px;
+	border: 3px solid var(--green-color);
+	display:block;
+	opacity:100;
+	transition-duration:0.3s;
+	transition-timing-function: ease-in-out;
+	outline: none;
+}
+.navBar .navList .search .se:hover{
+	
+	color: var(--green-color);
+}
+.navBar .navList .search .se{
+	
+	padding:4px;
+	color: black;
+	background-color: transeparent;
+	transition-duration:0.3s;
+	transition-timing-function: ease-in-out;
+	
+}
+.seClicked{
+	
+	padding:4px;
+	color: #ffffff;
+	background-color: var(--green-color);
+	transition-duration:0.3s;
+	transition-timing-function: ease-in-out;
+}
+
+
 /*End search*/
 /*End profile_search*/
 /*End navlist*/
@@ -1011,11 +1114,6 @@
     margin-top:50px;
     text-align:center;
 }
-.contact h1{
-	
-	margin:50px;
-	font-size:25px;
-}
 .contact .background{
 	
 	   background-image: url(../images/contact.jpg);
@@ -1115,6 +1213,7 @@
 	display:flex;
 	flex-wrap: nowrap;
 	justify-content:space-between;
+	padding:5px;
 }
 
 .contact .container .contactForm .text{
@@ -1194,6 +1293,69 @@
     transition-timing-function: ease-in;
 }
 
+
+@media (max-width: 1450px){
+ 
+ .contact .container .contactMethods div{
+ 	width: calc(100% / 3 - 20px); 
+ }
+}
+@media (max-width: 900px){
+ 
+  .contact .container .contactMethods div{
+ 	width: calc(100% / 3 - 20px); 
+ }
+    
+}
+@media (max-width: 767px){
+ 
+  .contact .container .contactMethods div{
+ 	display:none;
+  }
+  .contact .container .contactForm{
+  
+  	flex-direction: column;
+  	    align-items: center;
+    justify-content: space-evenly;
+    height:100%;
+  }
+  .contact .container .contactForm .text{
+  	
+  	width:80%;	
+  }
+    .contact .container .contactForm .text p{
+    
+    font-size:30px;
+    }
+     .contact .container .contactForm .form{
+     
+     width:80%;
+     
+     }
+     .contact .container .contactForm .form form textarea{
+
+		margin-bottom: 20px;
+    	padding: 10px;
+    	height:10em;
+    
+}
+ .contact .container .contactForm .form form input{
+ 	
+	height: 30px; 
+	padding:10px;
+	
+ }
+  .contact .container .contactForm .form form input:last-of-type{
+
+    width: 50%;
+    font-size: 10px;
+    font-weight:bolder;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in;
+        margin-bottom:10px;
+    
+}
+}
 
 /*End contactForm */
 
