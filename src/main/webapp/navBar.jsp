@@ -94,7 +94,6 @@
 			<div class="profile_search">
 				<div class="profile">
 					<i class="fa-solid fa-user"></i>
-					
 				</div>
 				<div class="search">
 					<i class="se fa-solid fa-magnifying-glass" id="SE"></i>

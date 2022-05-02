@@ -94,7 +94,7 @@
 	width:100%;
 	height:70px;
 	background-color:#fffffffa;
-	position:absolute;
+	position:relative;
 	z-index:50;
 	transition-duration: 0.3s;
     transition-timing-function: ease-out;
@@ -279,6 +279,10 @@
 }
 .navBar .navList .list #burger{
     display: none;
+    text-align: center;
+    align-self: center;
+    padding-right: 20px;
+    width: 10%;
 }
 .navBar .navList .list ul{
 	
@@ -375,12 +379,11 @@
 
     
     .navBar .navList .list #burger{
-        display: block;
-        text-align: center;
-        align-self: center;
-        padding: 5px;
-         width: 10%;
-         height: 30%;
+         display: block;
+	    text-align: center;
+	    align-self: center;
+	    padding-right: 20px;
+	    width: 10%;
     }
     .navBar .navList .list #burger:hover{
         color: var(--green-color);
@@ -497,6 +500,8 @@
 	transition-duration:0.3s;
 	transition-timing-function: ease-in-out;
 	outline: none;
+	padding:1.5px;
+	
 }
 .navBar .navList .search .SI{
 
@@ -507,6 +512,7 @@
 	transition-duration:0.3s;
 	transition-timing-function: ease-in-out;
 	outline: none;
+	padding:1.5px;
 }
 .navBar .navList .search .se:hover{
 	
@@ -519,6 +525,8 @@
 	background-color: transeparent;
 	transition-duration:0.3s;
 	transition-timing-function: ease-in-out;
+	padding:5px;
+	
 	
 }
 .seClicked{
@@ -528,6 +536,8 @@
 	background-color: var(--green-color);
 	transition-duration:0.3s;
 	transition-timing-function: ease-in-out;
+	padding:5px;
+
 }
 
 
@@ -1359,9 +1369,145 @@
 
 /*End contactForm */
 
-
-
 /*End contact */
+
+
+
+/*Start sidebar */
+
+.sideBar{
+	width:250px;
+	display:flex;
+	flex-direction:column;
+	background-color: #ffffff;
+	font-family: var(--font-cairo);
+}
+
+.sideTitle{
+	background-color: var(--green-color);
+    text-align: center;
+    padding: 10px;
+    color: white;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.sideBar .sideSearch{
+	width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px;
+    align-items:center;
+    
+}
+.sideBar .sideSearch input{
+	border: 2px solid var(--green-color);
+    padding: 10px;
+    outline: none;
+}
+.sideBar .sideSearch i{
+	border: 2px solid var(--green-color);
+    padding: 9.5px;
+    color: black;
+}
+
+.sideBar .sideSearch:hover i{
+	background-color: var(--green-color);
+	color:white;
+}
+.sideBar .postRecent{
+	width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.sideBar .postRecent .posts{
+	
+	    display: flex;
+    flex-direction: column;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.sideBar .postRecent .posts a{
+	text-decoration: none;
+	
+} 
+.sideBar .postRecent .posts a .post{
+
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+}
+.sideBar .postRecent .posts a .post .image{
+	
+	width: 50%;
+	overflow: hidden;
+}
+.sideBar .postRecent .posts a .post .image img{
+
+	height:110px;
+}
+
+.sideBar .postRecent .posts a .post .postInfo{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width:40%;
+	color: black;
+}
+
+.sideBar .postRecent .posts a .post .postInfo span{
+	display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: black;
+    
+}
+
+.sideBar .postRecent .posts a .post .postInfo span i{
+	font-size: 10px;
+    color: #00000085;
+
+}
+.sideBar .postRecent .posts a .post .postInfo span p{
+	
+	font-size: 12px;
+	padding-left: 5px;
+
+}
+.sideBar .postRecent .categories{
+	display: flex;
+	flex-direction: column;	
+}
+.sideBar .postRecent .categories a{
+	text-decoration: none;
+	
+} 
+
+.sideBar .postRecent .categories a .categorie{
+	display: flex;
+	flex-wrap: nowrap;
+	align-items:center;
+}
+.sideBar .postRecent .categories a .categorie i{
+	
+	font-size: 15px;
+    color: black;
+}
+.sideBar .postRecent .categories a .categorie p{
+	padding-left:10px;
+	color: black;
+	font-weight: bolder;
+}
+
+/*End sideBar */
+
+
 
 
 /*Start footer */
