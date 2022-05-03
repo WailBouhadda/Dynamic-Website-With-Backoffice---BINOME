@@ -1,5 +1,5 @@
 
-<jsp:include page="navBar.jsp"></jsp:include>
+<jsp:include page="navBar.jsp"></jsp:include>    
 
 <!-- Start accueil -->
 
@@ -14,9 +14,9 @@
 		<a href="#cabinetBinome"> <i class="fa-solid fa-angles-down"></i></a>
 	</div>
 
-<!-- End accueil -->
+<!-- End accueil -->  
 
-<!-- Start cabbinetBinome -->
+<!-- Start cabbinetBinome -->    
 
 	<div class="cabinetBinome" id="cabinetBinome">
 		<div class="container">
@@ -127,7 +127,7 @@
 				        	</form>
 					</div>
 				</div>
-			</div>
+			</div >       
 		</div>	
 	</div>
 <!--End contact-->
