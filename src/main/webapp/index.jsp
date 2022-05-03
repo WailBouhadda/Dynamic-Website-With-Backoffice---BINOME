@@ -6,7 +6,7 @@
 	<div class="accueil" id="accueil">
 		<div class="container">
 			<div class="headContent">
-				<div class="img"><img src="../images/leadership.png"></div>
+				<div class="img"><img src="images/leadership.png"></div>
 				<h1>FORMATION  DES  ASSISTANTES DE DIRECTION</h1>
 				<p>Avec l'efficacité du <span style="color: var(--green-color); font-weight:bold;"> < </span> sur-mesure <span style="color: var(--green-color); font-weight:bold;"> > </span></p>
 			</div>
@@ -62,7 +62,7 @@
             <div class="container">
                 <div class="formation">
                     <div class="img-holder">
-                        <img src="../images/formation1.jpg" alt="">
+                        <img src="images/formation1.jpg" alt="">
                     </div>
                     <h2>Formation 1</h2>
                     <p>Une petit description de formation 1</p>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="formation">
                     <div class="img-holder">
-                        <img src="../images/formation2.jpg" alt="">
+                        <img src="images/formation2.jpg" alt="">
                     </div>
                     <h2>Formation 2</h2>
                     <p>Une petit description de formation 2</p>
@@ -78,7 +78,7 @@
                 </div>
                 <div class="formation">
                     <div class="img-holder">
-                        <img src="../images/formation3.jpg" alt="">
+                        <img src="images/formation3.jpg" alt="">
                     </div>
                     <h2>Formation 3</h2>
                     <p>Une petit description de formation 2</p>

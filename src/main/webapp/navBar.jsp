@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Start Style -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- End Style -->
     
     <!-- FontAwseme icons -->
@@ -28,7 +28,7 @@
     <!-- FontAwseme icons -->
     
 <title>BINOME</title>
-<link rel="icon" href="../images/logo.png">
+<link rel="icon" href="images/logo.png">
 </head>
 <body>
 
@@ -69,7 +69,7 @@
 		<div class="navList">
 		
 			<div class="logo">
-				<img class="logo" src="../images/logo.png">
+				<img class="logo" src="images/logo.png">
 			</div>
 			<div class="list">
 				<i class="fa-solid fa-bars" id="burger"></i>

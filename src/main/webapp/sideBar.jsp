@@ -15,7 +15,7 @@
 				<a href="#">
 					<div class="post">
 						<div class="image">
-							<img src="../images/blog1.jpg">
+							<img src="images/blog1.jpg">
 						</div>
 						<div class="postInfo">
 							<span><i class="fa-solid fa-calendar-days"></i><p>Jan 10, 2022</p></span>
