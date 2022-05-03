@@ -14,7 +14,7 @@
 		</div>
 		<div class="pageContent">
 			<div class="blog" id="blog">
-				<h1>hello world</h1>
+				<h1></h1>
 			</div>
 			<jsp:include page="sideBar.jsp"></jsp:include>
 		</div>
