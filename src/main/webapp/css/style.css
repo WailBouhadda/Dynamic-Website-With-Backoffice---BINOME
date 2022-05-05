@@ -1057,7 +1057,7 @@ html{
 
 .services .box .container .service{
 
-    width: 350px;
+    width: calc(100% / 3 - 60px);
     display: flex;
     flex-direction: column;
     border: 0.5px solid rgb(171 171 171 / 32%);
