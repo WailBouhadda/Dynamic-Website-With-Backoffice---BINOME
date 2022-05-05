@@ -136,7 +136,7 @@
 	width:100%;
 	height:70px;
 	background-color:#fffffffa;
-	position:relative;
+	position: absolute;
 	z-index:50;
 	transition-duration: 0.3s;
     transition-timing-function: ease-out;
@@ -706,7 +706,7 @@ html{
 	display:flex;
     flex-direction:column; 
     align-items:center;
-    margin-top: 350px;
+    margin-top: 300px;
     
 }
 
@@ -722,20 +722,29 @@ html{
 /* --- Responsive accueil --- */
 
 @media (max-width: 1450px){
+	
     .accueil .container .headContent{
        width: 700px;
    }
  
 }
 @media (max-width: 900px){
+	 .accueil .container{
+	 	   margin-top: 250px;
+	 }
     .accueil .container .headContent{
        width: 500px;
+       
    }
 
 }
 @media (max-width: 767px){
+	 .accueil .container{
+	 	   margin-top: 250px;
+	 }
     .accueil .container .headContent{
        width: 80%;
+       
    }
     
 }
@@ -790,6 +799,7 @@ html{
 	
 }
 @media (max-width: 1450px){
+	
     .accueil .container .headContent .img img{
        height: 50px;
    }
@@ -806,6 +816,10 @@ html{
  
 }
 @media (max-width: 900px){
+	.accueil .container .headContent .img {
+	
+	padding:10px;
+	}
      .accueil .container .headContent .img img{
        height: 40px;
    }
@@ -821,17 +835,21 @@ html{
    
 }
 @media (max-width: 767px){
+	.accueil .container .headContent .img {
+	
+	padding:10px;
+	}
      .accueil .container .headContent .img img{
        height: 25px;
    }
      .accueil .container .headContent > h1{
    
-   		font-size:30px;
-   		margin-top:30px;
+   		font-size:25px;
+   		margin-top:25px;
    }
    .accueil .container .headContent > p{
    	
-   		margin:10px;
+   		margin:5px;
    }
    
     
@@ -1239,21 +1257,53 @@ html{
 @media (max-width: 1450px){
   .formations .box .container{
     flex-wrap: wrap;
-    justify-content: center;
     }
  	.formations .box .container .formation{
  		margin-top:20px;
+ 		width: calc(100% / 3 - 30px);
+    	height: 650px;
+ 	}
+ 	
+ 	.formations .box .container .formation h2{
+ 		
+ 		 font-size: 30px;
+   		 padding: 20px;
+ 	}
+ 	.formations .box .container .formation p{
+ 		
+ 		    margin-top: 20px;
+		    margin-bottom: 20px;
+		    padding: 20px;
+ 	}
+ 	.formations .box .container .formation a{
+ 		
+		    margin-bottom: 20px;
  	}
 }
 @media (max-width: 900px){
    .formations .box .container{
     flex-wrap: wrap;
-    justify-content: center;
     }
     .formations .box .container .formation{
  		margin-top:20px;
+ 		width: calc(100% / 3 - 15px);
+    	height: 600px;
  	}
-    
+     	.formations .box .container .formation h2{
+ 		
+ 		 font-size: 25px;
+   		 padding: 15px;
+ 	}
+ 	.formations .box .container .formation p{
+ 		
+ 		    margin-top: 15px;
+		    margin-bottom: 15px;
+		    padding: 15px;
+ 	}
+ 	.formations .box .container .formation a{
+ 		
+		    margin-bottom: 15px;
+ 	}
 }
 @media (max-width: 767px){
      .formations .box .container{
@@ -1262,6 +1312,25 @@ html{
     }
     .formations .box .container .formation{
  		margin-top:20px;
+ 		width: 60%;
+    	height: 550px;
+ 	}
+ 	 .formations .box .container .formation h2{
+ 		
+ 		 font-size: 20px;
+   		 padding: 10px;
+ 	}
+ 	.formations .box .container .formation p{
+ 		
+ 		    margin-top: 10px;
+		    margin-bottom: 10px;
+		    padding: 10px;
+ 	}
+ 	.formations .box .container .formation a{
+ 		
+		    margin-bottom: 10px;
+		   	padding: 5px;
+		    
  	}
     
 }
@@ -1272,7 +1341,6 @@ html{
 .contact{
 
     width: 100%;
-    height: 100vh;
     display:flex;
     flex-direction:column;
     align-items: space-between;
@@ -1322,6 +1390,8 @@ html{
 	flex-wrap: nowrap;
 	width:100%;
 	justify-content:space-between;
+	padding-top: 25px;
+	padding-bottom: 15px;
 }
 .contact .container .contactMethods div{
 	

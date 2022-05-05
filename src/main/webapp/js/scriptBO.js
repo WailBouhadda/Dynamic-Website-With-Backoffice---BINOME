@@ -63,18 +63,20 @@ for(let i = 0 ; i < dropDown.length ; i++){
 		
 		var subList = document.getElementById(`${this.id}ul`); 	
 		var mainLi = document.getElementById(`${this.id}li`);
-		var maiLiAfter = window.getComputedStyle(document.getElementById(`${this.id}li`) , `:after`);
-		
+		var arrow = document.getElementById(`${this.id}i`);
+		var mainLiAfter = window.getComputedStyle(document.getElementById(`${this.id}li`) , `:after`);
 		
 		mainLi.classList.toggle("li");	
 		mainLi.classList.toggle("liClicked");
+		
 		subList.classList.toggle("subList");
 		subList.classList.toggle("subListClicked");	
-		mainLiAfter.style.height = "100%";	
 		
+		mainLiAfter.style = "height:100%";	
 		
+		arrow.classList.toggle("normal");
+		arrow.classList.toggle("rotate");			
 
-	
 		}
 }
 

@@ -290,6 +290,18 @@ h1{
     transition-timing-function: ease-out;
 }
 
+.normal{
+	    transform: rotate(0deg);
+	    transition-duration: 0.2s;
+   		 transition-timing-function: ease-out;	
+}
+
+.rotate{
+	    transform: rotate(180deg);
+	    transition-duration: 0.2s;
+   		 transition-timing-function: ease-out;	
+}
+
 
 
 
