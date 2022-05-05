@@ -22,3 +22,62 @@
 			}
 			
 /* End show login password  */
+
+
+
+
+
+/* --- Start admin side bar stretch --- */
+
+var sideBar = document.getElementById("adminSideBar");
+var sideBurger = document.getElementById("burger");
+
+burger.onclick = function(){
+	
+	var span = sideBar.querySelectorAll("span");	
+	
+	for(var i = 0 ; i < span.length ;i++){
+		
+		span[i].classList.toggle("showSpan");
+		span[i].classList.toggle("hideSpan");
+
+	}
+} 	
+
+
+
+
+/* --- End admin side bar stretch --- */
+
+
+
+
+/* --- Start admin side bar sublist drop down --- */
+
+var dropDown = document.getElementsByClassName("dropDown");
+
+
+for(let i = 0 ; i < dropDown.length ; i++){
+	
+	dropDown[i].onclick = function(){
+		
+		var subList = document.getElementById(`${this.id}ul`); 	
+		var mainLi = document.getElementById(`${this.id}li`);
+		var maiLiAfter = window.getComputedStyle(document.getElementById(`${this.id}li`) , `:after`);
+		
+		
+		mainLi.classList.toggle("li");	
+		mainLi.classList.toggle("liClicked");
+		subList.classList.toggle("subList");
+		subList.classList.toggle("subListClicked");	
+		mainLiAfter.style.height = "100%";	
+		
+		
+
+	
+		}
+}
+
+
+
+/* --- End admin side bar sublist drop down --- */

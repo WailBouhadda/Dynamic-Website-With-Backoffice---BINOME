@@ -22,6 +22,8 @@
 	
 	--font-cairo:'Cairo', sans-serif;
 	--font-fredoka:'Fredoka', sans-serif;
+	--font-noto:'Noto Sans', sans-serif;
+	--font-rolway: 'Raleway', sans-serif;
 
 	
 }
@@ -97,6 +99,7 @@ h1{
 	color: var(--dark-color);
 }
 
+
 .loginPage .adminLogin .eye{
 	position: absolute;
 	color: var(--dark-color);
@@ -133,4 +136,164 @@ h1{
 
 /* --- End Login page --- */
 
+
+
+/* --- Start admin sidebar --- */
+
+.adminSideBar{
+	
+	width: fit-content;
+	height: 100vh;
+	position: fixed;
+	left:0;
+	top:0;
+	list-style:none;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 15px;
+	background-color: var(--dark-color);
+	font-family: var(--font-cairo);
+	color: white;
+	transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.adminSideBar div{
+	
+	width: 100%;
+	transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+.adminSideBar div li{
+	
+	width: 100%;
+	position: relative;
+	z-index:0;
+}
+
+.adminSideBar div .li{
+	
+	
+	background-color: transparent;
+	transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+.adminSideBar div .liClicked{
+	
+ 	border-radius: 10px;
+    background-color: var(--green-color);
+      transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    }
+
+.adminSideBar div li span{
+	
+	padding: 10px;
+}
+
+.adminSideBar div .li .subList{
+	
+	height: 0;
+	opacity: 0%;
+	transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+.adminSideBar div .li .subListClicked{
+	
+	height: 100%;
+	opacity: 100%;
+	transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+
+.adminSideBar div li::after{
+    content: "";
+    width: 0%;
+    height: 0;
+    z-index: -1;
+    border-radius: 10px;
+    position: absolute;
+    background-color: var(--green-color);
+    left: 0;
+    top: 0;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+
+
+.adminSideBar div li:hover:after{
+
+    width: 100%;
+    height: 100%;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.adminSideBar div li ul li::after{
+	
+	content: "";
+    width: 0%;
+    height: 0;
+    z-index: -1;
+    position: absolute;
+    border-radius: 5px;
+    background-color: var(--dark-color);
+    left: 0;
+    top: 0;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+	
+}
+
+.adminSideBar div a{
+	
+	text-decoration: none;
+	color: var(--white-color);
+}
+
+.adminSideBar div i{
+	
+	padding: 15px;
+	font-size: 20px;
+	
+}
+.adminSideBar .list{
+	display: flex;
+	align-items: center;
+	flex:1;
+}
+	
+.adminSideBar .list ul{
+	
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	
+}
+
+
+.showSpan{
+	
+	display: initial;
+	transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.hideSpan{
+	
+	display: none;
+	transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+
+
+
+
+
+/* --- End admin sidebar --- */
 
