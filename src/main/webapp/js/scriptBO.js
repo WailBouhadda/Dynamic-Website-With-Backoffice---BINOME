@@ -34,8 +34,13 @@ var sideBurger = document.getElementById("burger");
 
 burger.onclick = function(){
 	
-	var span = sideBar.querySelectorAll("span");	
+	var span = sideBar.querySelectorAll("span");
+	var content = document.getElementById("content");
 	
+	
+	content.classList.toggle("content");
+	content.classList.toggle("contentStrech");
+
 	for(var i = 0 ; i < span.length ;i++){
 		
 		span[i].classList.toggle("showSpan");

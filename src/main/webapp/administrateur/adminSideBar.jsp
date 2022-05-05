@@ -7,11 +7,11 @@
 	</div>
 	<div class="list">
 		<ul class="mainList">
-			<li><a href="#"><i class="fa-solid fa-house-chimney"></i><span class="showSpan">TABLEAU DE BOARD</span></a></li>
+			<li><a href="Dashboard.jsp"><i class="fa-solid fa-house-chimney"></i><span class="showSpan">TABLEAU DE BOARD</span></a></li>
 			<li class="li" id="blogli">
 				<div class="dropDown" id="blog"><i class="fa-solid fa-newspaper"></i><span class="showSpan">BLOG<i class="normal fa-solid fa-caret-down" id="blogi"></i></span></div>
 				<ul class="subList" id="blogul">
-					<li><a href="#"><i class="fa-solid fa-plus"></i><span class="showSpan">AJOUTER BLOG</span></a></li>
+					<li><a href="addBlog.jsp"><i class="fa-solid fa-plus"></i><span class="showSpan">AJOUTER BLOG</span></a></li>
 					<li><a href="#"><i class="fa-solid fa-list"></i><span class="showSpan">BLOGs</span></a></li>
 				</ul>
 			</li>

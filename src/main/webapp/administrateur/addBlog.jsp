@@ -33,11 +33,11 @@
 </head>
 <body>
 
-	<div class="container">
+	<div class="container" >
 
 		<jsp:include page="adminSideBar.jsp"></jsp:include>
 			
-		<div class="content">
+		<div class="content" id="content">
 			
 			<form action="addBlog" method="post" enctype="multipart/form-data">
 			

@@ -13,6 +13,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -46,12 +47,7 @@ public class addBlog extends HttpServlet {
 		
 		
 		
-		
-		
-
-		
-		
-		
+	
 		
 		
 		
@@ -77,19 +73,33 @@ public class addBlog extends HttpServlet {
 	  
 	        // Sends the statement to the
 	        // database server
-		 try {
-				st = DBconnection.connect().createStatement();
-				
-				st.executeUpdate("insert into blogimages values("+is+")");
-				
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+	
 		
-		
-		
-		
+		 String SQL = "INSERT INTO blogimages (image) values (?)";
+			
+		 
+		 
+		  PreparedStatement preparedStatement;
+	        try {
+	            preparedStatement = DBconnection.connect().prepareStatement(SQL);
+	  
+	  
+	            if (is != null) {
+	  
+	                // Fetches the input stream
+	                // of the upload file for
+	                // the blob column
+	                preparedStatement.setBlob(1, is);
+	            }
+
+	            
+	            preparedStatement
+                .executeUpdate();
+	        } catch (SQLException e) {
+	            System.out.println(e.getMessage());
+	        }
+	       
+	         
 		
 		
 		

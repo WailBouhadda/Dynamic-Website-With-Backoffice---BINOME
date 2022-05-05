@@ -316,5 +316,15 @@ h1{
 
 .content{
 	
-	margin-left: 395px;
+	margin-left: 250px;
+	transition-duration: 0.2s;
+   	transition-timing-function: ease-out;
+}
+
+.contentStrech{
+	
+		margin-left: 100px;
+		transition-duration: 0.2s;
+   		transition-timing-function: ease-out;
+	
 }
