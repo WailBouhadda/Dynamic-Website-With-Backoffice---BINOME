@@ -1034,20 +1034,20 @@ html{
 /* --- End cabinetBinome --- */
 
 
-/* --- start formation --- */
-.formations{
+/* --- start service --- */
+.services{
     margin-top: 50px;
     margin-bottom:50px;
     width: 100%;
     font-family: var(--font-cairo);
 }
 
-.formations .box{
+.services .box{
 	
 	text-align:center;
 }
 
-.formations .box .container{
+.services .box .container{
     margin-top: 100px;
     display: flex;
     justify-content: space-between;
@@ -1055,7 +1055,7 @@ html{
 
 }
 
-.formations .box .container .formation{
+.services .box .container .service{
 
     width: 350px;
     display: flex;
@@ -1066,12 +1066,12 @@ html{
 	 transition-duration: 0.2s;
     	transition-timing-function: ease-out;
 }
-.formations .box .container .formation .img-holder{
+.services .box .container .service .img-holder{
     width: 100%;
     overflow: hidden;
     position: relative;
 }
-.formations .box .container .formation .img-holder::after{
+.services .box .container .service .img-holder::after{
  
     content: "";
     width: 0;
@@ -1086,17 +1086,17 @@ html{
     transition-duration: 0.2s;
     transition-timing-function: ease-out;
 }
-.formations .box .container .formation:hover .img-holder::after{
+.services .box .container .service:hover .img-holder::after{
 
     transition-duration: 0.2s;
     transition-timing-function: ease-out;
     border-width: 0px 350px 170px 500px;
 }
-.formations .box .container .formation .img-holder img{
+.services .box .container .service .img-holder img{
     height: 350px;
     position: relative;
 }
-.formations .box .container .formation .img-holder::before{
+.services .box .container .service .img-holder::before{
 
     content: "";
     width: 100%;
@@ -1107,13 +1107,13 @@ html{
     z-index: 8;
    
 }
-.formations .box .container .formation h2{
+.services .box .container .service h2{
     font-size: 35px;
     padding: 20px;
     position: relative;
 
 }
-.formations .box .container .formation h2::after{
+.services .box .container .service h2::after{
     content: "";
     width: 100px;
     height: 5px;
@@ -1124,7 +1124,7 @@ html{
 
 }
 
-.formations .box .container .formation p{
+.services .box .container .service p{
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 10px;
@@ -1133,7 +1133,7 @@ html{
     font-size: 18px;
     color: #868686;
 }
-.formations .box .container .formation a{
+.services .box .container .service a{
     text-decoration: none;
     font-weight: 900;
     font-size: 19px;
@@ -1147,7 +1147,7 @@ html{
     transition-timing-function: ease-out;
     z-index: 0;
 }
-.formations .box .container .formation a::after{
+.services .box .container .service a::after{
     content: "";
     width: 0%;
     height: 100%;
@@ -1160,56 +1160,56 @@ html{
     z-index: -10;
 
 }
-.formations .box .container .formation a::after{
+.services .box .container .service a::after{
 
     background-color: var(--mauve-color);
 
 }
 
-/* --- start every formation color --- */
-.formations .box .container .formation .img-holder::before{
+/* --- start every service color --- */
+.services .box .container .service .img-holder::before{
 
     background-color: var(--green-trans);
    
 }
 
-.formations .box .container .formation h2::after{
+.services .box .container .service h2::after{
   
     background-color: var(--green-color);
     transition-duration: 0.2s;
     transition-timing-function: ease-out;
 }
 
-.formations .box .container .formation a{
+.services .box .container .service a{
     color: var(--green-color);
     border: 3px solid var(--green-color);
   
 }
 
 
-/* --- end every formation color --- */
+/* --- end every service color --- */
 
-.formations .box .container .formation:hover{
+.services .box .container .service:hover{
 	
 	transform: translateY(-10px);
 	  transition-duration: 0.2s;
     	transition-timing-function: ease-out;
 }
-.formations .box .container .formation:hover .img-holder::before{
+.services .box .container .service:hover .img-holder::before{
 
   		 background-color: var(--mauve-trans);
 	    transition-duration: 0.2s;
     	transition-timing-function: ease-out;
    
 }
-.formations .box .container .formation:hover h2::after{
+.services .box .container .service:hover h2::after{
 	    background-color: var(--mauve-color);
 	    transition-duration: 0.2s;
     	transition-timing-function: ease-out;
 	
 }
 
-.formations .box .container .formation a{
+.services .box .container .service a{
     text-decoration: none;
     font-weight: 900;
     font-size: 19px;
@@ -1223,7 +1223,7 @@ html{
     transition-timing-function: ease-out;
     z-index: 0;
 }
-.formations .box .container .formation a::after{
+.services .box .container .service a::after{
     content: "";
     width: 0%;
     height: 100%;
@@ -1237,7 +1237,7 @@ html{
 
 }
 
-.formations .box .container .formation:hover a{
+.services .box .container .service:hover a{
 
 
     color: white;
@@ -1246,7 +1246,7 @@ html{
     transition-timing-function: ease-out;
 
 }
-.formations .box .container .formation:hover a::after{
+.services .box .container .service:hover a::after{
 
     width: 100%;
     transition-duration: 0.2s;
@@ -1255,78 +1255,78 @@ html{
 
 
 @media (max-width: 1450px){
-  .formations .box .container{
+  .services .box .container{
     flex-wrap: wrap;
     }
- 	.formations .box .container .formation{
+ 	.services .box .container .service{
  		margin-top:20px;
  		width: calc(100% / 3 - 30px);
     	height: 650px;
  	}
  	
- 	.formations .box .container .formation h2{
+ 	.services .box .container .service h2{
  		
  		 font-size: 30px;
    		 padding: 20px;
  	}
- 	.formations .box .container .formation p{
+ 	.services .box .container .service p{
  		
  		    margin-top: 20px;
 		    margin-bottom: 20px;
 		    padding: 20px;
  	}
- 	.formations .box .container .formation a{
+ 	.services .box .container .service a{
  		
 		    margin-bottom: 20px;
  	}
 }
 @media (max-width: 900px){
-   .formations .box .container{
+   .services .box .container{
     flex-wrap: wrap;
     }
-    .formations .box .container .formation{
+    .services .box .container .service{
  		margin-top:20px;
  		width: calc(100% / 3 - 15px);
     	height: 600px;
  	}
-     	.formations .box .container .formation h2{
+     	.services .box .container .service h2{
  		
  		 font-size: 25px;
    		 padding: 15px;
  	}
- 	.formations .box .container .formation p{
+ 	.services .box .container .service p{
  		
  		    margin-top: 15px;
 		    margin-bottom: 15px;
 		    padding: 15px;
  	}
- 	.formations .box .container .formation a{
+ 	.services .box .container .service a{
  		
 		    margin-bottom: 15px;
  	}
 }
 @media (max-width: 767px){
-     .formations .box .container{
+     .services .box .container{
     flex-wrap: wrap;
     justify-content: center;
     }
-    .formations .box .container .formation{
+    .services .box .container .service{
  		margin-top:20px;
  		width: 60%;
     	height: 550px;
  	}
- 	 .formations .box .container .formation h2{
+ 	 .services .box .container .service h2{
  		
  		 font-size: 20px;
    		 padding: 10px;
  	}
- 	.formations .box .container .formation p{
+ 	.services .box .container .service p{
  		
  		    margin-top: 10px;
 		    margin-bottom: 10px;
 		    padding: 10px;
  	}
- 	.formations .box .container .formation a{
+ 	.services .box .container .service a{
  		
 		    margin-bottom: 10px;
 		   	padding: 5px;
@@ -1334,7 +1334,7 @@ html{
  	}
     
 }
-/* --- end formation --- */
+/* --- end service --- */
 
 /* --- Start contact --- */
 
