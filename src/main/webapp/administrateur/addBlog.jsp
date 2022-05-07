@@ -36,26 +36,62 @@
 	<div class="container" >
 
 		<jsp:include page="adminSideBar.jsp"></jsp:include>
+		
+		<form action="addBlog" method="post" enctype="multipart/form-data">
 			
-		<div class="content" id="content">
+			<div class="content" id="content">
 			
-			<form action="addBlog" method="post" enctype="multipart/form-data">
+				<div class="blogInfos">
+					<div class="imgCate">
+						<div class="img">
+							<label for="blogImage">Image : </label>
+							<input type="file" name="blogImage">
+						</div>
+						 <div class="cat">
+							 <label for="categorie">Categorie : </label>
+								  <select name="categorie" id="categorie">
+								    <option value="1">Volvo</option>
+								    <option value="2">Saab</option>
+								    <option value="3">Opel</option>
+								    <option value="4">Audi</option>
+								  </select>
+						</div>
+					</div>
+					<div class="posteTitle">
+						<label for="blogTitle">Titre : </label>
+						<input type="text" name="blogTitle" placeholder="Ajouter un titre ici...">
+					</div>
+					
+				</div>
+				
+				<div class="blogContent">
+				
+					<textarea name="article" id="article"></textarea>
+				
+				</div>
+				
+				<div class="decision">
+					<input type="submit" value="valider">
+					<input type="submit" value="annuler">
+				</div>
+				
+			</div>
+						
+		</form>
 			
-				<input type="file" name="blogImage">
-				<input type="submit" value="Valider">
-			
-			</form>
-			
-			
-			
-			
-		</div>
+		
+		
 	
 	</div>
 
 	
 	<!-- admin script -->
 
+	<script src="../js/ckeditor/ckeditor.js"></script>
+	
+	<script>
+		CKEDITOR.replace('article');
+	</script>
 	<script src="../js/scriptBO.js"></script>
 
 	<!-- admin script -->

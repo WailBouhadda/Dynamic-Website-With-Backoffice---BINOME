@@ -16,6 +16,10 @@
 	--mauve-color:#503D76;
 	--mauve-trans:#503d7699;
 	--dark-color: #192027;
+	--dark-trans: #000000a3;
+	--white-color: #ffffff;
+	--white-trans: #ffffffcc;
+	
 	--font-cairo:'Cairo', sans-serif;
 	--font-fredoka:'Fredoka', sans-serif;
 	--font-noto:'Noto Sans', sans-serif;
@@ -1670,6 +1674,8 @@ html{
 	flex-wrap: nowrap;
 	align-items: center;
 	justify-content: space-between;
+	height: 120px;
+    margin-top: 10px;
 }
 .sideBar .postRecent .posts a .post .image{
 	
@@ -1692,7 +1698,12 @@ html{
 	width:40%;
 	color: black;
 }
+.sideBar .postRecent .posts a .post .postInfo h5{
 
+	width: 100%;
+    height: 45px;
+    overflow: hidden;
+}
 
 .sideBar .postRecent .posts a .post .postInfo span{
 	display: flex;
@@ -1785,9 +1796,167 @@ html{
 .pageContainer .container .pageContent .blog{
 	
 	width:80%;
+	font-family: var(--font-fredoka);
 	
 }
 
+.pageContainer .container .pageContent .blog a{
+	
+	text-decoration: none;
+	color: black;
+	margin-bottom: 50px;
+	
+}
+
+.pageContainer .container .pageContent .blog a .poste{
+	
+	width: 80%;
+	margin:auto;
+	padding: 20px;
+	position: relative;
+	margin-bottom: 110px;
+}
+.pageContainer .container .pageContent .blog a .poste .posteBG{
+
+	width: 100%;
+	height: 350px;
+	overflow:hidden;
+	position: relative;
+	
+}
+
+.pageContainer .container .pageContent .blog a .poste .posteBG img{
+
+	width:100%;
+}
+
+.pageContainer .container .pageContent .blog a .poste .posteBG .posteDate{
+
+	position: absolute;
+	width: 50px;
+	text-align: center;
+	background-color: var(--white-color);
+	border-bottom: 5px solid var(--green-color);
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	box-shadow: -1px 2px 9px #00000085;
+	top: 5%;
+	left: 5%;
+}
+.pageContainer .container .pageContent .blog a .poste .posteBG .posteDate p:first-of-type{
+	
+	font-size: 20px;
+	font-weight: bold;
+	
+}
+.pageContainer .container .pageContent .blog a .poste .posteBG .posteDate p:last-of-type{
+	
+	font-size: 12px;
+}
+
+.pageContainer .container .pageContent .blog a .poste .posteDetails{
+	
+	display: flex;
+    flex-wrap: nowrap;
+    width: 85%;
+    height: 200px;
+    justify-content: space-between;
+    background-color: var(--white-color);
+    position: absolute;
+    box-shadow: -3px 7px 8px #00000047;
+    margin-left: 20px;
+    bottom: -20%;
+   
+}
+.pageContainer .container .pageContent .blog a .poste .posteDetails .posteBttn{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	width: 10%;
+	background-color: var(--green-color);
+}
+.pageContainer .container .pageContent .blog a .poste .posteDetails .posteBttn i{
+	
+	color: var(--white-color);
+	font-size: 75px;
+}
+
+.pageContainer .container .pageContent .blog a .poste .posteDetails .details{
+
+	width: 85%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	
+	
+}
+
+.pageContainer .container .pageContent .blog a .poste .posteDetails .details .posteTitle{
+
+	font-family: var(--font-cairo);
+	font-size: 25px;
+	font-weight: 600;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.pageContainer .container .pageContent .blog a .poste .posteDetails .details .posteTitle > *{
+	
+		font-weight:600;
+	
+}
+
+.pageContainer .container .pageContent .blog a .poste .posteDetails .details .Stat{
+	
+	display: flex;
+    width: 50%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+.pageContainer .container .pageContent .blog a .poste .posteDetails .details .Stat div{
+	
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+    align-items: center;
+    	border-left: 1px solid #0000004f;
+    
+}
+.pageContainer .container .pageContent .blog a .poste .posteDetails .details .Stat div:first-of-type{
+	
+	border-left: none;
+}
+.pageContainer .container .pageContent .blog a .poste .posteDetails .details .Stat div p{
+	
+	   padding-left: 15px;
+    font-weight: 300;
+    font-size: 13px;
+}
+
+.pageContainer .container .pageContent .blog a .poste .posteDetails .details .Stat div i{
+	
+	color: var(--green-color);
+	padding-left: 10px;
+	font-size: 15px;
+	 
+}
+
+.pageContainer .container .pageContent .blog a .poste .posteDetails .details .content{
+	
+	margin: 5px;
+    margin-left: 15px;
+    padding: 5px;
+    font-weight: 300;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    border-top: 1px solid #0000004f;
+}
 
 
 

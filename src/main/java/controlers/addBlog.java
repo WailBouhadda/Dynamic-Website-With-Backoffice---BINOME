@@ -1,11 +1,13 @@
 package controlers;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.http.Part;
 import tools.DBconnection;
 
@@ -13,9 +15,21 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.sql.Blob;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.List;
+
+import com.mysql.cj.protocol.Resultset;
+
+import dao.posteDAO;
+import entities.poste;
 
 /**
  * Servlet implementation class addBlog
@@ -39,33 +53,61 @@ public class addBlog extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		Part blogImage = request.getPart("blogImage");
 		
-		String imageFileName = blogImage.getSubmittedFileName();
+		//String imageFileName = blogImage.getSubmittedFileName();
+		
+		
 		
 		Statement st;
-		
-		
+		ResultSet rs;
 		
 	
 		
+		InputStream is = null;	
 		
 		
-		PrintWriter out = response.getWriter();
+		
+		poste p1 = new poste();
+		posteDAO pdao= new posteDAO();
 		
 		
-		InputStream is = null;
+		Part blogImage = request.getPart("blogImage");
+		is = blogImage.getInputStream();
+		p1.setImageis(is);	
+		
+		int idcategorie = Integer.parseInt(request.getParameter("categorie"));
+		p1.setIdCategorie(idcategorie);
+		
+		String title = request.getParameter("blogTitle");
+		p1.setTitle(title);
+		
+		String content = request.getParameter("article");
+		p1.setContent(content);
+		
+		
+		
+		pdao.addPoste(p1);
+		
+		
+		response.sendRedirect("addBlog.jsp");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
 		
 		 if (blogImage != null) {
 			  
 	            // Prints out some information
 	            // for debugging
-	            System.out.println(
-	            		blogImage.getName());
-	            System.out.println(
-	            		blogImage.getSize());
-	            System.out.println(
-	            		blogImage.getContentType());
+	            System.out.println(blogImage.getName());
+	            System.out.println(blogImage.getSize());
+	            System.out.println(blogImage.getContentType());
 	  
 	            // Obtains input stream of the upload file
 	    		 is = blogImage.getInputStream();
@@ -79,6 +121,7 @@ public class addBlog extends HttpServlet {
 			
 		 
 		 
+		
 		  PreparedStatement preparedStatement;
 	        try {
 	            preparedStatement = DBconnection.connect().prepareStatement(SQL);
@@ -93,15 +136,51 @@ public class addBlog extends HttpServlet {
 	            }
 
 	            
-	            preparedStatement
-                .executeUpdate();
+	            preparedStatement.executeUpdate();
 	        } catch (SQLException e) {
 	            System.out.println(e.getMessage());
 	        }
-	       
-	         
-		
-		
+	        
+	        
+	        
+	        
+	        
+	        
+	        	Blob img = null;
+		       byte[] imgdata = null;
+		       
+		       ArrayList<String> imgsrc = new ArrayList<String>();
+		       
+		   
+	        try {
+				st = DBconnection.connect().createStatement();
+				   rs =  st.executeQuery("select * from blogimages;");
+				   
+				   
+				   while(rs.next()){
+					  	      
+					      
+					  	img=rs.getBlob(2);
+					  	
+					  	   byte[] imageBytes=img.getBytes(1, (int)img.length());
+
+					  	   String encodedImage=Base64.getEncoder().encodeToString(imageBytes);
+	  	
+					  	   String image = "data:image/jpg;base64,"+encodedImage;
+					  	   
+					  	imgsrc.add(image);
+
+						
+						
+					   }
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	        request.setAttribute("imgssrc", imgsrc);
+			request.getRequestDispatcher("NewFile.jsp").forward(request, response);
+	        
+	    */
 		
 		
 	}

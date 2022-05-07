@@ -312,6 +312,8 @@ h1{
 
 
 
+/* --- Start admin add blog --- */
+
 
 
 .content{
@@ -319,12 +321,107 @@ h1{
 	margin-left: 250px;
 	transition-duration: 0.2s;
    	transition-timing-function: ease-out;
+   	display: flex;
+   	flex-direction: column;
+   	padding: 25px;
+   	font-family: var(--font-cairo);
 }
 
 .contentStrech{
 	
-		margin-left: 100px;
-		transition-duration: 0.2s;
-   		transition-timing-function: ease-out;
+	margin-left: 100px;
+	padding: 25px;
+	font-family: var(--font-cairo);
+	transition-duration: 0.2s;
+   	transition-timing-function: ease-out;
 	
 }
+
+.content .blogInfos label{
+	
+	font-weight: 600;
+	margin-right: 20px;
+}
+
+.content .blogInfos{
+	display: flex;
+	flex-direction: column;
+	margin: 20px;
+}
+
+.content .blogInfos .imgCate{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	margin: 15px;
+}
+
+.content .blogInfos .cat select{
+	
+	background-color: var(--white-color);
+	border: 2px solid var(--green-color);
+    padding: 5px;
+    font-family: var(--font-fredoka);
+	
+}
+
+.content .blogInfos .posteTitle input{
+	
+	display: flex;
+	flex: 1;
+	padding: 10px;
+	
+}
+
+
+.content .blogInfos .posteTitle{
+	
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	margin: 15px;
+	width:100%;
+	margin: 15px;
+}
+
+.content .blogContent{
+		
+	margin: 25px;
+}
+
+.content .decision{
+		
+	margin: 25px;
+	display: flex;
+	flex-wrap: nowrap;
+	width: 50%;
+	justify-content: space-between;
+}
+.content .decision input:first-of-type{
+
+	padding: 10px;
+	font-family: var(--font-fredoka);
+	width: 30%;
+	border: 2px solid var(--green-color);
+	background-color: var(--white-color);
+	color: var(--green-color);
+	font-size: 20px;
+	
+}
+.content .decision input:last-of-type{
+
+	padding: 10px;
+	font-family: var(--font-fredoka);
+	width: 30%;
+	border: 2px solid red;
+	background-color: var(--white-color);
+	color: red;
+	font-size: 20px;
+
+	
+}
+
+/* --- End admin add blog --- */
+
+
+
