@@ -19,4 +19,14 @@
     <servlet-name>addBlog</servlet-name>
     <url-pattern>/administrateur/addBlog</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>adminLogin</display-name>
+    <servlet-name>adminLogin</servlet-name>
+    <servlet-class>controlers.adminLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminLogin</servlet-name>
+    <url-pattern>/administrateur/adminLogin</url-pattern>
+  </servlet-mapping>
 </web-app>

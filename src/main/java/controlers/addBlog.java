@@ -28,7 +28,9 @@ import java.util.List;
 
 import com.mysql.cj.protocol.Resultset;
 
+import dao.categorieDAO;
 import dao.posteDAO;
+import entities.categorie;
 import entities.poste;
 
 /**
@@ -70,28 +72,53 @@ public class addBlog extends HttpServlet {
 		poste p1 = new poste();
 		posteDAO pdao= new posteDAO();
 		
+		categorie c1 = new categorie();
+		categorieDAO cdao = new categorieDAO();
 		
-		Part blogImage = request.getPart("blogImage");
-		is = blogImage.getInputStream();
-		p1.setImageis(is);	
-		
-		int idcategorie = Integer.parseInt(request.getParameter("categorie"));
-		p1.setIdCategorie(idcategorie);
-		
-		String title = request.getParameter("blogTitle");
-		p1.setTitle(title);
-		
-		String content = request.getParameter("article");
-		p1.setContent(content);
+		String decision = request.getParameter("decision");
 		
 		
 		
-		pdao.addPoste(p1);
 		
 		
-		response.sendRedirect("addBlog.jsp");
 		
+		 
+			
+			if(decision.equals("Valider")) {
+				
+				
+				
+				Part blogImage = request.getPart("blogImage");
+				
+				if( blogImage != null) {
+				is = blogImage.getInputStream();
+				p1.setImageis(is);	
+				}
+				
+				int idcategorie = Integer.parseInt(request.getParameter("categorie"));
+				p1.setIdCategorie(idcategorie);
+				
+				String title = request.getParameter("blogTitle");
+				p1.setTitle(title);
+				
+				String content = request.getParameter("article");
+				p1.setContent(content);
+				
+				
+				pdao.addPoste(p1);
+				response.sendRedirect("addBlog.jsp");
+				
+			}else if(decision.equals("Ajouter")){
+				
+				String cate = request.getParameter("addcat");
+				c1.setNomcategorie(cate);
+				
+				cdao.addcategorie(c1);
+				response.sendRedirect("addBlog.jsp");
+
+			}
 		
+
 		
 		
 		

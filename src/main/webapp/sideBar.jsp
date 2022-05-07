@@ -26,13 +26,15 @@ categorieDAO cdao = new categorieDAO();
 
 ArrayList<poste> postes = pdao.getPostes();
 
+ArrayList<categorie> categos = cdao.getcategories();
+
 
 
 %>
  
 			<div class="posts">
 		<%
-		for(int i = 0 ; i < postes.size() ; i++) {	
+		for(int i = 0 ; i < 4 ; i++) {	
 
 			byte[] imgdata = null;
 
@@ -41,6 +43,57 @@ ArrayList<poste> postes = pdao.getPostes();
 			p = postes.get(i);
 			
 			String title =  p.getTitle();
+			
+			int day = p.getPublishDate().getDay();
+			
+			String month = null;
+			
+			int mo =  p.getPublishDate().getMonth();
+			
+			int year =  p.getPublishDate().getYear() + 1900;
+			
+			switch(mo){
+			case 0:
+				month = "Jan";
+				break;
+			case 1:
+				month = "Fev";
+				break;
+			case 2:
+				month = "Mar";
+				break;
+			case 3:
+				month = "Avr";
+				break;
+			case 4:
+				month = "Mai";
+				break;
+			case 5:
+				month = "Jun";
+				break;
+			case 6:
+				month = "Jul";
+				break;
+			case 7:
+				month = "Aou";
+				break;
+			case 8:
+				month = "Sep";
+				break;
+			case 9:
+				month = "Oct";
+				break;
+			case 10:
+				month = "Nov";
+				break;
+			case 11:
+				month = "Dec";
+				break;
+			 default:
+				 month = "";
+				
+			}
+			
 			
 			String content = p.getContent(); 
 			
@@ -56,7 +109,7 @@ ArrayList<poste> postes = pdao.getPostes();
 								<img src="<%=image%>">
 							</div>
 							<div class="postInfo">
-								<span><i class="fa-solid fa-calendar-days"></i><p>Jan 10, 2022</p></span>
+								<span><i class="fa-solid fa-calendar-days"></i><p><%=month %> <%=day %>, <%=year %></p></span>
 								<h5><%=title %></h5>
 								<span><i class="fa-solid fa-user"></i><p>Admin</p></span>
 							</div>
@@ -68,12 +121,20 @@ ArrayList<poste> postes = pdao.getPostes();
 				<h2>CATEGORIE</h2>
 			</div>
 			<div class="categories">
+			<% for(int i = 0 ; i < categos.size() ; i++){
+										categorie c = new categorie();
+										c = categos.get(i);
+										
+										int idcat = c.getIdcategorie();
+										String nomcat = c.getNomcategorie();
+			%>
 				<a href="#">
 					<div class="categorie">
 						<i class="fa-solid fa-hashtag"></i>
-						<p>Categorie 1<p>
+						<p><%=nomcat %><p>
 					</div>
 				</a>
+			<%} %>
 			</div>
 		</div>
 		

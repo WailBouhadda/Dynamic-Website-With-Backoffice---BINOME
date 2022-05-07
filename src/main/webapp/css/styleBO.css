@@ -65,7 +65,11 @@
 	box-shadow: 0 0 20px 2px rgba(0,0,0.5);
 }
 
-
+.loginPage .adminLogin p{
+	
+	text-align: center;
+	font-family: monospace;
+}
 
 h1{
 	text-align:  center;
@@ -394,31 +398,82 @@ h1{
 	margin: 25px;
 	display: flex;
 	flex-wrap: nowrap;
-	width: 50%;
-	justify-content: space-between;
+	width: 25%;
+    justify-content: space-evenly;
 }
 .content .decision input:first-of-type{
 
-	padding: 10px;
-	font-family: var(--font-fredoka);
-	width: 30%;
-	border: 2px solid var(--green-color);
-	background-color: var(--white-color);
-	color: var(--green-color);
-	font-size: 20px;
+    padding: 10px;
+    font-family: var(--font-noto);
+    font-weight: 700;
+    width: 45%;
+    border: 2px solid var(--green-color);
+    background-color: var(--white-color);
+    color: var(--green-color);
+    font-size: 15px;
 	
 }
 .content .decision input:last-of-type{
 
 	padding: 10px;
-	font-family: var(--font-fredoka);
-	width: 30%;
+    font-family: var(--font-noto);
+    font-weight: 700;
+     width: 45%;
 	border: 2px solid red;
 	background-color: var(--white-color);
 	color: red;
-	font-size: 20px;
+	font-size: 15px;
 
 	
+}
+.content .decision input:first-of-type:hover{
+	border: 2px solid var(--white-color);
+    background-color: var(--green-color);
+    color: var(--white-color);
+}
+.content .decision input:last-of-type:hover{
+	
+	border: 2px solid var(--white-color);
+    background-color: red;
+    color: var(--white-color);
+}
+
+.content .addcategorie{
+	
+	display: flex;
+	flex-wrap: nowrap;
+	margin: 25px;
+	justify-content: space-between;
+}
+
+.content .addcategorie input:first-of-type{
+
+	flex: 1;
+	padding: 10px;
+	margin-right: 20px;
+}
+.content .addcategorie input:last-of-type{
+	
+	padding: 10px;
+	margin-left: 20px;
+	 border: 2px solid var(--green-color);
+    background-color: var(--white-color);
+    color: var(--green-color);
+        font-family: var(--font-noto);
+    font-weight: 700;
+    font-size: 15px;
+	
+	
+}
+.content  .addcategorie input:last-of-type:hover{
+	border: 2px solid var(--white-color);
+    background-color: var(--green-color);
+    color: var(--white-color);
+}
+.content .addcategorie label{
+	
+	font-weight: 600;
+	margin-right: 20px;
 }
 
 /* --- End admin add blog --- */

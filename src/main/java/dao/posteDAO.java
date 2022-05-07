@@ -69,7 +69,7 @@ public class posteDAO {
 		try {
 			
 			st = con.createStatement();
-			rs = st.executeQuery("select * from poste");
+			rs = st.executeQuery("select * from poste order by date desc");
 			
 			while(rs.next()) {
 				

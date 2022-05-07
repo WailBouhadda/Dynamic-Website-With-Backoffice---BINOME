@@ -23,6 +23,23 @@ public class categorieDAO {
 	
 	
 	
+	public int addcategorie(categorie c) {
+		int statut = 0;
+		
+		try {
+			st = con.createStatement();
+			st.executeUpdate("insert into categorie(nomcategorie) values ('"+c.getNomcategorie()+"')");
+		statut = 1;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			statut = -1;
+		}
+		return statut;
+	}
+	
+	
 	
 	
 	

@@ -47,6 +47,54 @@ ArrayList<poste> postes = pdao.getPostes();
 			
 			int nbcomm = p.getNbrComments();
 			
+			int day = p.getPublishDate().getDay();
+			
+			String month = null;
+			
+			int mo =  p.getPublishDate().getMonth();
+			
+			switch(mo){
+			case 0:
+				month = "Jan";
+				break;
+			case 1:
+				month = "Fev";
+				break;
+			case 2:
+				month = "Mar";
+				break;
+			case 3:
+				month = "Avr";
+				break;
+			case 4:
+				month = "Mai";
+				break;
+			case 5:
+				month = "Jun";
+				break;
+			case 6:
+				month = "Jul";
+				break;
+			case 7:
+				month = "Aou";
+				break;
+			case 8:
+				month = "Sep";
+				break;
+			case 9:
+				month = "Oct";
+				break;
+			case 10:
+				month = "Nov";
+				break;
+			case 11:
+				month = "Dec";
+				break;
+			 default:
+				 month = "";
+				
+			}
+			
 			String content = p.getContent(); 
 			
 			byte[] imageBytes=p.getImage().getBytes(1, (int)p.getImage().length());
@@ -59,8 +107,8 @@ ArrayList<poste> postes = pdao.getPostes();
 							<div class="posteBG">
 								<img src="<%=image%>">
 								<div class="posteDate">
-									<p>18</p>
-									<p>Jun</p>
+									<p><%=day %></p>
+									<p><%=month %></p>
 								</div>
 							</div>
 							<div class="posteDetails">

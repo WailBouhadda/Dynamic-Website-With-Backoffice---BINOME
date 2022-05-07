@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+      <%@page import="java.util.*"%>
+  <%@page import="java.io.*"%>
+        <%@page import="entities.poste"%>
+        <%@page import="entities.categorie"%>
+        <%@page import="dao.posteDAO"%>
+        <%@page import="dao.categorieDAO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,23 +43,37 @@
 
 		<jsp:include page="adminSideBar.jsp"></jsp:include>
 		
-		<form action="addBlog" method="post" enctype="multipart/form-data">
-			
+		
 			<div class="content" id="content">
+			<form action="addBlog" method="post" enctype="multipart/form-data">
 			
 				<div class="blogInfos">
+					<h2>Ajouter un poste</h2>
 					<div class="imgCate">
 						<div class="img">
 							<label for="blogImage">Image : </label>
 							<input type="file" name="blogImage">
 						</div>
 						 <div class="cat">
+						  <%
+ 
+categorieDAO cdao = new categorieDAO();
+
+ArrayList<categorie> categos = cdao.getcategories();
+
+%>
 							 <label for="categorie">Categorie : </label>
 								  <select name="categorie" id="categorie">
-								    <option value="1">Volvo</option>
-								    <option value="2">Saab</option>
-								    <option value="3">Opel</option>
-								    <option value="4">Audi</option>
+								  <option value=""></option>
+								  <% for(int i = 0 ; i < categos.size() ; i++){
+										categorie c = new categorie();
+										c = categos.get(i);
+										
+										int idcat = c.getIdcategorie();
+										String nomcat = c.getNomcategorie();
+								   %>
+								    <option value="<%=idcat%>"><%=nomcat %></option>
+								  <% } %>
 								  </select>
 						</div>
 					</div>
@@ -71,17 +91,25 @@
 				</div>
 				
 				<div class="decision">
-					<input type="submit" value="valider">
-					<input type="submit" value="annuler">
+					<input type="submit" name="decision" value="Valider">
+					<input type="submit" name="decision" value="Annuler">
 				</div>
-				
-			</div>
-						
-		</form>
 			
-		
-		
+				</form>
+					
+						
+		<form  action="addBlog" method="post" enctype="multipart/form-data">
+		<h2>Ajouter une categorie</h2>
+			<di class="addcategorie" >
+				<label for="addcat">Image : </label>
+				<input type="text" name="addcat" placeholder="Ajouter une categorie...">
+				<input type="submit" name="decision" value="Ajouter">
+			</di>
+		</form>
 	
+			</div>
+	
+
 	</div>
 
 	
