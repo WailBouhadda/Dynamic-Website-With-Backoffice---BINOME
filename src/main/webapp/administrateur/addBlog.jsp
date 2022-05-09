@@ -61,11 +61,17 @@ categorieDAO cdao = new categorieDAO();
 
 ArrayList<categorie> categos = cdao.getcategories();
 
+HttpSession s = request.getSession();
+
+
+s.setAttribute("source", "addBlog.jsp");
+
 %>
 							 <label for="categorie">Categorie : </label>
 								  <select name="categorie" id="categorie">
 								  <option value=""></option>
-								  <% for(int i = 0 ; i < categos.size() ; i++){
+								  <%if(categos != null){ 
+								  for(int i = 0 ; i < categos.size() ; i++){
 										categorie c = new categorie();
 										c = categos.get(i);
 										
@@ -73,7 +79,8 @@ ArrayList<categorie> categos = cdao.getcategories();
 										String nomcat = c.getNomcategorie();
 								   %>
 								    <option value="<%=idcat%>"><%=nomcat %></option>
-								  <% } %>
+								  <% }} %>
+								  	
 								  </select>
 						</div>
 					</div>
@@ -100,11 +107,11 @@ ArrayList<categorie> categos = cdao.getcategories();
 						
 		<form  action="addBlog" method="post" enctype="multipart/form-data">
 		<h2>Ajouter une categorie</h2>
-			<di class="addcategorie" >
-				<label for="addcat">Image : </label>
+			<div class="addcategorie" >
+				<label for="addcat">Ajouter categorie : </label>
 				<input type="text" name="addcat" placeholder="Ajouter une categorie...">
 				<input type="submit" name="decision" value="Ajouter">
-			</di>
+			</div>
 		</form>
 	
 			</div>

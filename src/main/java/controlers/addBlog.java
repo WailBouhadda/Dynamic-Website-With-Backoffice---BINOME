@@ -59,11 +59,10 @@ public class addBlog extends HttpServlet {
 		//String imageFileName = blogImage.getSubmittedFileName();
 		
 		
+
 		
-		Statement st;
-		ResultSet rs;
-		
-	
+		HttpSession s = request.getSession();
+
 		
 		InputStream is = null;	
 		
@@ -77,7 +76,8 @@ public class addBlog extends HttpServlet {
 		
 		String decision = request.getParameter("decision");
 		
-		
+		String source = (String) s.getAttribute("source");
+
 		
 		
 		
@@ -114,7 +114,7 @@ public class addBlog extends HttpServlet {
 				c1.setNomcategorie(cate);
 				
 				cdao.addcategorie(c1);
-				response.sendRedirect("addBlog.jsp");
+				response.sendRedirect(source);
 
 			}
 		

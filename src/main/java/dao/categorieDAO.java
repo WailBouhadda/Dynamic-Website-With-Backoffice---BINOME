@@ -24,18 +24,25 @@ public class categorieDAO {
 	
 	
 	public int addcategorie(categorie c) {
+		
 		int statut = 0;
 		
-		try {
-			st = con.createStatement();
-			st.executeUpdate("insert into categorie(nomcategorie) values ('"+c.getNomcategorie()+"')");
-		statut = 1;
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(con != null) {	
+				try {
+					st = con.createStatement();
+					st.executeUpdate("insert into categorie(nomcategorie) values ('"+c.getNomcategorie()+"')");
+				statut = 1;
+					
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					statut = -1;
+					
+				}
+		}else {
 			statut = -1;
 		}
+		
 		return statut;
 	}
 	
@@ -46,24 +53,27 @@ public class categorieDAO {
 	public ArrayList<categorie> getcategories(){
 		
 		ArrayList<categorie> c = new ArrayList<categorie>();
-		
-		try {
-			st = con.createStatement();
-			rs = st.executeQuery("select * from categorie");
-			
-			while(rs.next()) {
-				categorie cn = new categorie();
-				
-				cn.setIdcategorie(rs.getInt(1));
-				cn.setNomcategorie(rs.getString(2));
-				
-				c.add(cn);
-			}
-			
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(con != null) {		
+				try {
+					st = con.createStatement();
+					rs = st.executeQuery("select * from categorie");
+					
+					while(rs.next()) {
+						categorie cn = new categorie();
+						
+						cn.setIdcategorie(rs.getInt(1));
+						cn.setNomcategorie(rs.getString(2));
+						
+						c.add(cn);
+					}
+					
+					
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}else {
+			c = null;
 		}
 		
 		return c;
@@ -74,27 +84,49 @@ public class categorieDAO {
 	public categorie getcategorieById(int id){
 		
 		categorie c = new categorie();
-		
-		try {
-			st = con.createStatement();
-			rs = st.executeQuery("select * from categorie where id = "+id);
-			
-			if(rs.next()) {
-				
-				c.setIdcategorie(rs.getInt(1));
-				c.setNomcategorie(rs.getString(2));
-				
-				return c;
-			}
-			
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(con != null) {
+				try {
+					st = con.createStatement();
+					rs = st.executeQuery("select * from categorie where id = "+id);
+					
+					if(rs.next()) {
+						
+						c.setIdcategorie(rs.getInt(1));
+						c.setNomcategorie(rs.getString(2));
+						
+						return c;
+					}
+					
+					
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}else {
+			c = null;
 		}
+		
 		
 		return c;
 	}
+	
+	
+	public int deleteCategorieById(int id) {
+		int statut = 0;
+		
+		try {
+			st = con.createStatement();
+			st.execute("delete from categorie where idcategorie =" + id);
+			statut = 1;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			statut = -1;
+		}
+		
+		return statut;
+	}
+
 	
 	
 	

@@ -34,7 +34,8 @@ ArrayList<categorie> categos = cdao.getcategories();
  
 			<div class="posts">
 		<%
-		for(int i = 0 ; i < 4 ; i++) {	
+	if(postes != null){	
+		for(int i = 0 ; i < postes.size() ; i++) {	
 
 			byte[] imgdata = null;
 
@@ -44,7 +45,11 @@ ArrayList<categorie> categos = cdao.getcategories();
 			
 			String title =  p.getTitle();
 			
-			int day = p.getPublishDate().getDay();
+			
+			 Calendar cal = Calendar.getInstance();
+			    cal.setTime(p.getPublishDate());
+			
+			int day =  cal.get(Calendar.DAY_OF_MONTH);
 			
 			String month = null;
 			
@@ -52,48 +57,7 @@ ArrayList<categorie> categos = cdao.getcategories();
 			
 			int year =  p.getPublishDate().getYear() + 1900;
 			
-			switch(mo){
-			case 0:
-				month = "Jan";
-				break;
-			case 1:
-				month = "Fev";
-				break;
-			case 2:
-				month = "Mar";
-				break;
-			case 3:
-				month = "Avr";
-				break;
-			case 4:
-				month = "Mai";
-				break;
-			case 5:
-				month = "Jun";
-				break;
-			case 6:
-				month = "Jul";
-				break;
-			case 7:
-				month = "Aou";
-				break;
-			case 8:
-				month = "Sep";
-				break;
-			case 9:
-				month = "Oct";
-				break;
-			case 10:
-				month = "Nov";
-				break;
-			case 11:
-				month = "Dec";
-				break;
-			 default:
-				 month = "";
-				
-			}
-			
+			month = pdao.getMonth(mo);
 			
 			String content = p.getContent(); 
 			
@@ -115,25 +79,30 @@ ArrayList<categorie> categos = cdao.getcategories();
 							</div>
 						</div>
 					</a>
-			<% } %>
+			<% }}else{ %>
+				<p style="color:red;">Un error est servenu, Pas de poste pour le moment !</p>
+			<%} %>
 			</div>
 			<div class="sideTitle">
 				<h2>CATEGORIE</h2>
 			</div>
 			<div class="categories">
-			<% for(int i = 0 ; i < categos.size() ; i++){
+			<%
+		if(categos != null){	
+			for(int i = 0 ; i < categos.size() ; i++){
 										categorie c = new categorie();
 										c = categos.get(i);
 										
-										int idcat = c.getIdcategorie();
 										String nomcat = c.getNomcategorie();
 			%>
 				<a href="#">
 					<div class="categorie">
 						<i class="fa-solid fa-hashtag"></i>
-						<p><%=nomcat %><p>
+						<p><%=nomcat%><p>
 					</div>
 				</a>
+			<%}}else{ %>
+					<p style="color:red;">Un error est servenu, Pas de poste pour le moment !</p>
 			<%} %>
 			</div>
 		</div>

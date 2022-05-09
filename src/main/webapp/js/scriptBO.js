@@ -88,3 +88,82 @@ for(let i = 0 ; i < dropDown.length ; i++){
 
 
 /* --- End admin side bar sublist drop down --- */
+
+
+
+	/* --- Start filter/search poste function --- */
+	
+	var filtervalue = document.getElementById("filterPoste");
+	
+	filtervalue.onkeyup = function(){
+		
+		var value = this.value.toLowerCase();
+		var table = document.getElementById("tablePoste");
+		var rows = table.getElementsByTagName("tr");
+		
+		for(var i = 1 ; i < rows.length ; i++){
+				
+			var LNI = rows[i].getElementsByTagName("td")[1].querySelector("input");
+			var FNI = rows[i].getElementsByTagName("td")[2].querySelector("input");
+			var CNEI = rows[i].getElementsByTagName("td")[4].querySelector("input");
+			
+			if(LNI || FNI || CNEI){
+				var LN = LNI.value;
+				var FN = FNI.value;
+				var CNE = CNEI.value;
+				
+				if(LN.toLowerCase().indexOf(value) > -1 || FN.toLowerCase().indexOf(value) > -1 || CNE.toLowerCase().indexOf(value) > -1){
+			
+					rows[i].style.display ="";				
+				}else{
+					rows[i].style.display ="none";				
+
+				}
+			}
+			}
+		
+		
+	}
+	
+	
+		/* --- End filter/search poste function --- */
+		
+		
+
+		/* --- Start filter/search Categorie function --- */
+
+	
+	
+		var filtervalue = document.getElementById("filterCategorie");
+	
+	filtervalue.onkeyup = function(){
+		
+		var value = this.value.toLowerCase();
+		var table = document.getElementById("tableCategorie");
+		var rows = table.getElementsByTagName("tr");
+		
+		for(var i = 1 ; i < rows.length ; i++){
+				
+			var LNI = rows[i].getElementsByTagName("td")[1].querySelector("input");
+			
+			if(LNI){
+				var LN = LNI.value;
+				
+				if(LN.toLowerCase().indexOf(value) > -1){
+			
+					rows[i].style.display ="";				
+				}else{
+					rows[i].style.display ="none";				
+
+				}
+			}
+			}
+		
+		
+	}
+	
+	
+			/* --- End filter/search Categorie function --- */
+
+	
+

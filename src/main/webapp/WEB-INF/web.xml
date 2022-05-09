@@ -29,4 +29,24 @@
     <servlet-name>adminLogin</servlet-name>
     <url-pattern>/administrateur/adminLogin</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>actionPoste</display-name>
+    <servlet-name>actionPoste</servlet-name>
+    <servlet-class>controlers.actionPoste</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>actionPoste</servlet-name>
+    <url-pattern>/administrateur/actionPoste</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>actionCategorie</display-name>
+    <servlet-name>actionCategorie</servlet-name>
+    <servlet-class>controlers.actionCategorie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>actionCategorie</servlet-name>
+    <url-pattern>/administrateur/actionCategorie</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -33,6 +33,7 @@ ArrayList<poste> postes = pdao.getPostes();
 			<div class="blog" id="blog">
 			
 				<%
+	if(postes != null){
 		for(int i = 0 ; i < postes.size() ; i++) {	
 
 			byte[] imgdata = null;
@@ -47,53 +48,16 @@ ArrayList<poste> postes = pdao.getPostes();
 			
 			int nbcomm = p.getNbrComments();
 			
-			int day = p.getPublishDate().getDay();
+			 Calendar cal = Calendar.getInstance();
+			    cal.setTime(p.getPublishDate());
+			
+			int day =  cal.get(Calendar.DAY_OF_MONTH);
 			
 			String month = null;
 			
 			int mo =  p.getPublishDate().getMonth();
 			
-			switch(mo){
-			case 0:
-				month = "Jan";
-				break;
-			case 1:
-				month = "Fev";
-				break;
-			case 2:
-				month = "Mar";
-				break;
-			case 3:
-				month = "Avr";
-				break;
-			case 4:
-				month = "Mai";
-				break;
-			case 5:
-				month = "Jun";
-				break;
-			case 6:
-				month = "Jul";
-				break;
-			case 7:
-				month = "Aou";
-				break;
-			case 8:
-				month = "Sep";
-				break;
-			case 9:
-				month = "Oct";
-				break;
-			case 10:
-				month = "Nov";
-				break;
-			case 11:
-				month = "Dec";
-				break;
-			 default:
-				 month = "";
-				
-			}
+			month = pdao.getMonth(mo);
 			
 			String content = p.getContent(); 
 			
@@ -140,8 +104,10 @@ ArrayList<poste> postes = pdao.getPostes();
 							</div>
 						</div>
 					</a>
-				<%} %>
-				<h1></h1>
+				<%}}else{%>
+					
+					<p style="color:red;">Un error est servenu, Pas de poste pour le moment !</p>
+				<% }%>		
 			</div>
 			<jsp:include page="sideBar.jsp"></jsp:include>
 		</div>
