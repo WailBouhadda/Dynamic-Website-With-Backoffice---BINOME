@@ -47,6 +47,11 @@
 	font-family: var(--font-fredoka);
     color: #00000070;
 }
+
+.pageContainer .pageSubject span:last-of-type{
+	
+	color: var(--green-color);
+}
 .pageContainer .pageContent{
 	
 	display: flex;
@@ -1801,15 +1806,15 @@ html{
 	
 }
 
-.pageContainer .container .pageContent .blog a{
+.pageContainer .container .pageContent .blog .postes a{
 	
 	text-decoration: none;
 	color: black;
-	margin-bottom: 50px;
 	
 }
 
-.pageContainer .container .pageContent .blog a .poste{
+
+.pageContainer .container .pageContent .blog .postes{
 	
 	width: 80%;
 	margin:auto;
@@ -1818,7 +1823,7 @@ html{
 	margin-bottom: 110px;
 	box-shadow: -2px 5px 12px 1px #00000033;
 }
-.pageContainer .container .pageContent .blog a .poste .posteBG{
+.pageContainer .container .pageContent .blog .postes .posteBG{
 
 	width: 100%;
 	height: 350px;
@@ -1826,7 +1831,7 @@ html{
 	position: relative;
 	
 }
-.pageContainer .container .pageContent .blog a .poste .posteBG:after{
+.pageContainer .container .pageContent .blog .postes .posteBG:after{
 	
 	content:"";
 	position:absolute;
@@ -1840,7 +1845,7 @@ html{
 	transition-timing-function: ease-in;
 }
 
-.pageContainer .container .pageContent .blog a:hover .poste .posteBG:after{
+.pageContainer .container .pageContent .blog .postes:hover .posteBG:after{
 	
 	width:100%;
 	height:100%;
@@ -1852,7 +1857,7 @@ html{
 	
 }
 
-.pageContainer .container .pageContent .blog a .poste .posteBG img{
+.pageContainer .container .pageContent .blog .postes .posteBG img{
 
 	width:100%;
 	transform: scale(1) rotate(0deg);
@@ -1860,7 +1865,7 @@ html{
 	transition-timing-function: ease-in;
 	
 }
-.pageContainer .container .pageContent .blog a:hover .poste .posteBG img{
+.pageContainer .container .pageContent .blog .postes:hover .posteBG img{
 	
 		transition-duration: 0.2s;
 		transform: scale(1.2) rotate(6deg);
@@ -1868,7 +1873,7 @@ html{
 	
 }
 
-.pageContainer .container .pageContent .blog a .poste .posteBG .posteDate{
+.pageContainer .container .pageContent .blog .postes .posteBG .posteDate{
 
 	position: absolute;
 	width: 50px;
@@ -1883,18 +1888,18 @@ html{
 	top: 5%;
 	left: 5%;
 }
-.pageContainer .container .pageContent .blog a .poste .posteBG .posteDate p:first-of-type{
+.pageContainer .container .pageContent .blog .postes .posteBG .posteDate p:first-of-type{
 	
 	font-size: 20px;
 	font-weight: bold;
 	
 }
-.pageContainer .container .pageContent .blog a .poste .posteBG .posteDate p:last-of-type{
+.pageContainer .container .pageContent .blog .postes .posteBG .posteDate p:last-of-type{
 	
 	font-size: 12px;
 }
 
-.pageContainer .container .pageContent .blog a .poste .posteDetails{
+.pageContainer .container .pageContent .blog .postes .posteDetails{
 	
 	display: flex;
     flex-wrap: nowrap;
@@ -1908,20 +1913,20 @@ html{
     bottom: -20%;
    
 }
-.pageContainer .container .pageContent .blog a .poste .posteDetails .posteBttn{
+.pageContainer .container .pageContent .blog .postes .posteDetails .posteBttn{
 	display:flex;
 	align-items: center;
 	justify-content: center;
 	width: 10%;
 	background-color: var(--green-color);
 }
-.pageContainer .container .pageContent .blog a .poste .posteDetails .posteBttn i{
+.pageContainer .container .pageContent .blog .postes .posteDetails .posteBttn i{
 	
 	color: var(--white-color);
 	font-size: 75px;
 }
 
-.pageContainer .container .pageContent .blog a .poste .posteDetails .details{
+.pageContainer .container .pageContent .blog .postes .posteDetails .details{
 
 	width: 85%;
 	height: 100%;
@@ -1931,7 +1936,7 @@ html{
 	
 }
 
-.pageContainer .container .pageContent .blog a .poste .posteDetails .details .posteTitle{
+.pageContainer .container .pageContent .blog .postes .posteDetails .details .posteTitle{
 
 	font-family: var(--font-cairo);
 	font-size: 25px;
@@ -1939,13 +1944,13 @@ html{
 	padding-left: 20px;
 	padding-right: 20px;
 }
-.pageContainer .container .pageContent .blog a .poste .posteDetails .details .posteTitle > *{
+.pageContainer .container .pageContent .blog .postes .posteDetails .details .posteTitle > *{
 	
 		font-weight:600;
 	
 }
 
-.pageContainer .container .pageContent .blog a .poste .posteDetails .details .Stat{
+.pageContainer .container .pageContent .blog .postes .posteDetails .details .Stat{
 	
 	display: flex;
     width: 50%;
@@ -1956,7 +1961,7 @@ html{
     padding-left: 20px;
 }
 
-.pageContainer .container .pageContent .blog a .poste .posteDetails .details .Stat div{
+.pageContainer .container .pageContent .blog .postes .posteDetails .details .Stat div{
 	
 	display: flex;
 	flex-wrap: nowrap;
@@ -1965,18 +1970,18 @@ html{
     	border-left: 1px solid #0000004f;
     
 }
-.pageContainer .container .pageContent .blog a .poste .posteDetails .details .Stat div:first-of-type{
+.pageContainer .container .pageContent .blog .postes .posteDetails .details .Stat div:first-of-type{
 	
 	border-left: none;
 }
-.pageContainer .container .pageContent .blog a .poste .posteDetails .details .Stat div p{
+.pageContainer .container .pageContent .blog .postes .posteDetails .details .Stat div p{
 	
 	   padding-left: 15px;
     font-weight: 300;
     font-size: 13px;
 }
 
-.pageContainer .container .pageContent .blog a .poste .posteDetails .details .Stat div i{
+.pageContainer .container .pageContent .blog .postes .posteDetails .details .Stat div i{
 	
 	color: var(--green-color);
 	padding-left: 10px;
@@ -1984,7 +1989,7 @@ html{
 	 
 }
 
-.pageContainer .container .pageContent .blog a .poste .posteDetails .details .content{
+.pageContainer .container .pageContent .blog .postes .posteDetails .details .content{
 	
 	margin: 5px;
     margin-left: 15px;
@@ -1994,6 +1999,7 @@ html{
     height: 100px;
     overflow: hidden;
     border-top: 1px solid #0000004f;
+    
 }
 
 
@@ -2002,6 +2008,42 @@ html{
 
 
 
+/* --- Start poste --- */
+
+
+.pageContainer .container .pageContent .poste{
+	
+    width: 80%;
+    font-family: var(--font-cairo);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+	
+	
+}
+
+.pageContainer .container .pageContent .poste .posteImg{
+	
+	width: 100%;
+	
+}
+
+.pageContainer .container .pageContent .poste .posteImg img{
+	
+	width: 100%;
+}
+.pageContainer .container .pageContent .poste .posteTitle{
+	
+	font-size: 30px;
+}
+
+
+
+
+
+
+
+/* --- End poste --- */
 
 
 

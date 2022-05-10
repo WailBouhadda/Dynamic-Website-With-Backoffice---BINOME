@@ -43,6 +43,9 @@ ArrayList<categorie> categos = cdao.getcategories();
 			poste p = new poste();
 			p = postes.get(i);
 			
+			int idPoste = p.getId();
+
+			
 			String title =  p.getTitle();
 			
 			
@@ -67,7 +70,7 @@ ArrayList<categorie> categos = cdao.getcategories();
 		  	
 		%>
 				
-					<a href="#">
+					<a href="poste.jsp?p=<%=idPoste%>">
 						<div class="post">
 							<div class="image">
 								<img src="<%=image%>">

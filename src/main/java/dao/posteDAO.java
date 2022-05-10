@@ -105,6 +105,50 @@ public class posteDAO {
 	}
 	
 	
+	
+	
+public poste getPosteById(int id){
+		
+	
+		poste p = new poste();
+
+		if(con != null) {	
+			try {
+				
+				st = con.createStatement();
+				rs = st.executeQuery("select * from poste where idposte = "+id);
+				
+				if(rs.next()) {
+					
+					
+					
+					p.setId(rs.getInt(1));
+					p.setTitle(rs.getString(2));
+					p.setImage(rs.getBlob(3));
+					p.setContent(rs.getString(4));
+					p.setPublishDate(rs.getDate(5));
+					p.setNbrLike(rs.getInt(6));
+					p.setNbrComments(rs.getInt(7));
+					p.setIdCategorie(rs.getInt(8));
+					
+				}
+	
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		
+			}else {
+				p = null;
+			}
+		return p;
+	}
+	
+	
+	
+	
 	public int deletePosteById(int id) {
 		int statut = 0;
 		

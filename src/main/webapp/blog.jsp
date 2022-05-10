@@ -42,6 +42,8 @@ ArrayList<poste> postes = pdao.getPostes();
 			poste p = new poste();
 			p = postes.get(i);
 			
+			int idPoste = p.getId();
+			
 			String title =  p.getTitle();
 			
 			int nblike = p.getNbrLike();
@@ -66,8 +68,8 @@ ArrayList<poste> postes = pdao.getPostes();
 		  	String image = "data:image/jpg;base64,"+encodedImage;
 		  	
 				%>
-					<a href="#">
-						<div class="poste">
+						<div class="postes">
+							<a class="posteLink" href="poste.jsp?p=<%=idPoste%>">
 							<div class="posteBG">
 								<img src="<%=image%>">
 								<div class="posteDate">
@@ -102,8 +104,9 @@ ArrayList<poste> postes = pdao.getPostes();
 									<i class="fa-solid fa-chevron-right"></i>
 								</div>
 							</div>
+								</a>
 						</div>
-					</a>
+				
 				<%}}else{%>
 					
 					<p style="color:red;">Un error est servenu, Pas de poste pour le moment !</p>
