@@ -77,8 +77,9 @@ ArrayList<categorie> categos = cdao.getcategories();
 					<th>ID</th>
 					<th>TITRE</th>
 					<th>DATE DE PUBLICATION</th>
-					<th>NBR J'AIME</th>
-					<th>NBR COMMENTAIRE</th>
+					<th>NB J'AIME</th>
+					<th>NB COMMENTAIRE</th>
+					<th>CATEGORIE</th>
 					</tr>
 					
 					</thead>
@@ -101,6 +102,13 @@ ArrayList<categorie> categos = cdao.getcategories();
 				int nblike = p.getNbrLike();
 				
 				int nbcomm = p.getNbrComments();
+				
+				int idcat = p.getIdCategorie();
+				
+				categorie c = cdao.getcategorieById(idcat);
+
+				String nomcat = c.getNomcategorie();
+				
 				
 				int day = p.getPublishDate().getDay();
 				
@@ -125,6 +133,7 @@ ArrayList<categorie> categos = cdao.getcategories();
 						<td><input class="<%=idPoste%>" type="text" name="date" value="<%=day%>,<%=month%> <%=year%>" disabled></td> 
 						<td><input class="<%=idPoste%>" type="text" name="nblike" value="<%=nblike%>" disabled></td> 
 						<td><input class="<%=idPoste%>" type="text" name="nbcomment" value="<%=nbcomm%>" disabled></td>
+						<td><input class="<%=idPoste%>" type="text" name="categorie" value="<%=nomcat%>" disabled></td>
 						<td class="action"><input  class="<%=idPoste%>" id="supprimer" type="submit" name="action" value="Supprimer"><input class="<%=idPoste%>" id="modifier" type="button" name="action" value="Modifier"></td>
 						</form>
 						</tr>
@@ -151,6 +160,7 @@ ArrayList<categorie> categos = cdao.getcategories();
 						<tr>
 						<th>ID</th>
 						<th>CATEGORIE</th>
+						<th>NB POSTES</th>
 						</tr>
 						
 						</thead>
@@ -167,12 +177,17 @@ ArrayList<categorie> categos = cdao.getcategories();
 											int idcat = c.getIdcategorie();
 											String nomcat = c.getNomcategorie();
 											
+											ArrayList<poste> po = pdao.getPostesByIdCategorie(idcat);
+											
+											int nbposte = po.size();
+											
 						%>
 						<tr class="<%=idcat%>"> 
 							<form action="actionCategorie" method="get">
 							
 							<td><input class="<%=idcat%>" type="text" name="id" value="<%=idcat%>" readonly></td>
 							<td><input class="<%=idcat%>" type="text" name="title" value="<%=nomcat%>" disabled></td>
+							<td><input class="<%=idcat%>" type="text" name="nbpostes" value="<%=nbposte%>" disabled></td>
 							<td class="action"><input  class="<%=idcat%>" id="supprimer" type="submit" name="action" value="Supprimer"></td>
 							</form>
 						

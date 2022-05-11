@@ -87,7 +87,7 @@ public class categorieDAO {
 		if(con != null) {
 				try {
 					st = con.createStatement();
-					rs = st.executeQuery("select * from categorie where id = "+id);
+					rs = st.executeQuery("select * from categorie where idcategorie = "+id);
 					
 					if(rs.next()) {
 						

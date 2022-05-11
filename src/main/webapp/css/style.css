@@ -2024,7 +2024,10 @@ html{
 
 .pageContainer .container .pageContent .poste .posteImg{
 	
-	width: 100%;
+	width: 70%;
+    margin: auto;
+     margin-bottom: 10px;
+    margin-top: 10px;
 	
 }
 
@@ -2034,7 +2037,19 @@ html{
 }
 .pageContainer .container .pageContent .poste .posteTitle{
 	
-	font-size: 30px;
+	font-size: 25px;
+	width: 70%;
+    margin: auto;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+.pageContainer .container .pageContent .poste .posteContent{
+	
+	width: 70%;
+	margin: auto;
+	margin-top: 15px;
+	
 }
 
 

@@ -92,13 +92,24 @@ ArrayList<categorie> categos = cdao.getcategories();
 			<div class="categories">
 			<%
 		if(categos != null){	
-			for(int i = 0 ; i < categos.size() ; i++){
+			
+			int size = 0;
+			
+			if(categos.size() > 5 ){
+				size = 5;
+			}else{
+				size = categos.size();
+			}
+			
+			
+			for(int i = 0 ; i < size ; i++){
 										categorie c = new categorie();
 										c = categos.get(i);
 										
+										int idcategorie = c.getIdcategorie();
 										String nomcat = c.getNomcategorie();
 			%>
-				<a href="#">
+				<a href="blogByCategorie.jsp?c=<%=idcategorie%>">
 					<div class="categorie">
 						<i class="fa-solid fa-hashtag"></i>
 						<p><%=nomcat%><p>

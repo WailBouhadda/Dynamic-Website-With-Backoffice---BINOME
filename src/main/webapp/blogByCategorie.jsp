@@ -1,4 +1,4 @@
-  <%@page import="java.util.*"%>
+ <%@page import="java.util.*"%>
   <%@page import="java.io.*"%>
         <%@page import="entities.poste"%>
         <%@page import="entities.categorie"%>
@@ -13,9 +13,13 @@ posteDAO pdao = new posteDAO();
 
 categorieDAO cdao = new categorieDAO();
 
-ArrayList<poste> postes = pdao.getPostes();
+int idca = Integer.parseInt(request.getParameter("c"));
 
+categorie c = cdao.getcategorieById(idca);
 
+String nomCat = c.getNomcategorie();
+
+ArrayList<poste> postes = pdao.getPostesByIdCategorie(idca);
 
 %>
 <jsp:include page="navBar.jsp"></jsp:include>
@@ -30,6 +34,8 @@ ArrayList<poste> postes = pdao.getPostes();
 			<span>Home</span>
 			<span> / </span>
 			<span>Blog</span>
+			<span> / </span>
+			<span><%=nomCat %></span>
 		</div>
 		<div class="pageContent">
 			<div class="blog" id="blog">

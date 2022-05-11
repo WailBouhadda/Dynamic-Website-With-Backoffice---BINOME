@@ -146,6 +146,46 @@ public poste getPosteById(int id){
 		return p;
 	}
 	
+
+
+public ArrayList<poste> getPostesByIdCategorie(int id){
+	
+	ArrayList<poste> postes = new ArrayList<poste>();
+	if(con != null) {	
+		try {
+			
+			st = con.createStatement();
+			rs = st.executeQuery("select * from poste where idcategorie = "+id);
+			
+			while(rs.next()) {
+				
+				poste p = new poste();
+				
+				p.setId(rs.getInt(1));
+				p.setTitle(rs.getString(2));
+				p.setImage(rs.getBlob(3));
+				p.setContent(rs.getString(4));
+				p.setPublishDate(rs.getDate(5));
+				p.setNbrLike(rs.getInt(6));
+				p.setNbrComments(rs.getInt(7));
+				p.setIdCategorie(rs.getInt(8));
+				
+				postes.add(p);
+			}
+
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
+		}else {
+			postes = null;
+		}
+	return postes;
+}
+
 	
 	
 	
