@@ -15,7 +15,7 @@
 					<li><a href="posteListe.jsp"><i class="fa-solid fa-list"></i><span class="showSpan">POSTES</span></a></li>
 				</ul>
 			</li>
-			<li><a href="#"><i class="fa-regular fa-comments"></i><span class="showSpan">COMMENTAIRES</span></a></li>
+			<li><a href="commentaires.jsp"><i class="fa-regular fa-comments"></i><span class="showSpan">COMMENTAIRES</span></a></li>
 			<li class="li" id="ebookli">
 				<div class="dropDown" id="ebook"><i class="fa-solid fa-book"></i><span class="showSpan">E-BOOK<i class="normal fa-solid fa-caret-down" id="ebooki"></i></span></div>
 				<ul class="subList" id="ebookul">

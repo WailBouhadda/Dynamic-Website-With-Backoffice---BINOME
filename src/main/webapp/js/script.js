@@ -57,3 +57,26 @@ if(scroll >0){
 })
 
 /*End --- Change navigation Bar on scroll --- */
+
+
+/* Start likedislke */
+
+
+
+
+	function likeDislike(){
+				var like = document.getElementById("like");
+				var dislike = document.getElementById("dislike");
+
+					if(like.style.display === 'none'){
+						like.style.display = "block";
+						dislike.style.display = "none";
+					}
+					else{
+						like.style.display = "none";
+						dislike.style.display = "block";
+					}
+			}
+			
+/* End likedislike  */
+

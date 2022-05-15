@@ -49,4 +49,14 @@
     <servlet-name>actionCategorie</servlet-name>
     <url-pattern>/administrateur/actionCategorie</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>addComment</display-name>
+    <servlet-name>addComment</servlet-name>
+    <servlet-class>controlers.addComment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addComment</servlet-name>
+    <url-pattern>/addComment</url-pattern>
+  </servlet-mapping>
 </web-app>

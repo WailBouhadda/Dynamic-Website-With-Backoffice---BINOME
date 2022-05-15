@@ -21,9 +21,6 @@
 					}
 			}
 			
-/* End show login password  */
-
-
 
 
 

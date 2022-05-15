@@ -68,8 +68,8 @@ s.setAttribute("source", "addBlog.jsp");
 
 %>
 							 <label for="categorie">Categorie : </label>
-								  <select name="categorie" id="categorie">
-								  <option value=""></option>
+								  <select name="categorie" id="categorie" required>
+								  <option ></option>
 								  <%if(categos != null){ 
 								  for(int i = 0 ; i < categos.size() ; i++){
 										categorie c = new categorie();
@@ -86,7 +86,7 @@ s.setAttribute("source", "addBlog.jsp");
 					</div>
 					<div class="posteTitle">
 						<label for="blogTitle">Titre : </label>
-						<input type="text" name="blogTitle" placeholder="Ajouter un titre ici...">
+						<input type="text" name="blogTitle" placeholder="Ajouter un titre ici..." required>
 					</div>
 					
 				</div>
@@ -109,7 +109,7 @@ s.setAttribute("source", "addBlog.jsp");
 		<h2>Ajouter une categorie</h2>
 			<div class="addcategorie" >
 				<label for="addcat">Ajouter categorie : </label>
-				<input type="text" name="addcat" placeholder="Ajouter une categorie...">
+				<input type="text" name="addcat" placeholder="Ajouter une categorie..." required>
 				<input type="submit" name="decision" value="Ajouter">
 			</div>
 		</form>

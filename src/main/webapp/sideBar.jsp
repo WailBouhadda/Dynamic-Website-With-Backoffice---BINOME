@@ -35,7 +35,18 @@ ArrayList<categorie> categos = cdao.getcategories();
 			<div class="posts">
 		<%
 	if(postes != null){	
-		for(int i = 0 ; i < postes.size() ; i++) {	
+		
+		int size = 0; 
+		
+		if(postes.size() > 5){
+			
+			size = 5;
+		}else{
+			size = postes.size();
+		}
+		
+		
+		for(int i = 0 ; i < size ; i++) {	
 
 			byte[] imgdata = null;
 
@@ -92,17 +103,8 @@ ArrayList<categorie> categos = cdao.getcategories();
 			<div class="categories">
 			<%
 		if(categos != null){	
-			
-			int size = 0;
-			
-			if(categos.size() > 5 ){
-				size = 5;
-			}else{
-				size = categos.size();
-			}
-			
-			
-			for(int i = 0 ; i < size ; i++){
+	
+			for(int i = 0 ; i < categos.size() ; i++){
 										categorie c = new categorie();
 										c = categos.get(i);
 										
