@@ -499,7 +499,7 @@ h1{
 	
 }
 .table thead{
-	background-color: #009688;
+	background-color: var(--mauve-color);
 	color: white;
 	font-size: 15px;
 }

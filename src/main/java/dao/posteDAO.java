@@ -23,7 +23,7 @@ public class posteDAO {
 	
 	
 	
-	/* --- Ajouter un poste --- */
+	/* --- Start Add poste --- */
 	
 	public int addPoste(poste p) {
 		int test = 0;
@@ -64,7 +64,10 @@ public class posteDAO {
 	
 	
 	
-	/* --- Ajouter un poste --- */
+	/* --- End Add poste --- */
+	
+	
+	/* --- Start Get all postes --- */
 
 	public ArrayList<poste> getPostes(){
 		
@@ -105,7 +108,11 @@ public class posteDAO {
 	}
 	
 	
-	
+	/* --- End Get all postes --- */
+
+
+	/* --- Start Get poste by id --- */
+
 	
 public poste getPosteById(int id){
 		
@@ -146,6 +153,10 @@ public poste getPosteById(int id){
 		return p;
 	}
 	
+	/* --- End Get poste by id --- */
+
+	
+	/* --- Start Get  postes by id categorie --- */
 
 
 public ArrayList<poste> getPostesByIdCategorie(int id){
@@ -186,26 +197,90 @@ public ArrayList<poste> getPostesByIdCategorie(int id){
 	return postes;
 }
 
-	
-	
+/* --- End Get  postes by id categorie --- */
+
+
+/* --- Start delete poste by id  --- */
+
 	
 	public int deletePosteById(int id) {
 		int statut = 0;
-		
-		try {
-			st = con.createStatement();
-			st.execute("delete from poste where idposte=" + id);
-			statut = 1;
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			statut = -1;
+		if(con != null) {
+			try {
+				st = con.createStatement();
+				st.execute("delete from poste where idposte=" + id);
+				statut = 1;
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				statut = -1;
+			}
 		}
 		
 		return statut;
 	}
 
+	/* --- End delete poste by id  --- */
 	
+	
+	
+	/* --- Start Like  --- */
+
+	public void like(int id) {
+		
+		if(con != null) {
+			try {
+				st = con.createStatement();
+				
+				rs = st.executeQuery("select nbrlike from poste where idposte = "+id);
+				
+				if(rs.next()) {
+	
+					int likes = rs.getInt(1) + 1;
+					st.execute("update poste set nbrlike = "+likes+" where idposte=" + id);
+					
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/* --- End Like  --- */
+
+	
+	
+	/* --- Start Like  --- */
+
+	public void disLike(int id) {
+		
+		if(con != null) {
+			try {
+				st = con.createStatement();
+				
+				rs = st.executeQuery("select nbrlike from poste where idposte = "+id);
+				
+				if(rs.next()) {
+	
+					int likes = rs.getInt(1) - 1;
+					st.execute("update poste set nbrlike = "+likes+" where idposte=" + id);
+					
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/* --- End Like  --- */
+	
+	
+	
+
+	/* --- Start get month  --- */
+
 	public String getMonth(int mo) {
 		String month = null;
 		
@@ -254,4 +329,7 @@ public ArrayList<poste> getPostesByIdCategorie(int id){
 		
 		return month;
 	}
+	
+	/* --- End get month  --- */
+
 }

@@ -2065,7 +2065,17 @@ border: 1px solid #00000014;
 	
 	 font-size: 20px;
     color: var(--mauve-color);
+    width: 20px;
 }
+
+.pageContainer .container .pageContent .poste .infos .upline .reaction .heart{
+	
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	width: 40px;
+}
+
 .pageContainer .container .pageContent .poste .posteImg img{
 	
 	width: 100%;

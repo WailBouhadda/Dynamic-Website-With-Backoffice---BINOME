@@ -59,4 +59,14 @@
     <servlet-name>addComment</servlet-name>
     <url-pattern>/addComment</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>likeDislike</display-name>
+    <servlet-name>likeDislike</servlet-name>
+    <servlet-class>controlers.likeDislike</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>likeDislike</servlet-name>
+    <url-pattern>/likeDislike</url-pattern>
+  </servlet-mapping>
 </web-app>

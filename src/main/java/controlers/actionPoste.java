@@ -66,7 +66,7 @@ public class actionPoste extends HttpServlet {
 
 			}else if(action.equals("Modifier")) {
 				
-				response.sendRedirect(source);
+				response.sendRedirect("updatePoste.jsp");
 				
 			}else {
 				
@@ -74,6 +74,10 @@ public class actionPoste extends HttpServlet {
 				
 			}
 			}
+			}else {
+				
+				response.sendRedirect(source);
+				
 			}
 	
 		

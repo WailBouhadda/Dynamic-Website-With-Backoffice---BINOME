@@ -134,7 +134,7 @@ ArrayList<categorie> categos = cdao.getcategories();
 						<td><input class="<%=idPoste%>" type="text" name="nblike" value="<%=nblike%>" disabled></td> 
 						<td><input class="<%=idPoste%>" type="text" name="nbcomment" value="<%=nbcomm%>" disabled></td>
 						<td><input class="<%=idPoste%>" type="text" name="categorie" value="<%=nomcat%>" disabled></td>
-						<td class="action"><input  class="<%=idPoste%>" id="supprimer" type="submit" name="action" value="Supprimer"><input class="<%=idPoste%>" id="modifier" type="button" name="action" value="Modifier"></td>
+						<td class="action"><input  class="<%=idPoste%>" id="supprimer" type="submit" name="action" value="Supprimer"><input class="<%=idPoste%>" id="modifier" type="submit" name="action" value="Modifier"></td>
 						</form>
 						</tr>
 						

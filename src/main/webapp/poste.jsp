@@ -21,6 +21,7 @@ int po = Integer.parseInt(request.getParameter("p"));
 
 poste poste = pdao.getPosteById(po);
 
+String action = String.valueOf(ss.getAttribute("action"));
 
 %>
 <jsp:include page="navBar.jsp"></jsp:include>
@@ -89,9 +90,19 @@ poste poste = pdao.getPosteById(po);
 								<p><%=day%> <%=month %>, <%=year %> </p>
 							</div>
 							<div class="reaction">
-								<span class="heart" onclick="likeDislike()">
-									<i id="dislike" style="display:block" class="fa-regular fa-heart"></i>
-									<i id="like" style="display:none" class="fa-solid fa-heart"></i>
+								<span class="heart">
+									<p><%=nblike %></p>
+									<%if(!action.equals("null")){
+										if(action.equals("like")){%>
+										<i id="dislike" onclick="location ='likeDislike?p=<%=po%>&a=dislike';" style="display:none" class="fa-regular fa-heart"></i>
+										<i id="like" onclick="location ='likeDislike?p=<%=po%>&a=like';" style="display:block" class="fa-solid fa-heart"></i>
+									<%}else if(action.equals("dislike")){%>
+										<i id="dislike" onclick="location ='likeDislike?p=<%=po%>&a=dislike';" style="display:block" class="fa-regular fa-heart"></i>
+										<i id="like" onclick="location ='likeDislike?p=<%=po%>&a=like';" style="display:none" class="fa-solid fa-heart"></i>
+									<%}}else if(action.equals("null")){ %>
+										<i id="dislike" onclick="location ='likeDislike?p=<%=po%>&a=dislike';" style="display:block" class="fa-regular fa-heart"></i>
+										<i id="like" onclick="location ='likeDislike?p=<%=po%>&a=like';" style="display:none" class="fa-solid fa-heart"></i>
+									<%} %>
 								</span>
 							</div>
 						</div>
