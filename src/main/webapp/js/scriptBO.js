@@ -1,5 +1,4 @@
 
-
 /* Start show login password  */
 
 	function showPassword(){
@@ -92,6 +91,7 @@ for(let i = 0 ; i < dropDown.length ; i++){
 	
 	var filtervalue = document.getElementById("filterPoste");
 	
+	if(filtervalue !== null){
 	filtervalue.onkeyup = function(){
 		
 		var value = this.value.toLowerCase();
@@ -120,7 +120,7 @@ for(let i = 0 ; i < dropDown.length ; i++){
 			}
 		
 		
-	}
+	}}
 	
 	
 		/* --- End filter/search poste function --- */
@@ -131,9 +131,9 @@ for(let i = 0 ; i < dropDown.length ; i++){
 
 	
 	
-		var filtervalue = document.getElementById("filterCategorie");
-	
-	filtervalue.onkeyup = function(){
+		var filtervalue2 = document.getElementById("filterCategorie");
+	if(filtervalue2 !== null){
+	filtervalue2.onkeyup = function(){
 		
 		var value = this.value.toLowerCase();
 		var table = document.getElementById("tableCategorie");
@@ -158,9 +158,87 @@ for(let i = 0 ; i < dropDown.length ; i++){
 		
 		
 	}
-	
+	}
 	
 			/* --- End filter/search Categorie function --- */
 
+
+
 	
+	/* --- Start Alert --- */
+	
+	var alertDiv = document.getElementById("alert");
+	
+	
+
+	function alert(result){
+		
+		
+		var count = 10;
+		
+		
+		var text = document.createElement("p");
+		
+		var icon = document.createElement("i");		
+		
+		icon.classList.add("fa-solid");	
+	
+	
+		if(result === 1){
+			 
+			 icon.classList.add("fa-circle-check");
+			 icon.classList.remove("fa-circle-xmark");
+			 alertDiv.classList.add("alertG");
+			 alertDiv.classList.remove("alertR");
+
+			 
+			 text.innerText = "Opération terminé avec succès";
+			 
+			
+			alertDiv.appendChild(icon); 
+			 alertDiv.appendChild(text);
+			
+			
+		}else if(result === -1){
+			
+			 icon.classList.add("fa-circle-xmark");
+			 icon.classList.remove("fa-circle-check");
+			 
+			 alertDiv.classList.remove("alertG");
+			 alertDiv.classList.add("alertR");
+			 text.innerText = "Opération a échoué";
+
+			alertDiv.appendChild(icon); 
+			alertDiv.appendChild(text);
+			
+			
+		}else{
+			
+			alertDiv.style.opacity  = "0%";
+		}
+		
+	}	
+
+	
+	
+	var count = 5;	
+	
+	function countDown(){
+			
+ 	if(count != 0){
+		
+		count -= 1;
+		
+	}else{
+		
+		clearInterval(counter);
+		alertDiv.style.opacity  = "0%";
+		
+	}
+	}
+			
+	var counter = setInterval(countDown,1000);
+
+			/* --- End Alert --- */
+
 

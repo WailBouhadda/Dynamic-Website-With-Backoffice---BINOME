@@ -69,4 +69,24 @@
     <servlet-name>likeDislike</servlet-name>
     <url-pattern>/likeDislike</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>deleteComment</display-name>
+    <servlet-name>deleteComment</servlet-name>
+    <servlet-class>controlers.deleteComment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteComment</servlet-name>
+    <url-pattern>/deleteComment</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>actionComment</display-name>
+    <servlet-name>actionComment</servlet-name>
+    <servlet-class>controlers.actionComment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>actionComment</servlet-name>
+    <url-pattern>/administrateur/actionComment</url-pattern>
+  </servlet-mapping>
 </web-app>

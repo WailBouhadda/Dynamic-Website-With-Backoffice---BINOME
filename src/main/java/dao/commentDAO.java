@@ -70,7 +70,7 @@ public class commentDAO {
 			
 			try {
 				st = con.createStatement();
-				rs = st.executeQuery("select * from comments");
+				rs = st.executeQuery("select * from comments order by date desc");
 				
 				while(rs.next()) {
 					
@@ -109,7 +109,7 @@ public class commentDAO {
 			
 			try {
 				st = con.createStatement();
-				rs = st.executeQuery("select * from comments where idposte = "+idposte);
+				rs = st.executeQuery("select * from comments where idposte = "+idposte+" order by date desc");
 				
 				while(rs.next()) {
 					
@@ -149,7 +149,7 @@ public class commentDAO {
 			
 			try {
 				st = con.createStatement();
-				rs = st.executeQuery("select * from comments where statut = "+statut);
+				rs = st.executeQuery("select * from comments where statut = "+statut+" order by date desc");
 				
 				while(rs.next()) {
 					
@@ -189,7 +189,7 @@ public class commentDAO {
 			
 			try {
 				st = con.createStatement();
-				rs = st.executeQuery("select * from comments where statut = "+statut+" and idposte = "+ idposte);
+				rs = st.executeQuery("select * from comments where statut = "+statut+" and idposte = "+ idposte +" order by date desc");
 				
 				while(rs.next()) {
 					
@@ -220,7 +220,79 @@ public class commentDAO {
 		return comments; 
 	}
 	
+	public int deleteCommentById(int id) {
+		
+		int counter = 0;
+		
+		if(con != null) {
+			
+			try {
+				
+				st = con.createStatement();
+				rs = st.executeQuery("select idposte from comments where idcomment = "+id);
+				if(rs.next()) {
+					
+					int idposte = rs.getInt(1);
+					rs = st.executeQuery("select nbrComments from poste where idposte = "+idposte);
+					
+					if(rs.next()) {
+						
+						int nbrcomments = rs.getInt(1);
+						
+						nbrcomments--;
+						
+						st.execute("delete from comments where idcomment = "+id);
+						
+						st.executeUpdate("update poste set nbrComments = "+nbrcomments+" where idposte = "+idposte);
+						
+						counter = 1;
+
+
+					}
+				}
+				
+				
+			
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				
+				counter = -1;
+			}
+			
+		}
+
+		return counter;
+	}
 	
+	
+	
+	public int acceptCommentById(int id) {
+		
+		int counter = 0;
+		
+		if(con != null) {
+			
+			try {
+				
+				st = con.createStatement();
+				st.execute("update comments set statut = 1 where idcomment = "+id);
+				
+				counter = 1;
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				
+				counter = -1;
+				
+			}
+			
+			
+		}
+		
+		return counter;
+	}
 	
 	
 	

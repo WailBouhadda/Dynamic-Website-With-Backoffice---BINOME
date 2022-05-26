@@ -24,8 +24,16 @@ ArrayList<comment> commentsA = cmdao.getCommentsByStatut(1);
 
 posteDAO pdao = new posteDAO();
 
+int result;
 
-
+if(request.getParameter("result") != null){
+	
+	result = Integer.parseInt(request.getParameter("result"));
+	
+}else{
+	
+	result = 0;
+}
 %>
 <meta charset="UTF-8">
 <title>Tableau de board</title>
@@ -57,11 +65,17 @@ posteDAO pdao = new posteDAO();
 </head>
 <body>
 
-	<div class="container">
+	<div class="container" >
 	
 		<jsp:include page="adminSideBar.jsp"></jsp:include>
-
+		
 		<div class="content">
+			
+			<div id="alert" class="alertG" >
+				
+			</div>
+			
+			
 			<div class="commentNA">
 				<h2>COMMENTAIRES NON ACCEPTE</h2>
 					
@@ -73,10 +87,10 @@ posteDAO pdao = new posteDAO();
 					<tr>
 					<th>ID</th>
 					<th>AUTEUR(E)</th>
+					<th>COMMENTAIRE</th>
 					<th>DATE DE PUBLICATION</th>
 					<th>ID POSTE</th>
-					<th>POSTE</th>
-					<th>TITLE</th>
+					<th>TITRE POSTE</th>
 					</tr>
 					
 					</thead>
@@ -89,10 +103,10 @@ posteDAO pdao = new posteDAO();
 			for(int i = 0 ; i < commentsNA.size() ; i++) {	
 				
 				comment cm = new comment();
-								
-				poste poste = pdao.getPosteById(cm.getIdPoste());
-				
+												
 				cm = commentsNA.get(i);
+				
+				poste poste = pdao.getPosteById(cm.getIdPoste());
 				
 				int idcomment = cm.getIdComment();
 				
@@ -124,7 +138,7 @@ posteDAO pdao = new posteDAO();
 					
 					
 						<tr class="<%=idcomment%>"> 
-						<form action="actionPoste" method="get">
+						<form action="actionComment" method="get">
 						
 						<td><input class="<%=idcomment%>" type="text" name="id" value="<%=idcomment%>" readonly></td>
 						<td><input class="<%=idcomment%>" type="text" name="auteur" value="<%=auteur%>" disabled></td>
@@ -132,7 +146,7 @@ posteDAO pdao = new posteDAO();
 						<td><input class="<%=idcomment%>" type="text" name="date" value="<%=day%>,<%=month%> <%=year%>" disabled></td> 
 						<td><input class="<%=idcomment%>" type="text" name="idposte" value="<%=idposte%>" disabled></td> 
 						<td><input class="<%=idcomment%>" type="text" name="title" value="<%=title%>" disabled></td>
-						<td class="action"><input  class="<%=idcomment%>" id="supprimer" type="submit" name="action" value="Supprimer"><input class="<%=idcomment%>" id="modifier" type="button" name="action" value="Modifier"></td>
+						<td class="action"><input  class="<%=idcomment%>" id="supprimer" type="submit" name="action" value="Supprimer"><input class="<%=idcomment%>" id="modifier" type="submit" name="action" value="Accepter"></td>
 						</form>
 						</tr>
 						
@@ -156,10 +170,10 @@ posteDAO pdao = new posteDAO();
 					<tr>
 					<th>ID</th>
 					<th>AUTEUR(E)</th>
+					<th>COMMENTAIRE</th>
 					<th>DATE DE PUBLICATION</th>
 					<th>ID POSTE</th>
-					<th>POSTE</th>
-					<th>TITLE</th>
+					<th>TITRE POSTE</th>
 					</tr>
 					
 					</thead>
@@ -172,13 +186,11 @@ posteDAO pdao = new posteDAO();
 			for(int i = 0 ; i < commentsA.size() ; i++) {	
 				
 				comment cm = new comment();
-				
-				
-				
-				poste poste = pdao.getPosteById(cm.getIdPoste());
-				
+								
 				cm = commentsA.get(i);
 				
+				poste poste = pdao.getPosteById(cm.getIdPoste());
+
 				int idcomment = cm.getIdComment();
 				
 				String auteur =  cm.getOwner();
@@ -209,7 +221,7 @@ posteDAO pdao = new posteDAO();
 					
 					
 						<tr class="<%=idcomment%>"> 
-						<form action="actionPoste" method="get">
+						<form action="actionComment" method="get">
 						
 						<td><input class="<%=idcomment%>" type="text" name="id" value="<%=idcomment%>" readonly></td>
 						<td><input class="<%=idcomment%>" type="text" name="auteur" value="<%=auteur%>" disabled></td>
@@ -217,7 +229,7 @@ posteDAO pdao = new posteDAO();
 						<td><input class="<%=idcomment%>" type="text" name="date" value="<%=day%>,<%=month%> <%=year%>" disabled></td> 
 						<td><input class="<%=idcomment%>" type="text" name="idposte" value="<%=idposte%>" disabled></td> 
 						<td><input class="<%=idcomment%>" type="text" name="title" value="<%=title%>" disabled></td>
-						<td class="action"><input  class="<%=idcomment%>" id="supprimer" type="submit" name="action" value="Supprimer"><input class="<%=idcomment%>" id="modifier" type="button" name="action" value="Modifier"></td>
+						<td class="action"><input  class="<%=idcomment%>" id="supprimer" type="submit" name="action" value="Supprimer"></td>
 						</form>
 						</tr>
 						
@@ -241,7 +253,14 @@ posteDAO pdao = new posteDAO();
 	<!-- admin script -->
 
 	<script src="../js/scriptBO.js"></script>
-
+	
+	
+	<script>
+		
+		alert(<%=result%>);
+		
+	</script>
+	
 	<!-- admin script -->
 	
 </body>
