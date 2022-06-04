@@ -6,6 +6,8 @@
         <%@page import="entities.categorie"%>
         <%@page import="dao.posteDAO"%>
         <%@page import="dao.categorieDAO"%>
+        
+    
 <!DOCTYPE html>
 <html>
 <head>

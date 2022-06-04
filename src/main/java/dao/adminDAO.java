@@ -15,8 +15,7 @@ public class adminDAO {
 	}
 	
 	
-	Connection con = DBconnection.connect();
-	
+	Connection con;	
 	Statement st;
 	ResultSet rs;
 	
@@ -30,6 +29,7 @@ public class adminDAO {
 		
 		
 		try {
+			con = DBconnection.connect();
 			st = con.createStatement();
 			rs = st.executeQuery("select * from admin where username = '"+a.getUsername()+"' and password = '"+a.getPassword()+"'");
 			

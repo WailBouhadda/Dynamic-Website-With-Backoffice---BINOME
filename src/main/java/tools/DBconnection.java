@@ -21,7 +21,7 @@ public class DBconnection {
 			
 		
 		
-		public static  Connection connect() {
+		public static  Connection connect() throws SQLException {
 		
 		try {
 				Class.forName(driver);
@@ -30,7 +30,7 @@ public class DBconnection {
 				try {	
 						con = DriverManager.getConnection(url,username,pass);
 					
-						return con;
+						
 					
 				}catch(SQLException e) {
 					
@@ -43,6 +43,13 @@ public class DBconnection {
 				e.printStackTrace();		
 			
 				System.out.println("Driver Not Found");
+		}
+		
+		if(!con.isClosed()) {
+			System.out.println("connection est reussit");
+		}
+		else {
+			System.out.println("connection echoué");
 		}
 		return con;
 			

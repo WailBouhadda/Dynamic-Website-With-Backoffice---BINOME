@@ -1,5 +1,6 @@
 
-
+ 
+   
 <div class="adminSideBar" id="adminSideBar">
 
 	<div class="admin">
@@ -28,7 +29,7 @@
 		</ul>
 	</div>
 	<div class="logout">
-		<li><a href="#"><i class="fa-solid fa-power-off"></i><span class="showSpan">DECONNECTION</span></a></li>
+		<li><form action="LogoutS"><i class="fa-solid fa-power-off"></i><span class="showSpan"><input type="submit" value="DECONNECTION"></span></form></li>
 	</div>
 </div>
 

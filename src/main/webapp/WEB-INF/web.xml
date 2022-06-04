@@ -21,13 +21,13 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>adminLogin</display-name>
-    <servlet-name>adminLogin</servlet-name>
-    <servlet-class>controlers.adminLogin</servlet-class>
+    <display-name>adminLoginS</display-name>
+    <servlet-name>adminLoginS</servlet-name>
+    <servlet-class>controlers.adminLoginS</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>adminLogin</servlet-name>
-    <url-pattern>/administrateur/adminLogin</url-pattern>
+    <servlet-name>adminLoginS</servlet-name>
+    <url-pattern>/administrateur/adminLoginS</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -88,5 +88,36 @@
   <servlet-mapping>
     <servlet-name>actionComment</servlet-name>
     <url-pattern>/administrateur/actionComment</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Test</display-name>
+    <servlet-name>Test</servlet-name>
+    <servlet-class>controlers.Test</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Test</servlet-name>
+    <url-pattern>/Test</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginS</display-name>
+    <servlet-name>LoginS</servlet-name>
+    <servlet-class>controlers.LoginS</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginS</servlet-name>
+    <url-pattern>/LoginS</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>LogoutS</display-name>
+    <servlet-name>LogoutS</servlet-name>
+    <servlet-class>controlers.LogoutS</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutS</servlet-name>
+    <url-pattern>/administrateur/LogoutS</url-pattern>
   </servlet-mapping>
 </web-app>

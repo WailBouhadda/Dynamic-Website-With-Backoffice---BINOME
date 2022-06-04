@@ -10,7 +10,8 @@ public class admin {
 	
 
 	public admin() {
-		// TODO Auto-generated constructor stub
+		username="";
+		password="";
 	}
 	
 	

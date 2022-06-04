@@ -10,6 +10,7 @@
         <%@page import="dao.posteDAO"%>
         <%@page import="dao.commentDAO"%>
         <%@page import="dao.categorieDAO"%>
+        
 <!DOCTYPE html>
 <html>
 <head>
