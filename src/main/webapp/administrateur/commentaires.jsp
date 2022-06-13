@@ -15,6 +15,20 @@
 <html>
 <head>
 
+
+   <%
+    String user= null;
+    if(session.getAttribute("login")==null){
+    	response.sendRedirect("adminLogin.jsp");
+    	
+    	
+    }else{
+    	
+    	 user = (String)session.getAttribute("login");
+    }
+    
+    %>
+
 <%
  
 commentDAO cmdao = new commentDAO();
@@ -70,7 +84,7 @@ if(request.getParameter("result") != null){
 	
 		<jsp:include page="adminSideBar.jsp"></jsp:include>
 		
-		<div class="content">
+		<div class="content" id="content">
 			
 			<div id="alert" class="alertG" >
 				
@@ -161,7 +175,7 @@ if(request.getParameter("result") != null){
 				
 				
 				<div class="commentA">
-				<h2>COMMENTAIRES NON ACCEPTE</h2>
+				<h2>COMMENTAIRES ACCEPTE</h2>
 					
 					<div class="filter"><input id="filterPoste" type="text" name="search" placeholder="Search ..."> <i class="fa-solid fa-magnifying-glass"></i></div>
 					

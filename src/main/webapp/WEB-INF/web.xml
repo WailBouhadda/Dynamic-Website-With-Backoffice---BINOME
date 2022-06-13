@@ -109,7 +109,6 @@
     <servlet-name>LoginS</servlet-name>
     <url-pattern>/LoginS</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>LogoutS</display-name>
@@ -119,5 +118,25 @@
   <servlet-mapping>
     <servlet-name>LogoutS</servlet-name>
     <url-pattern>/administrateur/LogoutS</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>updateAdmin</display-name>
+    <servlet-name>updateAdmin</servlet-name>
+    <servlet-class>controlers.updateAdmin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateAdmin</servlet-name>
+    <url-pattern>/updateAdmin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>tt</display-name>
+    <servlet-name>tt</servlet-name>
+    <servlet-class>controlers.tt</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>tt</servlet-name>
+    <url-pattern>/tt</url-pattern>
   </servlet-mapping>
 </web-app>

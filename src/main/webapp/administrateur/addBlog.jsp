@@ -7,6 +7,19 @@
         <%@page import="dao.posteDAO"%>
         <%@page import="dao.categorieDAO"%>
         
+        
+           <%
+    String user= null;
+    if(session.getAttribute("login")==null){
+    	response.sendRedirect("adminLogin.jsp");
+    	
+    	
+    }else{
+    	
+    	 user = (String)session.getAttribute("login");
+    }
+    
+    %>
 <!DOCTYPE html>
 <html>
 <head>

@@ -1,10 +1,21 @@
 
- 
+     <%
+    String user= null;
+    if(session.getAttribute("login")==null){
+    	response.sendRedirect("adminLogin.jsp");
+    	
+    	
+    }else{
+    	
+    	 user = (String)session.getAttribute("login");
+    }
+    
+    %>
    
 <div class="adminSideBar" id="adminSideBar">
 
 	<div class="admin">
-		<li><i class="fa-solid fa-bars" id="burger"></i><span class="showSpan">wail</span></li>
+		<li><i class="fa-solid fa-bars" id="burger"></i><span class="showSpan"><%=user %></span></li>
 	</div>
 	<div class="list">
 		<ul class="mainList">
@@ -25,11 +36,11 @@
 				</ul>
 			</li>
 			<li><a href="#"><i class="fa-solid fa-users"></i></i><span class="showSpan">UTILISATEURS</span></a></li>
-			<li><a href="#"><i class="fa-solid fa-user"></i><span class="showSpan">PROFILE</span></a></li>
+			<li><a href="Profile.jsp"><i class="fa-solid fa-user"></i><span class="showSpan">PROFILE</span></a></li>
 		</ul>
 	</div>
 	<div class="logout">
-		<li><form action="LogoutS"><i class="fa-solid fa-power-off"></i><span class="showSpan"><input type="submit" value="DECONNECTION"></span></form></li>
+		<li><a href="LogoutS"><i class="fa-solid fa-power-off"></i><span class="showSpan">DECONNECTION</span></a></li>
 	</div>
 </div>
 

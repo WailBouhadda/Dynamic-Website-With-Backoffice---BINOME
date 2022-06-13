@@ -2,8 +2,14 @@
     pageEncoding="UTF-8"%>
     
     <%
+    String user= null;
     if(session.getAttribute("login")==null){
     	response.sendRedirect("adminLogin.jsp");
+    	
+    	
+    }else{
+    	
+    	 user = (String)session.getAttribute("login");
     }
     
     %>
@@ -49,7 +55,40 @@
 
 		<div class="content" id="content">
 			
-			
+			<div class="profile">
+				<h2>Profile</h2>
+				<div class="profileDetails">
+					<i class="fa-solid fa-circle-user"></i>
+					<p><%=user %></p>
+				</div>
+				<div class="updatePassword">
+					<form action="updateAdmin.java" method="post">
+						<div class="Apassword">
+							 <input type="password" placeholder="Ancien mot de passe..." name="password" id="Apassword">
+							 <span class="eye" onclick="showPassword('Apassword')">
+								 <i id="eyeShowApassword" class="fa fa-eye"></i>
+								 <i id="eyeHideApassword" class="fa fa-eye-slash"></i>
+							 </span>
+						</div>	
+						<div class="Npassword">
+							 <input type="password" placeholder="Nouveau mot de passe..." name="password" id="Npassword">
+							 <span class="eye" onclick="showPassword('Npassword')">
+								 <i id="eyeShowNpassword" class="fa fa-eye"></i>
+								 <i id="eyeHideNpassword" class="fa fa-eye-slash"></i>
+							 </span>
+						</div>	
+						<div class="CNpassword">
+							 <input type="password" placeholder="Confirmation mot de passe..." name="password" id="CNpassword">
+							 <span class="eye" onclick="showPassword('CNpassword')">
+								 <i id="eyeShowCNpassword" class="fa fa-eye"></i>
+								 <i id="eyeHideCNpassword" class="fa fa-eye-slash"></i>
+							 </span>
+						</div>	
+						<input type="submit" name="Modifier"  value="Modifier">
+					</form>
+				</div>
+				
+			</div>
 			
 		</div>
 	

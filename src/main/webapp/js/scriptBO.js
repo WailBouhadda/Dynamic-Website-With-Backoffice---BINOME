@@ -1,10 +1,10 @@
 
 /* Start show login password  */
 
-	function showPassword(){
-				var password = document.getElementById("password");
-				var show = document.getElementById("eyeShow");
-				var hide = document.getElementById("eyeHide");
+	function showPassword(name){
+				var password = document.getElementById(name);
+				var show = document.getElementById("eyeShow"+name);
+				var hide = document.getElementById("eyeHide"+name);
 				show.style.color = "red";
 
 
