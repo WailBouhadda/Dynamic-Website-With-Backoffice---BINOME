@@ -1,15 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
+        <%@page import="entities.admin"%>
+    
     <%
-    String user= null;
-    if(session.getAttribute("login")==null){
+    admin a= new admin();
+    if(session.getAttribute("admin")==null){
     	response.sendRedirect("adminLogin.jsp");
     	
     	
     }else{
     	
-    	 user = (String)session.getAttribute("login");
+    	 a = (admin)session.getAttribute("admin");
     }
     
     %>
@@ -59,34 +61,87 @@
 				<h2>Profile</h2>
 				<div class="profileDetails">
 					<i class="fa-solid fa-circle-user"></i>
-					<p><%=user %></p>
+					<div class="userMail">
+					
+						<div><span>Nom d'utilisateur</span><p><%=a.getUsername() %></p></div>
+						<div><span>Email</span><p><%=a.getEmail() %></p></div>
+						
+					</div>
 				</div>
-				<div class="updatePassword">
-					<form action="updateAdmin.java" method="post">
+				
+				<div class="updateAdmin">
+					<div class="headBar" id="UAE">
+						<span>
+							<i class="fa-solid fa-key"></i>
+							<p>Modifier Nom d'utilisateur et Email</p>
+						</span>
+						<i class="fa-solid fa-caret-down normal" id="UAEi"></i>
+					</div>
+					<form action="updateAdmin.java" class="form" method="post" id="UAEF">
 						<div class="Apassword">
-							 <input type="password" placeholder="Ancien mot de passe..." name="password" id="Apassword">
-							 <span class="eye" onclick="showPassword('Apassword')">
-								 <i id="eyeShowApassword" class="fa fa-eye"></i>
-								 <i id="eyeHideApassword" class="fa fa-eye-slash"></i>
+							<span>Nom d'utilisateur</span>
+							 <input type="text" placeholder="..." name="username" id="username">
+							 <span class="eye" >
+								 <i class="fa-regular fa-user"></i>
 							 </span>
 						</div>	
 						<div class="Npassword">
-							 <input type="password" placeholder="Nouveau mot de passe..." name="password" id="Npassword">
+							 <span>Email</span>
+							 <input type="password" placeholder="..." name="email" id="email">
 							 <span class="eye" onclick="showPassword('Npassword')">
-								 <i id="eyeShowNpassword" class="fa fa-eye"></i>
-								 <i id="eyeHideNpassword" class="fa fa-eye-slash"></i>
+								 <i class="fa-regular fa-envelope"></i>
 							 </span>
 						</div>	
 						<div class="CNpassword">
-							 <input type="password" placeholder="Confirmation mot de passe..." name="password" id="CNpassword">
-							 <span class="eye" onclick="showPassword('CNpassword')">
-								 <i id="eyeShowCNpassword" class="fa fa-eye"></i>
-								 <i id="eyeHideCNpassword" class="fa fa-eye-slash"></i>
+							 <span>Mot de passe</span>
+							 <input type="password" placeholder="..." name="password" id="password">
+							 <span class="eye" onclick="showPassword('password')">
+								 <i id="eyeShowCNpassword" style="display:none;" class="fa fa-eye"></i>
+								 <i id="eyeHideCNpassword" style="display:block;" class="fa fa-eye-slash"></i>
 							 </span>
 						</div>	
-						<input type="submit" name="Modifier"  value="Modifier">
+						<button type="submit" name="Modifierm"  value="ModifierUE">MODIFIER</button>
 					</form>
 				</div>
+				
+				<div class="updateAdmin">
+					<div class="headBar" id="UAP">
+						<span>
+							<i class="fa-solid fa-key"></i>
+							<p>Modifier Mot De Passe </p>
+						</span>
+						<i class="fa-solid fa-caret-down normale" id="UAPi"></i>
+					</div>
+					<form action="updateAdmin.java" class="form" method="post" id="UAPF">
+						<div class="Apassword">
+							<span>Ancienne mot de passe</span>
+							 <input type="password" placeholder="..." name="Apassword" id="Apassword">
+							 <span class="eye" onclick="showPassword('Apassword')">
+								 <i id="eyeShowApassword" style="display:none;" class="fa fa-eye"></i>
+								 <i id="eyeHideApassword" style="display:block;" class="fa fa-eye-slash"></i>
+							 </span>
+						</div>	
+						<div class="Npassword">
+							 <span>Nouveau mot de passe</span>
+							 <input type="password" placeholder="..." name="Npassword" id="Npassword">
+							 <span class="eye" onclick="showPassword('Npassword')">
+								 <i id="eyeShowNpassword" style="display:none;" class="fa fa-eye"></i>
+								 <i id="eyeHideNpassword" style="display:block;" class="fa fa-eye-slash"></i>
+							 </span>
+						</div>	
+						<div class="CNpassword">
+							 <span>Confirmation de mot de passe</span>
+							 <input type="password" placeholder="..." name="CNpassword" id="CNpassword">
+							 <span class="eye" onclick="showPassword('CNpassword')">
+								 <i id="eyeShowCNpassword" style="display:none;" class="fa fa-eye"></i>
+								 <i id="eyeHideCNpassword" style="display:block;" class="fa fa-eye-slash"></i>
+							 </span>
+						</div>	
+						<button type="submit" name="Modifierm"  value="ModifierMDP">MODIFIER</button>
+					</form>
+				</div>
+				
+				
 				
 			</div>
 			

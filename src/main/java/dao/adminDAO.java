@@ -24,21 +24,26 @@ public class adminDAO {
 	
 	
 	
-	public boolean adminLogin(admin a) {
-		boolean statut=false;
+	public admin adminLogin(String email, String password) {
 		
+		admin a = new admin();
 		
 		try {
 			con = DBconnection.connect();
 			st = con.createStatement();
-			rs = st.executeQuery("select * from admin where username = '"+a.getUsername()+"' and password = '"+a.getPassword()+"'");
+			rs = st.executeQuery("select * from admin where email = '"+email+"' and password = '"+password+"'");
 			
 			
 			if(rs.next()) {
 				
-				statut = true;
+				a.setId(rs.getInt(1));
+				a.setEmail(rs.getString(2));
+				a.setUsername(rs.getString(3));
+				a.setPassword(rs.getString(4));
+				
 			}else {
-				statut = false;
+				
+				a = null;
 			}
 			
 			
@@ -48,8 +53,32 @@ public class adminDAO {
 		}
 		
 		
-		return statut;
+		return a;
 		
+		
+	}
+	
+	
+	public int updateUserEmail(admin a, String username) {
+		
+		int statut = 0;
+		
+		try {
+			
+			con = DBconnection.connect();
+			st = con.createStatement();
+			
+			statut	= st.executeUpdate("update table admin set email = '"+a.getEmail()+"', username = '"+a.getUsername()+"' where username = '"+username+"'");
+			 
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+			statut = 0;
+		}
+		
+		
+		return statut;
 		
 	}
 

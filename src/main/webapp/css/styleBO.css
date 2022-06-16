@@ -622,6 +622,165 @@ padding: 15px;
 	/*END admin Postes filter style*/
 
 
+
+
+
+	/*START admin Profile */
+
+
+
+
+
+.profile .profileDetails{
+	
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: -4px 6px 20px 4px #0000001c;
+	
+}
+
+.profile .profileDetails i{
+
+    font-size: 100px;
+    color: darkgrey;
+    
+    }
+
+
+.profile .profileDetails .userMail{
+	
+	
+ 	display: flex;
+    width: 50%;
+    justify-content: space-between;
+	
+}
+
+.profile .profileDetails .userMail div{
+	
+	display: flex;
+    width: 45%;
+    justify-content: space-between;
+    border: 2px solid #673ab7;
+    border-radius: 5px;
+    align-items: center;
+
+}
+
+.profile .profileDetails .userMail div span{
+	
+    background-color: var(--mauve-color);
+    color: white;
+    padding: 10px;
+    
+}
+
+.profile .profileDetails .userMail div p{
+	
+    flex: 1;
+    text-align: center;
+    font-weight: 600;
+    
+}
+
+
+.profile .updateAdmin{
+	
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: -4px 6px 20px 4px #0000001c;
+	
+}
+
+.profile .updateAdmin .headBar{
+	
+	display: flex;
+    width: 100%;	
+    background-color: var(--green-color);
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items:center;
+	padding: 10px;
+	
+}
+
+
+.profile .updateAdmin .headBar span{
+	
+	display: flex;
+    align-items: center;
+	
+}
+
+.profile .updateAdmin .headBar span p{
+	
+	margin-left: 10px;
+	
+}
+
+.form{
+
+	display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+	
+}
+
+.formClicked{
+	
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+	
+	
+}
+
+.profile .updateAdmin form div{
+	
+	width: 70%;
+    display: flex;
+    gap: 5px;
+    margin: 10px;
+    align-items: center;
+	
+}
+
+.profile .updateAdmin form div span:first-of-type{
+    width: 30%;
+    font-weight: 600;
+}
+
+.profile .updateAdmin form div input{
+	
+	flex:1;
+	padding: 10px;
+	
+}
+
+.profile .updateAdmin form > button{
+	
+	width: 10%;
+    padding: 10px;
+    border: 2px solid var(--green-color);
+    background-color: transparent;
+    color: var(--green-color);
+	
+}
+
+	/*END admin Profile */
+
+
 .alertG{
 		
 	position: absolute;

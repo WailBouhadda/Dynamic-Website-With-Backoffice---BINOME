@@ -85,6 +85,37 @@ for(let i = 0 ; i < dropDown.length ; i++){
 
 /* --- End admin side bar sublist drop down --- */
 
+/* --- Start admin side bar sublist drop down --- */
+
+var headBar = document.getElementsByClassName("headBar");
+
+
+for(let i = 0 ; i < headBar.length ; i++){
+	
+	headBar[i].onclick = function(){
+		
+		var form = document.getElementById(`${this.id}F`); 	
+		var arrow = document.getElementById(`${this.id}i`);
+								
+				
+	
+			
+			form.classList.toggle("form");
+			form.classList.toggle("formClicked");
+			
+			arrow.classList.toggle("normal");
+			arrow.classList.toggle("rotate");
+			
+	
+
+		}
+	}
+
+
+
+/* --- End admin side bar sublist drop down --- */
+
+
 
 
 	/* --- Start filter/search poste function --- */

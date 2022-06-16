@@ -37,16 +37,17 @@ public class adminLoginS extends HttpServlet {
 		admin a = new admin();
 		String LoginFailed = "";
 		
-		String user = request.getParameter("username");
-		a.setUsername(user);
+		String email = request.getParameter("email");
+	
 		String pass= request.getParameter("password");
-		a.setPassword(pass);
+	
+			admin adm = adao.adminLogin(email,pass);
 			
-		if(adao.adminLogin(a)) {
+		if(adm != null) {
 			
 			HttpSession session=request.getSession();
-			session.setAttribute("login", pass);
-			session.setAttribute("user", user);
+			session.setAttribute("admin", adm);
+			
 			
 			
 			

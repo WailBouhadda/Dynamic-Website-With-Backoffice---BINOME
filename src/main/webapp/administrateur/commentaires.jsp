@@ -17,16 +17,11 @@
 
 
    <%
-    String user= null;
-    if(session.getAttribute("login")==null){
+    if(session.getAttribute("admin")==null){
     	response.sendRedirect("adminLogin.jsp");
     	
     	
-    }else{
-    	
-    	 user = (String)session.getAttribute("login");
     }
-    
     %>
 
 <%

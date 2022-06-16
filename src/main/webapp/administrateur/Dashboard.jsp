@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
     <%
-    if(session.getAttribute("login")==null){
+    if(session.getAttribute("admin")==null){
     	response.sendRedirect("adminLogin.jsp");
     }
     

@@ -1,21 +1,22 @@
 
-     <%
-    String user= null;
-    if(session.getAttribute("login")==null){
+    <%@page import="entities.admin"%>
+    
+    <%
+    admin a= new admin();
+    if(session.getAttribute("admin")==null){
     	response.sendRedirect("adminLogin.jsp");
     	
     	
     }else{
     	
-    	 user = (String)session.getAttribute("login");
+    	 a = (admin)session.getAttribute("admin");
     }
     
     %>
-   
 <div class="adminSideBar" id="adminSideBar">
 
 	<div class="admin">
-		<li><i class="fa-solid fa-bars" id="burger"></i><span class="showSpan"><%=user %></span></li>
+		<li><i class="fa-solid fa-bars" id="burger"></i><span class="showSpan"><%=a.getUsername() %></span></li>
 	</div>
 	<div class="list">
 		<ul class="mainList">
