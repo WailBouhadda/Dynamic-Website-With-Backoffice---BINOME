@@ -47,6 +47,7 @@ public class actionPoste extends HttpServlet {
 		String action = request.getParameter("action");
 		
 		String type = request.getParameter("type");
+		
 		int  delete=0;
 		
 		if(action != null) {	
@@ -66,7 +67,8 @@ public class actionPoste extends HttpServlet {
 
 			}else if(action.equals("Modifier")) {
 				
-				response.sendRedirect("updatePoste.jsp");
+				
+				response.sendRedirect("updatePoste.jsp?id="+id);
 				
 			}else {
 				

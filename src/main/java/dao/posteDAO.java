@@ -277,6 +277,53 @@ public ArrayList<poste> getPostesByIdCategorie(int id){
 	/* --- End Like  --- */
 	
 	
+
+	/* --- Start update poste  --- */
+	
+	public int updatePoste(poste p) {
+		
+		int test = 0;
+		String SQL = "update poste set title =?,image =?, content =?, idcategorie=? where idposte =?";
+		 
+		PreparedStatement preparedStatement;
+
+		if(con != null) {	
+				
+				try {
+					
+		            preparedStatement = con.prepareStatement(SQL);
+		            
+		            preparedStatement.setString(1, p.getTitle());
+		            preparedStatement.setBlob(2, p.getImageis());
+		            preparedStatement.setString(3, p.getContent());
+		            preparedStatement.setInt(4, p.getIdCategorie());
+		            preparedStatement.setInt(5, p.getId());
+		            
+		            preparedStatement.executeUpdate();
+		
+		
+		    		test=1;
+		
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					test= -1;
+				}
+		}else {
+			test = -1;
+		}
+		
+		
+		return test;
+	}
+		
+	
+
+	/* --- End update poste  --- */
+	
+	
+
+	/* --- End update poste  --- */
 	
 
 	/* --- Start get month  --- */

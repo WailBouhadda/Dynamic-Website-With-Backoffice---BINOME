@@ -7,12 +7,20 @@
         <%@page import="dao.posteDAO"%>
         <%@page import="dao.categorieDAO"%>
         
+     <% 
+           if(session.getAttribute("admin")==null){
+    	response.sendRedirect("adminLogin.jsp");
+    	
+    	
+    }
+     
+     %>
     
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Ajouter Blog</title>
+<title>Modifier Poste</title>
 
     <!-- Style File -->
 		
@@ -47,31 +55,44 @@
 		
 		
 			<div class="content" id="content">
-			<form action="addBlog" method="post" enctype="multipart/form-data">
+			<h2>Modifier Poste	</h2>
+			<div class="boxpack">
 			
-				<div class="blogInfos">
-					<h2>Ajouter un poste</h2>
-					<div class="imgCate">
-						<div class="img">
-							<label for="blogImage">Image : </label>
-							<input type="file" name="blogImage">
-						</div>
-						 <div class="cat">
-						  <%
- 
+			 <%
 categorieDAO cdao = new categorieDAO();
+posteDAO pdao = new posteDAO();						  
+						  
+int idposte = Integer.parseInt(request.getParameter("id"));
+						  
+poste p = pdao.getPosteById(idposte);
+
+categorie ca = cdao.getcategorieById(p.getIdCategorie());
 
 ArrayList<categorie> categos = cdao.getcategories();
 
 HttpSession s = request.getSession();
 
 
-s.setAttribute("source", "addBlog.jsp");
+
+
 
 %>
+			
+			<form action="updateposte" method="post" enctype="multipart/form-data">
+			
+			<input type="text" name="id" style="display:none" value="<%=idposte%>">
+				<div class="blogInfos">
+					
+					<div class="imgCate">
+						<div class="img">
+							<label for="blogImage">Image : </label>
+							<input type="file" name="blogImage" required>
+						</div>
+						 <div class="cat">
+
 							 <label for="categorie">Categorie : </label>
 								  <select name="categorie" id="categorie" required>
-								  <option ></option>
+								   <option value="<%=p.getIdCategorie()%>"><%=ca.getNomcategorie() %></option>
 								  <%if(categos != null){ 
 								  for(int i = 0 ; i < categos.size() ; i++){
 										categorie c = new categorie();
@@ -88,14 +109,14 @@ s.setAttribute("source", "addBlog.jsp");
 					</div>
 					<div class="posteTitle">
 						<label for="blogTitle">Titre : </label>
-						<input type="text" name="blogTitle" placeholder="Ajouter un titre ici..." required>
+						<input type="text" name="blogTitle" placeholder="Ajouter un titre ici..." value="<%=p.getTitle() %>" required>
 					</div>
 					
 				</div>
 				
 				<div class="blogContent">
 				
-					<textarea name="article" id="article"></textarea>
+					<textarea name="article" id="article" value="<%=p.getContent() %>" required></textarea>
 				
 				</div>
 				
@@ -105,7 +126,7 @@ s.setAttribute("source", "addBlog.jsp");
 				</div>
 			
 				</form>
-	
+	</div>
 			</div>
 	
 

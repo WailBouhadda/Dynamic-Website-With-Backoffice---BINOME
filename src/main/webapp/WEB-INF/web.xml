@@ -129,5 +129,14 @@
     <servlet-name>updateAdmin</servlet-name>
     <url-pattern>/administrateur/updateAdmin</url-pattern>
   </servlet-mapping>
- 
+  <servlet>
+    <description></description>
+    <display-name>updateposte</display-name>
+    <servlet-name>updateposte</servlet-name>
+    <servlet-class>controlers.updateposte</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateposte</servlet-name>
+    <url-pattern>/administrateur/updateposte</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -9,14 +9,10 @@
         
         
            <%
-    String user= null;
     if(session.getAttribute("admin")==null){
     	response.sendRedirect("adminLogin.jsp");
     	
     	
-    }else{
-    	
-    	 user = (String)session.getAttribute("login");
     }
     
     
@@ -87,7 +83,7 @@
 					<div class="imgCate">
 						<div class="img">
 							<label for="blogImage">Image : </label>
-							<input type="file" name="blogImage">
+							<input type="file" name="blogImage" required>
 						</div>
 						 <div class="cat">
 						  <%
@@ -128,7 +124,7 @@ s.setAttribute("source", "addBlog.jsp");
 				
 				<div class="blogContent">
 				
-					<textarea name="article" id="article"></textarea>
+					<textarea name="article" id="article" required></textarea>
 				
 				</div>
 				
