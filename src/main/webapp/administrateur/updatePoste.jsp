@@ -122,7 +122,7 @@ HttpSession s = request.getSession();
 				
 				<div class="decision">
 					<input type="submit" name="decision" value="Valider">
-					<input type="submit" name="decision" value="Annuler">
+					<input type="button" name="decision" value="Annuler" onclick="location.href='posteListe.jsp';">
 				</div>
 			
 				</form>

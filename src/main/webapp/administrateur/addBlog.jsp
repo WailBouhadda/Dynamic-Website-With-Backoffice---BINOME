@@ -130,7 +130,7 @@ s.setAttribute("source", "addBlog.jsp");
 				
 				<div class="decision">
 					<input type="submit" name="decision" value="Valider">
-					<input type="submit" name="decision" value="Annuler">
+					<input type="reset" name="decision" value="Annuler">
 				</div>
 			
 				</form>

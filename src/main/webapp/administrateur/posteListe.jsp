@@ -89,7 +89,7 @@ ArrayList<categorie> categos = cdao.getcategories();
 			
 				<div id="alert" class="alertG" >
 				
-			</div>
+				</div>
 			
 				<div class="posteTable">
 				<h2>POSTE</h2>
@@ -103,8 +103,8 @@ ArrayList<categorie> categos = cdao.getcategories();
 					<th>ID</th>
 					<th>TITRE</th>
 					<th>DATE DE PUBLICATION</th>
-					<th>NB J'AIME</th>
-					<th>NB COMMENTAIRE</th>
+					<th>J'AIME</th>
+					<th>COMMENTAIRE</th>
 					<th>CATEGORIE</th>
 					</tr>
 					

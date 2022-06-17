@@ -308,3 +308,11 @@ for(let i = 0 ; i < headBar.length ; i++){
 			/* --- End Alert --- */
 
 
+
+
+
+
+function websiteVisits(response){
+	
+	document.querySelector("#visits").setContent = response.value;
+}

@@ -322,8 +322,121 @@ public ArrayList<poste> getPostesByIdCategorie(int id){
 	/* --- End update poste  --- */
 	
 	
+	
+	
+	/* --- Start number of likes --- */
+	
 
-	/* --- End update poste  --- */
+	public int totalLikes() {
+		
+		int counter = 0;
+		
+
+		if(con != null) {
+			try {
+				st = con.createStatement();
+				
+				rs = st.executeQuery("select nbrlike from poste ");
+				
+				while(rs.next()) {
+	
+					int likes = rs.getInt(1);
+					
+					counter += likes;
+					
+					
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		
+		
+		return counter;
+	}
+	
+	
+	/* --- End number of likes --- */
+	
+
+	/* --- Start number of comments --- */
+	
+
+	public int totalComments() {
+		
+		int counter = 0;
+		
+
+		if(con != null) {
+			try {
+				st = con.createStatement();
+				
+				rs = st.executeQuery("select nbrComments from poste ");
+				
+				while(rs.next()) {
+	
+					int comments = rs.getInt(1);
+					
+					counter += comments;
+					
+					
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		
+		
+		return counter;
+	}
+	
+	
+	/* --- End number of comments --- */
+	
+
+	
+	/* --- Start number of postes --- */
+	
+
+	public int totalPostes() {
+		
+		int counter = 0;
+		
+
+		if(con != null) {
+			try {
+				st = con.createStatement();
+				
+				rs = st.executeQuery("select count(*) from poste ");
+				
+				if(rs.next()) {
+	
+					counter = rs.getInt(1);
+					
+					
+					
+					
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		
+		
+		return counter;
+	}
+	
+	
+	/* --- End number of postes --- */
+	
+
+	
 	
 
 	/* --- Start get month  --- */
