@@ -38,35 +38,83 @@ public class updateAdmin extends HttpServlet {
 		
 		admin a = (admin)s.getAttribute("admin");
 		
+		admin ad = new admin();
 		
 		String action = request.getParameter("Modifier");
 		
 		int result = 0;
 		
-		if(action.equals("ModifierUE")) {
+		
+		
+		if(action.equals("ModifierUE") & a != null) {
 			
 			String email = request.getParameter("email");
+			ad.setEmail(email);
 			String username = request.getParameter("username");
+			ad.setUsername(username);
 			String password = request.getParameter("password");
+			ad.setPassword(password);
 			
-			if(a.getPassword().equals(password)) {
+			
+				if(password.equals(a.getPassword())) {
+					
+					result = adao.updateUserEmail(ad, a.getUsername());
+					
+					a.setEmail(email);
+					a.setUsername(username);
+					
+					s.setAttribute("admin", a);
+					
+					request.getRequestDispatcher("Profile.jsp?result="+result).forward(request, response);
+					
+						
+					
+				}else {
+					
+					result = -1;
+					
+					request.getRequestDispatcher("Profile.jsp?result="+result).forward(request, response);
+					
+					
+				}
+			
+			
+		}else if(action.equals("ModifierMDP") & a != null) {
+		
+		String Apass = request.getParameter("Apassword");
+		String Npass = request.getParameter("Npassword");
+		String Cpass = request.getParameter("CNpassword");
+		
+		
+			if(Apass.equals(a.getPassword()) & Npass.equals(Cpass)) {
 				
-				result = adao.updateUserEmail(a, username);
+				result = adao.updatepassword(Npass, a.getUsername());
+				
+				a.setPassword(Npass);
+				
+				s.setAttribute("admin", a);
 				
 				request.getRequestDispatcher("Profile.jsp?result="+result).forward(request, response);
-
-				
 			}else {
 				
+				result = -1;
+				
 				request.getRequestDispatcher("Profile.jsp?result="+result).forward(request, response);
-
+				
 				
 			}
+			
+		}else {
+			
+			result = -1;
+			
+			request.getRequestDispatcher("Profile.jsp?result="+result).forward(request, response);
 			
 			
 		}
 		
 		
-	}
+	
 
+}
 }

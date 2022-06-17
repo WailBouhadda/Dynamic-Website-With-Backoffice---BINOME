@@ -43,6 +43,7 @@ public class commentDAO {
 					nbrcomments++;
 					
 					st.executeUpdate("update poste set nbrComments ="+nbrcomments+" where idposte = "+c.getIdPoste());
+					result = 1;
 				}
 				result = 1;
 			} catch (SQLException e) {

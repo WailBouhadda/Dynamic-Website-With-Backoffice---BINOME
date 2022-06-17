@@ -19,7 +19,20 @@
     	 user = (String)session.getAttribute("login");
     }
     
+    
+    
+    int result;
+
+    if(request.getParameter("result") != null){
+    	
+    	result = Integer.parseInt(request.getParameter("result"));
+    	
+    }else{
+    	
+    	result = 0;
+    }
     %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,10 +72,18 @@
 		
 		
 			<div class="content" id="content">
+			
+			<div id="alert" class="alertG" >
+				
+			</div>
+			
+			<h2>Ajouter un poste</h2>
+			<div class="boxpack">	
 			<form action="addBlog" method="post" enctype="multipart/form-data">
 			
 				<div class="blogInfos">
-					<h2>Ajouter un poste</h2>
+					
+					
 					<div class="imgCate">
 						<div class="img">
 							<label for="blogImage">Image : </label>
@@ -117,17 +138,18 @@ s.setAttribute("source", "addBlog.jsp");
 				</div>
 			
 				</form>
-					
-						
+					</div>
+				<h2>Ajouter une categorie</h2>
+		<div class="boxpack">		
 		<form  action="addBlog" method="post" enctype="multipart/form-data">
-		<h2>Ajouter une categorie</h2>
+		
 			<div class="addcategorie" >
 				<label for="addcat">Ajouter categorie : </label>
 				<input type="text" name="addcat" placeholder="Ajouter une categorie..." required>
 				<input type="submit" name="decision" value="Ajouter">
 			</div>
 		</form>
-	
+		</div>
 			</div>
 	
 
@@ -141,8 +163,16 @@ s.setAttribute("source", "addBlog.jsp");
 	<script>
 		CKEDITOR.replace('article');
 	</script>
-	<script src="../js/scriptBO.js"></script>
 
+	<script src="../js/scriptBO.js"></script>
+	
+	
+	<script>
+		
+		alert(<%=result%>);
+		
+	</script>
+	
 	<!-- admin script -->
 	
 </body>

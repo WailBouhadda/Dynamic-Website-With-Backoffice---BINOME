@@ -13,41 +13,12 @@
         
 <!DOCTYPE html>
 <html>
+
 <head>
 
-
-   <%
-    if(session.getAttribute("admin")==null){
-    	response.sendRedirect("adminLogin.jsp");
-    	
-    	
-    }
-    %>
-
-<%
- 
-commentDAO cmdao = new commentDAO();
-
-ArrayList<comment> commentsNA = cmdao.getCommentsByStatut(-1);
-
-ArrayList<comment> commentsA = cmdao.getCommentsByStatut(1);
-
-posteDAO pdao = new posteDAO();
-
-int result;
-
-if(request.getParameter("result") != null){
-	
-	result = Integer.parseInt(request.getParameter("result"));
-	
-}else{
-	
-	result = 0;
-}
-%>
 <meta charset="UTF-8">
 <title>Tableau de board</title>
-
+	
     <!-- Style File -->
 		
 	<link rel="stylesheet" href="../css/styleBO.css">
@@ -75,6 +46,38 @@ if(request.getParameter("result") != null){
 </head>
 <body>
 
+
+
+
+   <%
+    if(session.getAttribute("admin")==null){
+    	response.sendRedirect("adminLogin.jsp");
+    	
+    	
+    }
+ 
+ 
+commentDAO cmdao = new commentDAO();
+
+ArrayList<comment> commentsNA = cmdao.getCommentsByStatut(-1);
+
+ArrayList<comment> commentsA = cmdao.getCommentsByStatut(1);
+
+posteDAO pdao = new posteDAO();
+
+int result;
+
+if(request.getParameter("result") != null){
+	
+	result = Integer.parseInt(request.getParameter("result"));
+	
+}else{
+	
+	result = 0;
+}
+%>
+
+
 	<div class="container" >
 	
 		<jsp:include page="adminSideBar.jsp"></jsp:include>
@@ -88,7 +91,7 @@ if(request.getParameter("result") != null){
 			
 			<div class="commentNA">
 				<h2>COMMENTAIRES NON ACCEPTE</h2>
-					
+					<div class="boxpack">
 					<div class="filter"><input id="filterPoste" type="text" name="search" placeholder="Search ..."> <i class="fa-solid fa-magnifying-glass"></i></div>
 					
 					<table class="table" id="tablePoste">
@@ -166,12 +169,12 @@ if(request.getParameter("result") != null){
 						</tbody>
 						</table>
 				</div>
-				
+				</div>
 				
 				
 				<div class="commentA">
 				<h2>COMMENTAIRES ACCEPTE</h2>
-					
+					<div class="boxpack">
 					<div class="filter"><input id="filterPoste" type="text" name="search" placeholder="Search ..."> <i class="fa-solid fa-magnifying-glass"></i></div>
 					
 					<table class="table" id="tablePoste">
@@ -251,7 +254,7 @@ if(request.getParameter("result") != null){
 				</div>
 			
 			
-			
+			</div>
 			
 			
 			

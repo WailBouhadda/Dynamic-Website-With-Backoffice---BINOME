@@ -68,13 +68,42 @@ public class adminDAO {
 			con = DBconnection.connect();
 			st = con.createStatement();
 			
-			statut	= st.executeUpdate("update table admin set email = '"+a.getEmail()+"', username = '"+a.getUsername()+"' where username = '"+username+"'");
+			st.execute("update admin set email ='"+a.getEmail()+"', username ='"+a.getUsername()+"' where username ='"+username+"'");
 			 
+			statut	= 1;
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			
-			statut = 0;
+			statut = -1;
+		}
+		
+		
+		return statut;
+		
+	}
+	
+	
+	
+public int updatepassword(String password, String username) {
+		
+		int statut = 0;
+		
+		try {
+			
+			con = DBconnection.connect();
+			st = con.createStatement();
+			
+			st.execute("update admin set password ='"+password+"' where username ='"+username+"'");
+			 
+			statut	= 1;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+			statut = -1;
 		}
 		
 		

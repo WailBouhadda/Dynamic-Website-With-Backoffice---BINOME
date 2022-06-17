@@ -60,15 +60,9 @@ if(request.getParameter("result") != null){
 		</div>
 	</div>
 </form>	
+
+
 		<script src="../js/scriptBO.js"></script>
-
-
-	
-	<script>
-		
-		alert(<%=result%>);
-		
-	</script>
 	
 
 

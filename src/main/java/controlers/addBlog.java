@@ -66,7 +66,7 @@ public class addBlog extends HttpServlet {
 		
 		InputStream is = null;	
 		
-		
+		int result = 0;
 		
 		poste p1 = new poste();
 		posteDAO pdao= new posteDAO();
@@ -105,16 +105,20 @@ public class addBlog extends HttpServlet {
 				p1.setContent(content);
 				
 				
-				pdao.addPoste(p1);
-				response.sendRedirect("addBlog.jsp");
+				
+				
+				
+				result = pdao.addPoste(p1);;
+				
+				request.getRequestDispatcher("addBlog.jsp?result="+result).forward(request, response);
 				
 			}else if(decision.equals("Ajouter")){
 				
 				String cate = request.getParameter("addcat");
 				c1.setNomcategorie(cate);
 				
-				cdao.addcategorie(c1);
-				response.sendRedirect(source);
+				result = cdao.addcategorie(c1);
+				request.getRequestDispatcher(source+"?result="+result).forward(request, response);
 
 			}
 		

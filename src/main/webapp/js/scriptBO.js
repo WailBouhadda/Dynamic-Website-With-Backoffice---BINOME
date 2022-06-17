@@ -195,6 +195,41 @@ for(let i = 0 ; i < headBar.length ; i++){
 
 
 
+
+
+
+	
+	/* --- Start password and confirmation --- */
+
+		var cn = document.getElementById("CNpassword");
+
+
+	if(cn !== null){
+
+		cn.onkeyup =  function(){
+			
+			var Cvalue = this.value;
+			var	Nvalue = document.getElementById("Npassword").value;
+			
+			var button = document.getElementById("BMDP");
+			
+			console.log(Cvalue);
+			console.log(Nvalue);
+			if(Cvalue === Nvalue){
+				
+				this.style="outline: 2px solid green;";
+				
+				
+			}else{
+				
+				this.style="outline: 2px solid red;";
+		
+			}		
+			
+		}
+}
+	/* --- end password and confirmation --- */
+
 	
 	/* --- Start Alert --- */
 	
@@ -223,7 +258,7 @@ for(let i = 0 ; i < headBar.length ; i++){
 			 alertDiv.classList.remove("alertR");
 
 			 
-			 text.innerText = "Opération terminé avec succès";
+			 text.innerText = "OPERATION TERMINEE AVEC SUCCES";
 			 
 			
 			alertDiv.appendChild(icon); 
@@ -237,7 +272,7 @@ for(let i = 0 ; i < headBar.length ; i++){
 			 
 			 alertDiv.classList.remove("alertG");
 			 alertDiv.classList.add("alertR");
-			 text.innerText = "Opération a échoué";
+			 text.innerText = "OPERATION A ECHOUE";
 
 			alertDiv.appendChild(icon); 
 			alertDiv.appendChild(text);

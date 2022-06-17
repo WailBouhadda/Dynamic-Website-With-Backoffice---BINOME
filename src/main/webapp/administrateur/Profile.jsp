@@ -3,18 +3,7 @@
     
         <%@page import="entities.admin"%>
     
-    <%
-    admin a= new admin();
-    if(session.getAttribute("admin")==null){
-    	response.sendRedirect("adminLogin.jsp");
-    	
-    	
-    }else{
-    	
-    	 a = (admin)session.getAttribute("admin");
-    }
-    
-    %>
+
 <!DOCTYPE html>
 
 
@@ -22,6 +11,8 @@
 
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <title>Tableau de board</title>
 
     <!-- Style File -->
@@ -50,12 +41,46 @@
 
 </head>
 <body>
-<% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate") ;%>
+
+    <%
+    admin a= new admin();
+    if(session.getAttribute("admin")==null){
+    	response.sendRedirect("adminLogin.jsp");
+    	
+    	
+    }else{
+    	
+    	 a = (admin)session.getAttribute("admin");
+    }
+    
+    
+    
+    
+    
+    int result;
+
+    if(request.getParameter("result") != null){
+    	
+    	result = Integer.parseInt(request.getParameter("result"));
+    	
+    }else{
+    	
+    	result = 0;
+    }
+   
+   
+
+ response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate") ;%>
+ 
 	<div class="container">
 	
 		<jsp:include page="adminSideBar.jsp"></jsp:include>
 
 		<div class="content" id="content">
+		
+			<div id="alert" class="alertG" >
+				
+			</div>
 			
 			<div class="profile">
 				<h2>Profile</h2>
@@ -69,7 +94,7 @@
 					</div>
 				</div>
 				
-				<div class="updateAdmin">
+				<div class="boxpack">
 					<div class="headBar" id="UAE">
 						<span>
 							<i class="fa-solid fa-key"></i>
@@ -77,34 +102,34 @@
 						</span>
 						<i class="fa-solid fa-caret-down normal" id="UAEi"></i>
 					</div>
-					<form action="updateAdmin.java" class="form" method="post" id="UAEF">
+					<form action="updateAdmin" class="form" method="post" id="UAEF">
 						<div class="Apassword">
 							<span>Nom d'utilisateur</span>
-							 <input type="text" placeholder="..." name="username" id="username">
+							 <input type="text" placeholder="..." name="username" id="username" required>
 							 <span class="eye" >
 								 <i class="fa-regular fa-user"></i>
 							 </span>
 						</div>	
 						<div class="Npassword">
 							 <span>Email</span>
-							 <input type="password" placeholder="..." name="email" id="email">
-							 <span class="eye" onclick="showPassword('Npassword')">
+							 <input type="email" placeholder="..." name="email" id="email" required>
+							 <span class="eye">
 								 <i class="fa-regular fa-envelope"></i>
 							 </span>
 						</div>	
 						<div class="CNpassword">
 							 <span>Mot de passe</span>
-							 <input type="password" placeholder="..." name="password" id="password">
+							 <input type="password" placeholder="..." name="password" id="password" required>
 							 <span class="eye" onclick="showPassword('password')">
-								 <i id="eyeShowCNpassword" style="display:none;" class="fa fa-eye"></i>
-								 <i id="eyeHideCNpassword" style="display:block;" class="fa fa-eye-slash"></i>
+								 <i id="eyeShowpassword" style="display:none;" class="fa fa-eye"></i>
+								 <i id="eyeHidepassword" style="display:block;" class="fa fa-eye-slash"></i>
 							 </span>
 						</div>	
-						<button type="submit" name="Modifierm"  value="ModifierUE">MODIFIER</button>
+						<button type="submit" name="Modifier"  value="ModifierUE">MODIFIER</button>
 					</form>
 				</div>
 				
-				<div class="updateAdmin">
+				<div class="boxpack">
 					<div class="headBar" id="UAP">
 						<span>
 							<i class="fa-solid fa-key"></i>
@@ -112,10 +137,10 @@
 						</span>
 						<i class="fa-solid fa-caret-down normale" id="UAPi"></i>
 					</div>
-					<form action="updateAdmin.java" class="form" method="post" id="UAPF">
+					<form action="updateAdmin" class="form" method="post" id="UAPF">
 						<div class="Apassword">
 							<span>Ancienne mot de passe</span>
-							 <input type="password" placeholder="..." name="Apassword" id="Apassword">
+							 <input type="password" placeholder="..." name="Apassword" id="Apassword" required>
 							 <span class="eye" onclick="showPassword('Apassword')">
 								 <i id="eyeShowApassword" style="display:none;" class="fa fa-eye"></i>
 								 <i id="eyeHideApassword" style="display:block;" class="fa fa-eye-slash"></i>
@@ -123,7 +148,7 @@
 						</div>	
 						<div class="Npassword">
 							 <span>Nouveau mot de passe</span>
-							 <input type="password" placeholder="..." name="Npassword" id="Npassword">
+							 <input type="password" placeholder="..." name="Npassword" id="Npassword" required>
 							 <span class="eye" onclick="showPassword('Npassword')">
 								 <i id="eyeShowNpassword" style="display:none;" class="fa fa-eye"></i>
 								 <i id="eyeHideNpassword" style="display:block;" class="fa fa-eye-slash"></i>
@@ -131,13 +156,13 @@
 						</div>	
 						<div class="CNpassword">
 							 <span>Confirmation de mot de passe</span>
-							 <input type="password" placeholder="..." name="CNpassword" id="CNpassword">
+							 <input type="password" placeholder="..." name="CNpassword" id="CNpassword" onkeyup="confirmpass()" required>
 							 <span class="eye" onclick="showPassword('CNpassword')">
 								 <i id="eyeShowCNpassword" style="display:none;" class="fa fa-eye"></i>
 								 <i id="eyeHideCNpassword" style="display:block;" class="fa fa-eye-slash"></i>
 							 </span>
 						</div>	
-						<button type="submit" name="Modifierm"  value="ModifierMDP">MODIFIER</button>
+						<button type="submit" name="Modifier"  value="ModifierMDP" id="BMDP">MODIFIER</button>
 					</form>
 				</div>
 				
@@ -150,11 +175,20 @@
 	</div>
 
 
+
 	<!-- admin script -->
 
 	<script src="../js/scriptBO.js"></script>
-
+	
+	
+	<script>
+		
+		alert(<%=result%>);
+		
+	</script>
+	
 	<!-- admin script -->
+	
 	
 </body>
 </html>

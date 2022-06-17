@@ -47,21 +47,21 @@ public class actionPoste extends HttpServlet {
 		String action = request.getParameter("action");
 		
 		String type = request.getParameter("type");
-		
-		
+		int  delete=0;
 		
 		if(action != null) {	
 			
 			int id = Integer.parseInt(request.getParameter("id"));
 			
-			if(action.equals("Supprimer")) {
+			
 							
-				if(action.equals("Supprimer")) {
+			if(action.equals("Supprimer")) {
 				
-				int  delete = pdao.deletePosteById(id);
+				  delete = pdao.deletePosteById(id);
 				
-				s.setAttribute("result", delete);
-				response.sendRedirect(source);
+				s.setAttribute("result", delete);				
+				
+				request.getRequestDispatcher(source+"?result="+delete).forward(request, response);
 				
 
 			}else if(action.equals("Modifier")) {
@@ -70,15 +70,11 @@ public class actionPoste extends HttpServlet {
 				
 			}else {
 				
-				response.sendRedirect(source);
+				request.getRequestDispatcher(source+"?result="+delete).forward(request, response);
 				
 			}
 			}
-			}else {
-				
-				response.sendRedirect(source);
-				
-			}
+		
 	
 		
 	}

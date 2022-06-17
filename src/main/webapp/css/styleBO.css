@@ -385,7 +385,6 @@ h1{
 	justify-content: space-between;
 	flex-wrap: nowrap;
 	margin: 15px;
-	width:100%;
 	margin: 15px;
 }
 
@@ -487,8 +486,8 @@ h1{
 .table{
 	
 	margin: auto;
-	width: 90%;
-	border:2px solid #ececec;	
+    width: 100%;
+    border: 2px solid #ececec;
     padding: 20px;
 }
 
@@ -565,7 +564,6 @@ padding: 15px;
 
 .categorieTable .catFilt{
 	
-	width: 50%;
 	margin: auto;
 }
 	
@@ -595,7 +593,7 @@ padding: 15px;
 	
 	margin: 15px;
 	height: 40px;
-	width:85%;
+	flex: 1;
 	padding-left:20px;
 	border: 1px solid black;
 	margin-left:0px;
@@ -623,6 +621,28 @@ padding: 15px;
 
 
 
+
+.boxpack{
+	
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: -4px 6px 20px 4px #0000001c;
+    margin-bottom: 50px;
+	
+}
+
+
+
+.boxpack > *{
+	
+	width: 100%;
+}
+	
 
 
 	/*START admin Profile */
@@ -688,20 +708,7 @@ padding: 15px;
 }
 
 
-.profile .updateAdmin{
-	
-	display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-    gap: 15px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: -4px 6px 20px 4px #0000001c;
-	
-}
-
-.profile .updateAdmin .headBar{
+.profile .boxpack .headBar{
 	
 	display: flex;
     width: 100%;	
@@ -714,14 +721,14 @@ padding: 15px;
 }
 
 
-.profile .updateAdmin .headBar span{
+.profile .boxpack .headBar span{
 	
 	display: flex;
     align-items: center;
 	
 }
 
-.profile .updateAdmin .headBar span p{
+.profile .boxpack .headBar span p{
 	
 	margin-left: 10px;
 	
@@ -746,7 +753,7 @@ padding: 15px;
 	
 }
 
-.profile .updateAdmin form div{
+.profile .boxpack form div{
 	
 	width: 70%;
     display: flex;
@@ -756,19 +763,19 @@ padding: 15px;
 	
 }
 
-.profile .updateAdmin form div span:first-of-type{
+.profile .boxpack form div span:first-of-type{
     width: 30%;
     font-weight: 600;
 }
 
-.profile .updateAdmin form div input{
+.profile .boxpack form div input{
 	
 	flex:1;
 	padding: 10px;
 	
 }
 
-.profile .updateAdmin form > button{
+.profile .boxpack form > button{
 	
 	width: 10%;
     padding: 10px;

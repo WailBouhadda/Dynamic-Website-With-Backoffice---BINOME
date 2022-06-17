@@ -46,7 +46,7 @@ public class actionCategorie extends HttpServlet {
 		
 		String action = request.getParameter("action");
 				
-		
+		int result = 0;
 		
 		if(action != null) {	
 			
@@ -57,7 +57,10 @@ public class actionCategorie extends HttpServlet {
 				int  delete = cdao.deleteCategorieById(id);
 				
 				s.setAttribute("result", delete);
-				response.sendRedirect(source);
+				
+				result = delete;
+				
+				request.getRequestDispatcher(source+"?result="+result).forward(request, response);
 				
 
 			}else{

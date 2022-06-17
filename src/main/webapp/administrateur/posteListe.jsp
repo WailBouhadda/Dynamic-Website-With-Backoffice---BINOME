@@ -15,6 +15,17 @@
     	
     }
     
+           int result;
+
+           if(request.getParameter("result") != null){
+           	
+           	result = Integer.parseInt(request.getParameter("result"));
+           	
+           }else{
+           	
+           	result = 0;
+           }       
+           
     %>
         
 <!DOCTYPE html>
@@ -76,9 +87,13 @@ ArrayList<categorie> categos = cdao.getcategories();
 		
 			<div class="content" id="content">
 			
+				<div id="alert" class="alertG" >
+				
+			</div>
+			
 				<div class="posteTable">
 				<h2>POSTE</h2>
-					
+					<div class="boxpack">
 					<div class="filter"><input id="filterPoste" type="text" name="search" placeholder="Search ..."> <i class="fa-solid fa-magnifying-glass"></i></div>
 					
 					<table class="table" id="tablePoste">
@@ -155,9 +170,14 @@ ArrayList<categorie> categos = cdao.getcategories();
 						</tbody>
 						</table>
 				</div>
+				</div>
+				
 				<div class="categorieTable">
 					<h2>CATEGORIE</h2>
+					
+					
 					<div class="cat">
+					<div class="boxpack">
 					<div class="catFilt">
 					
 					
@@ -209,6 +229,7 @@ ArrayList<categorie> categos = cdao.getcategories();
 						</tbody>
 						</table>
 					</div>	
+					</div>
 					<div class="addCate">
 						<form  action="addBlog" method="post" enctype="multipart/form-data">
 							<div class="addcategorie" >
@@ -221,13 +242,22 @@ ArrayList<categorie> categos = cdao.getcategories();
 						
 					</div>
 					</div>
-				</div>
+				
+					
 			</div>
 </div>	
 
+	<!-- admin script -->
 
-		<script src="../js/scriptBO.js"></script>
-
-
+	<script src="../js/scriptBO.js"></script>
+	
+	
+	<script>
+		
+		alert(<%=result%>);
+		
+	</script>
+	
+	<!-- admin script -->
 </body>
 </html>
