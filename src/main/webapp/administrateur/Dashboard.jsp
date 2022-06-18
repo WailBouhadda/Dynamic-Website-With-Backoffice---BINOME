@@ -6,8 +6,10 @@
         <%@page import="entities.poste"%>
         <%@page import="entities.categorie"%>
         <%@page import="dao.posteDAO"%>
-        <%@page import="dao.categorieDAO"%>
-    
+        <%@page import="dao.categorieDAO"%>  
+        <%@page import="entities.comment"%>
+        <%@page import="dao.commentDAO"%>
+   
     
     <%
     if(session.getAttribute("admin")==null){
@@ -78,6 +80,8 @@ posteDAO pdao = new posteDAO();
 
 categorieDAO cdao = new categorieDAO();
 
+commentDAO codao = new commentDAO();
+
 int nbrlikes = pdao.totalLikes();
 int nbrcomments = pdao.totalComments();
 int nbrpostes = pdao.totalPostes();
@@ -93,11 +97,7 @@ ArrayList<categorie> categos = cdao.getcategories();
 		
 		
 		<div class="dashboard">
-		<h2>Statistiques</h2>
-			<div class="boxpack">
-			
-		
-
+			<div style="margin-top:0;"" class="boxpack">
         
            <div class="row">
           <div class="col-md-3 col-sm-6 col-12">
@@ -105,7 +105,7 @@ ArrayList<categorie> categos = cdao.getcategories();
               <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">POSTE</span>
+                <span class="info-box-text">PUBLICATIONS</span>
                 <span class="info-box-number"><%=nbrpostes %></span>
 
                 <div class="progress">
@@ -142,17 +142,17 @@ ArrayList<categorie> categos = cdao.getcategories();
           <!-- /.col -->
           <div class="col-md-3 col-sm-6 col-12">
             <div class="info-box bg-warning">
-              <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
+              <span style="color:white;" class="info-box-icon"><i class="fa-solid fa-book"></i></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Events</span>
-                <span class="info-box-number">41,410</span>
+                <span style="color:white;" class="info-box-text">EBOOKS</span>
+                <span style="color:white;" class="info-box-number">41,410</span>
 
                 <div class="progress">
                   <div class="progress-bar" style="width: 70%"></div>
                 </div>
                 <span class="progress-description">
-                  70% Increase in 30 Days
+                  <a style="color:white;" href="commentaires.jsp"> Voir plus <i class="fa-solid fa-circle-plus"></i></a>
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -165,7 +165,7 @@ ArrayList<categorie> categos = cdao.getcategories();
               <span class="info-box-icon"><i class="fas fa-comments"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">COMMENTAIRE</span>
+                <span class="info-box-text">COMMENTAIRES</span>
                 <span class="info-box-number"><%=nbrcomments %></span>
 
                 <div class="progress">
@@ -183,7 +183,150 @@ ArrayList<categorie> categos = cdao.getcategories();
         </div>
 			
 			</div>
-		</div>
+			
+			
+			<div class="boxpackContainer">
+			
+				<div class="semiboxpack">
+					
+					<h3>Publications Récents</h3>
+					
+						<%
+	if(postes != null){	
+		
+		int size = 0; 
+		
+		if(postes.size() > 3){
+			
+			size = 3;
+		}else{
+			size = postes.size();
+		}
+		
+		
+		for(int i = 0 ; i < size ; i++) {	
+
+			byte[] imgdata = null;
+
+			
+			poste p = new poste();
+			p = postes.get(i);
+			
+			int idPoste = p.getId();
+
+			
+			String title =  p.getTitle();
+			
+			
+			 Calendar cal = Calendar.getInstance();
+			    cal.setTime(p.getPublishDate());
+			
+			int day =  cal.get(Calendar.DAY_OF_MONTH);
+			
+			String month = null;
+			
+			int mo =  p.getPublishDate().getMonth();
+			
+			int year =  p.getPublishDate().getYear() + 1900;
+			
+			month = pdao.getMonth(mo);
+			
+			String content = p.getContent(); 
+			
+			byte[] imageBytes=p.getImage().getBytes(1, (int)p.getImage().length());
+		  	String encodedImage=Base64.getEncoder().encodeToString(imageBytes);
+		  	String image = "data:image/jpg;base64,"+encodedImage;
+		  	
+		%>
+				
+					
+						<div class="postrec">
+							<div class="image">
+								<img src="<%=image%>">
+							</div>
+							<div class="postInfo">
+								<span><i class="fa-solid fa-calendar-days"></i><p><%=month %> <%=day %>, <%=year %></p></span>
+								<h5><%=title %></h5>
+							</div>
+						</div>
+					
+			<% }}else{ %>
+				<p style="color:red;"><i class="fa-solid fa-hexagon-exclamation"> Une erreur est servenu, Pas de poste pour le moment</p>
+			<%} %>
+				<a href="posteListe.jsp">Voir Plus <i class="fa-solid fa-circle-chevron-right"></i></a>	
+				</div>
+				<div class="semiboxpack">
+					
+					<h3>Commentaires Récents </h3>
+				
+					<%
+						ArrayList<comment> comments = codao.getComments();
+						if(comments.size() >0){
+							
+							int size = 0; 
+							
+							if(comments.size() > 3){
+								
+								size = 3;
+							}else{
+								size = comments.size();
+							}
+							
+						for(int i = 0 ; i < size ; i++){
+							
+							comment cm = comments.get(i);
+						
+							Calendar cal = Calendar.getInstance();
+						    cal.setTime(cm.getPublishDate());
+						
+						int day =  cal.get(Calendar.DAY_OF_MONTH);
+						
+						String month = null;
+						
+						int mo =  cm.getPublishDate().getMonth();
+						
+						month = pdao.getMonth(mo);
+						
+						int year =  cm.getPublishDate().getYear() + 1900;
+						%>
+						<div class="comment">
+							<div class="dateIcon">
+								<i class="fa-solid fa-circle-user"></i>	
+								<p><%=day%> <%=month %>, <%=year %> </p>
+							</div>
+							<div class="com">
+								<p><%=cm.getOwner() %></p>
+								<p><%=cm.getComment() %></p>
+							</div>
+						
+						</div>
+						
+						<%}}else{ %>
+							<p style="color:red;"> <i class="fa-solid fa-hexagon-exclamation"></i> PAS DE COMMENTAIRE</p>
+						<%} %>
+						
+					<a href="commentaires.jsp">Voir Plus <i class="fa-solid fa-circle-chevron-right"></i></a>	
+				</div>
+				
+				</div>
+			
+			
+			<div class="boxpackContainer">
+			
+				<div class="boxpack">
+				
+					<h3>Ebooks Récents</h3>
+				
+				</div>
+				
+				<div class="boxpack">
+				
+					<h3>Utilisateurs</h3>
+				
+				</div>
+			</div>
+			
+			</div>
 	</div>
 	</div>
 

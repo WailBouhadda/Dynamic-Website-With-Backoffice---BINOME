@@ -172,7 +172,7 @@ String action = String.valueOf(ss.getAttribute("action"));
 						</div>
 						
 						<%}}else{ %>
-							<p style="color:red;"> * PAS DE COMMENTAIRE</p>
+							<p style="color:red;"> <i class="fa-solid fa-hexagon-exclamation"></i> PAS DE COMMENTAIRE</p>
 						<%} %>
 					</div>
 				</div>

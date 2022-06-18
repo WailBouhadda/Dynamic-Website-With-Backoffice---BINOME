@@ -209,6 +209,8 @@ public ArrayList<poste> getPostesByIdCategorie(int id){
 			try {
 				st = con.createStatement();
 				st.execute("delete from poste where idposte=" + id);
+				
+				st.execute("delete from comments where idposte=" + id);
 				statut = 1;
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

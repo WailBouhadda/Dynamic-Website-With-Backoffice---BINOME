@@ -24,8 +24,8 @@
 			<li class="li" id="blogli">
 				<div class="dropDown" id="blog"><i class="fa-solid fa-newspaper"></i><span class="showSpan">BLOG<i class="normal fa-solid fa-caret-down" id="blogi"></i></span></div>
 				<ul class="subList" id="blogul">
-					<li><a href="addBlog.jsp"><i class="fa-solid fa-plus"></i><span class="showSpan">AJOUTER POSTE</span></a></li>
-					<li><a href="posteListe.jsp"><i class="fa-solid fa-list"></i><span class="showSpan">POSTES</span></a></li>
+					<li><a href="addBlog.jsp"><i class="fa-solid fa-plus"></i><span class="showSpan">AJOUTER POST</span></a></li>
+					<li><a href="posteListe.jsp"><i class="fa-solid fa-list"></i><span class="showSpan">POSTS</span></a></li>
 				</ul>
 			</li>
 			<li><a href="commentaires.jsp"><i class="fa-regular fa-comments"></i><span class="showSpan">COMMENTAIRES</span></a></li>
