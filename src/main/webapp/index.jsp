@@ -119,10 +119,10 @@
 						<p>N'hésitez pas à nous contacter que vous cherchiez des réponses.</p>
 					</div>
 					<div class="form">
-						 	<form action="">
-				            <input type="text" class="cont" placeholder="Nom..." name="" id="">
-				            <input type="email" class="cont" placeholder="Email..." name="" id="">
-				            <textarea name="MEssage" id="" placeholder="Message..." cols="30" rows="10"></textarea>
+						 	<form action="https://formsubmit.co/196a8b6337e73b924bcac06d8e9b9b5b" method="POST">
+				            <input type="text" class="cont" placeholder="Nom..." name="Nom" id="name">
+				            <input type="email" class="cont" placeholder="Email..." name="Email" id="email">
+				            <textarea name="message" id="Message" placeholder="Message..." cols="30" rows="10"></textarea>
 				            <input type="submit" value="ENVOYER">
 				        	</form>
 					</div>

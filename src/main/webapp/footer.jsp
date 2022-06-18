@@ -36,18 +36,24 @@
 			
 	</div>
 
-<script type="text/javascript" src="js/script.js"></script>
+
 
 
 </div>
 
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script type="text/javascript" src="js/script.js"></script>
 
 <!-- particles scripts -->
 <script src="js/particles.js"></script>
 <script src="js/app.js"></script>
 
 <!-- stats.js -->
+
 <script src="js/lib/stats.js"></script>
+
 <script>
   var count_particles, stats, update;
   stats = new Stats;

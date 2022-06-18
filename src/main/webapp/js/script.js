@@ -3,6 +3,7 @@
 
 let search = document.getElementById("SE");
 let input = document.getElementById("si");
+
 search.onclick = function(){
 		
 	search.classList.toggle("se");
@@ -80,3 +81,9 @@ if(scroll >0){
 			
 /* End likedislike  */
 
+
+
+/* Start contact us */
+
+
+/* End contact us  */
