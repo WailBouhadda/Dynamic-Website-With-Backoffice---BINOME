@@ -138,7 +138,13 @@ String action = String.valueOf(ss.getAttribute("action"));
 					
 					<hr>
 					
+					
+					
+					
 					<div class="commentListe">
+					
+						<h3>Commentaires</h3>
+						
 						<%
 						ArrayList<comment> comments = codao.getCommentsByStatutId(1,po);
 						if(comments.size() >0){

@@ -28,6 +28,8 @@
 var sideBar = document.getElementById("adminSideBar");
 var sideBurger = document.getElementById("burger");
 
+if(sideBurger !== null && sideBar != null){
+
 burger.onclick = function(){
 	
 	var span = sideBar.querySelectorAll("span");
@@ -44,7 +46,7 @@ burger.onclick = function(){
 
 	}
 } 	
-
+}
 
 
 
@@ -57,6 +59,7 @@ burger.onclick = function(){
 
 var dropDown = document.getElementsByClassName("dropDown");
 
+if(dropDown !== null){
 
 for(let i = 0 ; i < dropDown.length ; i++){
 	
@@ -80,7 +83,7 @@ for(let i = 0 ; i < dropDown.length ; i++){
 
 		}
 }
-
+}
 
 
 /* --- End admin side bar sublist drop down --- */
@@ -89,6 +92,7 @@ for(let i = 0 ; i < dropDown.length ; i++){
 
 var headBar = document.getElementsByClassName("headBar");
 
+if(headBar !== null){
 
 for(let i = 0 ; i < headBar.length ; i++){
 	
@@ -110,7 +114,7 @@ for(let i = 0 ; i < headBar.length ; i++){
 
 		}
 	}
-
+}
 
 
 /* --- End admin side bar sublist drop down --- */
@@ -123,6 +127,7 @@ for(let i = 0 ; i < headBar.length ; i++){
 	var filtervalue = document.getElementById("filterPoste");
 	
 	if(filtervalue !== null){
+		
 	filtervalue.onkeyup = function(){
 		
 		var value = this.value.toLowerCase();
@@ -163,6 +168,7 @@ for(let i = 0 ; i < headBar.length ; i++){
 	
 	
 		var filtervalue2 = document.getElementById("filterCategorie");
+		
 	if(filtervalue2 !== null){
 	filtervalue2.onkeyup = function(){
 		
@@ -192,6 +198,105 @@ for(let i = 0 ; i < headBar.length ; i++){
 	}
 	
 			/* --- End filter/search Categorie function --- */
+
+
+
+
+
+
+
+
+
+	/* --- Start filter/search commentNA function --- */
+	
+	
+	
+	var filtervalue = document.getElementById("filtercommentNA");
+	
+	if(filtervalue !== null){
+	filtervalue.onkeyup = function(){
+		
+		var value = this.value.toLowerCase();
+		var table = document.getElementById("tableCommentNA");
+		var rows = table.getElementsByTagName("tr");
+		
+	
+		
+		for(var i = 1 ; i < rows.length ; i++){
+				
+			var LNI = rows[i].getElementsByTagName("td")[1].querySelector("input");
+			var FNI = rows[i].getElementsByTagName("td")[3].querySelector("input");
+			var CNEI = rows[i].getElementsByTagName("td")[5].querySelector("input");
+			
+			if(LNI || FNI || CNEI){
+				var LN = LNI.value;
+				var FN = FNI.value;
+				var CNE = CNEI.value;
+				
+				if(LN.toLowerCase().indexOf(value) > -1 || FN.toLowerCase().indexOf(value) > -1 || CNE.toLowerCase().indexOf(value) > -1){
+			
+					rows[i].style.display ="";				
+				}else{
+					rows[i].style.display ="none";				
+
+				}
+			}
+			}
+		
+		
+	}}
+	
+
+		/* --- End filter/search commentNA function --- */
+		
+		
+
+
+	/* --- Start filter/search commentA function --- */
+	
+	
+	
+	var filtervalue = document.getElementById("filtercommentA");
+	
+	if(filtervalue !== null){
+	filtervalue.onkeyup = function(){
+		
+		var value = this.value.toLowerCase();
+		var table = document.getElementById("tableCommentA");
+		var rows = table.getElementsByTagName("tr");
+		
+	
+		
+		for(var i = 1 ; i < rows.length ; i++){
+				
+			var LNI = rows[i].getElementsByTagName("td")[1].querySelector("input");
+			var FNI = rows[i].getElementsByTagName("td")[3].querySelector("input");
+			var CNEI = rows[i].getElementsByTagName("td")[5].querySelector("input");
+			
+			if(LNI || FNI || CNEI){
+				var LN = LNI.value;
+				var FN = FNI.value;
+				var CNE = CNEI.value;
+				
+				if(LN.toLowerCase().indexOf(value) > -1 || FN.toLowerCase().indexOf(value) > -1 || CNE.toLowerCase().indexOf(value) > -1){
+			
+					rows[i].style.display ="";				
+				}else{
+					rows[i].style.display ="none";				
+
+				}
+			}
+			}
+		
+		
+	}}
+	
+
+		/* --- End filter/search commentA function --- */
+		
+		
+
+
 
 
 
@@ -310,9 +415,3 @@ for(let i = 0 ; i < headBar.length ; i++){
 
 
 
-
-
-function websiteVisits(response){
-	
-	document.querySelector("#visits").setContent = response.value;
-}

@@ -1625,6 +1625,17 @@ html{
 	font-family: var(--font-cairo);
 }
 
+@media (max-width: 767px){
+ 
+ .sideBar{
+ 	
+ 	display:none;
+ 
+ }
+ 
+}
+
+
 .sideTitle{
 	background-color: var(--green-color);
     text-align: center;
@@ -1807,14 +1818,6 @@ html{
 	
 }
 
-.pageContainer .container .pageContent .blog .postes a{
-	
-	text-decoration: none;
-	color: black;
-	
-}
-
-
 .pageContainer .container .pageContent .blog .postes{
 	
 	width: 80%;
@@ -1824,6 +1827,16 @@ html{
 	margin-bottom: 110px;
 	box-shadow: -2px 5px 12px 1px #00000033;
 }
+
+.pageContainer .container .pageContent .blog .postes a{
+	
+	text-decoration: none;
+	color: black;
+	
+}
+
+
+
 .pageContainer .container .pageContent .blog .postes .posteBG{
 
 	width: 100%;
@@ -2003,6 +2016,242 @@ html{
     
 }
 
+@media (max-width: 1450px){
+	
+	
+	.pageContainer .container .pageContent .blog .postes .posteBG {
+	height: 100%;
+	
+	}
+	
+	.pageContainer .container .pageContent .blog .postes{
+	
+	width: 100%;
+	border-radius: 5px;
+	padding: 15px;
+}
+ 
+ 
+ 
+ .pageContainer .container .pageContent .blog .postes .posteDetails{
+ 
+ 	width: 90%;
+ 	height: 200px;	
+ 	margin-left: 10px;
+ 	bottom: -20%;
+ }
+ 
+ 
+ 
+ 
+
+.pageContainer .container .pageContent .blog .postes .posteDetails .details .posteTitle {
+ 
+ 	    font-size: 18px;
+    padding-left: 15px;
+    padding-right: 15px;
+ 
+ }
+ 
+ 
+.pageContainer .container .pageContent .blog .postes .posteDetails .details .Stat {
+	
+	width: 70%;
+	padding: 15px;
+    padding-left: 15px;
+}
+ .pageContainer .container .pageContent .blog .postes .posteDetails .details .Stat div i {
+ 
+ 	padding-left: 15px;
+    font-size: 15px;
+ 
+ }
+ 
+ .pageContainer .container .pageContent .blog .postes .posteDetails .details .Stat div p {
+ 
+ 	    padding-left: 15px;
+    font-size: 15px;
+ 
+ }
+ 
+ .pageContainer .container .pageContent .blog .postes .posteDetails .details .content {
+ 
+ 	height: 90px;
+ 	font-size:15px;
+ 	margin-left:15px;
+ 	
+ }
+ 
+ 
+ .pageContainer .container .pageContent .blog .postes .posteDetails .posteBttn i {
+ 
+ 
+ 	font-size: 50px;
+ 
+ }
+	
+}
+
+
+
+@media (max-width: 900px){
+
+		.pageContainer .container .pageContent .blog .postes .posteBG {
+	height: 100%;
+	
+	}
+	
+	
+	.pageContainer .container .pageContent .blog .postes{
+	
+	width: 100%;
+	border-radius: 5px;
+	padding: 15px;
+}
+ 
+ 
+ 
+ .pageContainer .container .pageContent .blog .postes .posteDetails{
+ 
+ 	width: 90%;
+ 	height: 170px;	
+ 	margin-left:0;
+ 	bottom: -20%;
+ }
+ 
+ 
+ 
+ 
+
+.pageContainer .container .pageContent .blog .postes .posteDetails .details .posteTitle {
+ 
+ 	    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+ 
+ }
+ 
+ 
+.pageContainer .container .pageContent .blog .postes .posteDetails .details .Stat {
+	
+	width: 70%;
+	padding: 5px;
+    padding-left: 10px;
+}
+ .pageContainer .container .pageContent .blog .postes .posteDetails .details .Stat div i {
+ 
+ 	padding-left: 5px;
+    font-size: 10px;
+ 
+ }
+ 
+ .pageContainer .container .pageContent .blog .postes .posteDetails .details .Stat div p {
+ 
+ 	    padding-left: 10px;
+    font-size: 10px;
+ 
+ }
+ 
+ .pageContainer .container .pageContent .blog .postes .posteDetails .details .content {
+ 
+ 	height: 90px;
+ 	font-size:10px;
+ 	margin-left:10px;
+ 	
+ }
+ 
+ 
+ .pageContainer .container .pageContent .blog .postes .posteDetails .posteBttn i {
+ 
+ 
+ 	font-size: 35px;
+ 
+ }
+}
+
+
+@media (max-width: 767px){
+	
+		.pageContainer .container .pageContent .blog .postes .posteBG {
+	height: 100%;
+	
+	}
+
+	.pageContainer .container .pageContent .blog{
+	
+	width:100%;
+	
+}
+
+
+.pageContainer .container .pageContent .blog .postes{
+	
+	width: 100%;
+	border-radius: 5px;
+	padding: 15px;
+}
+ 
+ 
+ 
+ .pageContainer .container .pageContent .blog .postes .posteDetails{
+ 
+ 	width: 90%;
+ 	height: 150px;	
+ 	margin-left:0;
+ 	bottom: -25%;
+ }
+ 
+ 
+ 
+ 
+
+.pageContainer .container .pageContent .blog .postes .posteDetails .details .posteTitle {
+ 
+ 	    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+ 
+ }
+ 
+ 
+.pageContainer .container .pageContent .blog .postes .posteDetails .details .Stat {
+	
+	width: 100%;
+	padding: 5px;
+    padding-left: 10px;
+}
+ .pageContainer .container .pageContent .blog .postes .posteDetails .details .Stat div i {
+ 
+ 	padding-left: 5px;
+    font-size: 10px;
+ 
+ }
+ 
+ .pageContainer .container .pageContent .blog .postes .posteDetails .details .Stat div p {
+ 
+ 	    padding-left: 10px;
+    font-size: 10px;
+ 
+ }
+ 
+ .pageContainer .container .pageContent .blog .postes .posteDetails .details .content {
+ 
+ 	height: 90px;
+ 	font-size:10px;
+ 	margin-left:10px;
+ 	
+ }
+ 
+ 
+ .pageContainer .container .pageContent .blog .postes .posteDetails .posteBttn i {
+ 
+ 
+ 	font-size: 35px;
+ 
+ }
+ 
+ 
+ }
 
 
 /* --- End blog --- */
@@ -2022,6 +2271,9 @@ html{
 	
 	
 }
+
+
+
 
 .pageContainer .container .pageContent .poste hr{
 border: 1px solid #00000014;
@@ -2118,6 +2370,13 @@ border: 1px solid #00000014;
 }
 
 
+.pageContainer .container .pageContent .commentListe h3{
+	
+	margin-bottom: 50px;
+	color: var(--mauve-color);
+	
+}
+
 .pageContainer .container .pageContent .poste .comments .addComment{
 	
 	width: 100%;
@@ -2133,12 +2392,6 @@ border: 1px solid #00000014;
 	
 }
 
-.pageContainer .container .pageContent .poste .comments .addComment:hover{
-	
-	border: 5px solid var(--mauve-color);
-	transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
-}
 
 .pageContainer .container .pageContent .poste .comments .addComment h3{
 	
@@ -2247,6 +2500,85 @@ border: 1px solid #00000014;
 	font-size: 14px;
 }
 
+
+
+@media (max-width: 900px){
+	
+	.pageContainer .container .pageContent .poste .comments .comment .dateIcon i {
+    font-size: 40px;
+  
+}
+	
+}
+
+
+@media (max-width: 767px){
+ 
+ 
+ .pageContainer .container .pageContent .poste{
+ width:100%;
+ }
+ 
+ .pageContainer .container .pageContent .poste .posteImg{
+	
+	width: 95%;
+
+}
+
+
+.pageContainer .container .pageContent .poste .infos{
+	
+	width: 95%;
+
+}
+
+.pageContainer .container .pageContent .poste .posteContent{
+	
+	width: 95%;
+
+}
+
+
+.pageContainer .container .pageContent .poste .comments{
+	
+	width: 95%;
+    
+}
+
+
+.pageContainer .container .pageContent .poste .comments{
+	
+	width: 100%;
+	margin: auto;
+	margin-bottom: 100px;
+	display: flex;
+    flex-direction: column;
+    
+}
+
+.pageContainer .container .pageContent .poste .posteTitle {
+	
+	font-size: 15px;
+	padding-right: 20px;
+}
+
+
+.pageContainer .container .pageContent .poste .comments .comment {
+	
+	margin: 0px;
+	border-radius: 10px;
+}
+
+
+
+.pageContainer .container .pageContent .poste .comments .comment .dateIcon i {
+    font-size: 40px;
+  
+}
+
+
+ 
+}
 
 
 /* --- End poste --- */

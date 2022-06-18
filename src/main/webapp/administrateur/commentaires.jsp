@@ -92,9 +92,9 @@ if(request.getParameter("result") != null){
 			<div class="commentNA">
 				<h2>COMMENTAIRES NON ACCEPTE</h2>
 					<div class="boxpack">
-					<div class="filter"><input id="filterPoste" type="text" name="search" placeholder="Search ..."> <i class="fa-solid fa-magnifying-glass"></i></div>
+					<div class="filter"><input id="filtercommentNA" type="text" name="search" placeholder="Search ..."> <i class="fa-solid fa-magnifying-glass"></i></div>
 					
-					<table class="table" id="tablePoste">
+					<table class="table" id="tableCommentNA">
 					<thead>
 					
 					<tr>
@@ -175,9 +175,9 @@ if(request.getParameter("result") != null){
 				<div class="commentA">
 				<h2>COMMENTAIRES ACCEPTE</h2>
 					<div class="boxpack">
-					<div class="filter"><input id="filterPoste" type="text" name="search" placeholder="Search ..."> <i class="fa-solid fa-magnifying-glass"></i></div>
+					<div class="filter"><input id="filtercommentA" type="text" name="search" placeholder="Search ..."> <i class="fa-solid fa-magnifying-glass"></i></div>
 					
-					<table class="table" id="tablePoste">
+					<table class="table" id="tableCommentA">
 					<thead>
 					
 					<tr>
