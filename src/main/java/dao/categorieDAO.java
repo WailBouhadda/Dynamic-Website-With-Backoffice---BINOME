@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.mysql.cj.protocol.Resultset;
 
 import entities.categorie;
 import tools.DBconnection;

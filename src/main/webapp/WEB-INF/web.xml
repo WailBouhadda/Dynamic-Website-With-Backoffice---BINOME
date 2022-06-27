@@ -139,4 +139,34 @@
     <servlet-name>updateposte</servlet-name>
     <url-pattern>/administrateur/updateposte</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>userServlet</display-name>
+    <servlet-name>userServlet</servlet-name>
+    <servlet-class>controlers.userServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userServlet</servlet-name>
+    <url-pattern>/administrateur/userServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>updateUser</display-name>
+    <servlet-name>updateUser</servlet-name>
+    <servlet-class>controlers.updateUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateUser</servlet-name>
+    <url-pattern>/administrateur/updateUser</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <description></description>
+    <display-name>newsLetter</display-name>
+    <servlet-name>newsLetter</servlet-name>
+    <servlet-class>controlers.newsLetter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>newsLetter</servlet-name>
+    <url-pattern>/newsLetter</url-pattern>
+  </servlet-mapping>
 </web-app>

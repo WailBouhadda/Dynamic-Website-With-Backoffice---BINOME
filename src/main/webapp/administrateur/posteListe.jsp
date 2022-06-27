@@ -92,7 +92,7 @@ ArrayList<categorie> categos = cdao.getcategories();
 				</div>
 			
 				<div class="posteTable">
-				<h2>POSTE</h2>
+				<h2>ARTICLE</h2>
 					<div class="boxpack">
 					<div class="filter"><input id="filterPoste" type="text" name="search" placeholder="Search ..."> <i class="fa-solid fa-magnifying-glass"></i></div>
 					
@@ -135,8 +135,10 @@ ArrayList<categorie> categos = cdao.getcategories();
 
 				String nomcat = c.getNomcategorie();
 				
+				 Calendar cal = Calendar.getInstance();
+				    cal.setTime(p.getPublishDate());
 				
-				int day = p.getPublishDate().getDay();
+				int day =  cal.get(Calendar.DAY_OF_MONTH);
 				
 				String month = null;
 				

@@ -21,7 +21,7 @@ int po = Integer.parseInt(request.getParameter("p"));
 
 poste poste = pdao.getPosteById(po);
 
-String action = String.valueOf(ss.getAttribute("action"));
+String action = String.valueOf(request.getAttribute("action"));
 
 %>
 <jsp:include page="navBar.jsp"></jsp:include>

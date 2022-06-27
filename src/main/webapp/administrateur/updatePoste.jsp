@@ -20,7 +20,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Modifier Poste</title>
+<title>Modifier Article</title>
 
     <!-- Style File -->
 		
@@ -55,7 +55,7 @@
 		
 		
 			<div class="content" id="content">
-			<h2>Modifier Poste	</h2>
+			<h2>Modifier Article	</h2>
 			<div class="boxpack">
 			
 			 <%
@@ -116,7 +116,7 @@ HttpSession s = request.getSession();
 				
 				<div class="blogContent">
 				
-					<textarea name="article" id="article" value="<%=p.getContent() %>" required></textarea>
+					<textarea name="article" id="article"  required><%=p.getContent() %></textarea>
 				
 				</div>
 				

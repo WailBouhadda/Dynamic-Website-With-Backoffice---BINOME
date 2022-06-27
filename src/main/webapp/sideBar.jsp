@@ -15,7 +15,7 @@
 		</div>
 		<div class="postRecent">
 			<div class="sideTitle">
-				<h2>POST RÉCENT</h2>
+				<h2>ARTICLES RÉCENTS</h2>
 			</div>
 			<% 		      
 HttpSession ss = request.getSession();
@@ -94,7 +94,7 @@ ArrayList<categorie> categos = cdao.getcategories();
 						</div>
 					</a>
 			<% }}else{ %>
-				<p style="color:red;">Un error est servenu, Pas de poste pour le moment !</p>
+				<p style="color:red;">Un error est servenu, Pas d'article pour le moment !</p>
 			<%} %>
 			</div>
 			<div class="sideTitle">

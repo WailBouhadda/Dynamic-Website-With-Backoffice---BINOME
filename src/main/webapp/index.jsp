@@ -7,7 +7,7 @@
 		<div class="container">
 			<div class="headContent">
 				<div class="img"><img src="images/leadership.png"></div>
-				<h1>service  DES  ASSISTANTES DE DIRECTION</h1>
+				<h1>SERVICE  DES  ASSISTANTES DE DIRECTION</h1>
 				<p>Avec l'efficacité du <span style="color: var(--green-color); font-weight:bold;"> < </span> sur-mesure <span style="color: var(--green-color); font-weight:bold;"> > </span></p>
 			</div>
 		</div>
@@ -119,11 +119,11 @@
 						<p>N'hésitez pas à nous contacter que vous cherchiez des réponses.</p>
 					</div>
 					<div class="form">
-						 	<form action="https://formsubmit.co/196a8b6337e73b924bcac06d8e9b9b5b" method="POST">
-				            <input type="text" class="cont" placeholder="Nom..." name="Nom" id="name">
-				            <input type="email" class="cont" placeholder="Email..." name="Email" id="email">
+						 	<form action="newsLetter" method="post">
+				            <input type="text" class="cont" placeholder="Nom..." name="nom" id="name">
+				            <input type="email" class="cont" placeholder="Email..." name="email" id="email">
 				            <textarea name="message" id="Message" placeholder="Message..." cols="30" rows="10"></textarea>
-				            <input type="submit" value="ENVOYER">
+				            <input type="submit" name="action" value="ENVOYER">
 				        	</form>
 					</div>
 				</div>
@@ -139,6 +139,10 @@
 		</div>
 		<div class="container">
 			<div class="reference">
+			
+			</div>
+			<div class="temoin">
+			
 			</div>
 		</div>
 	</div>

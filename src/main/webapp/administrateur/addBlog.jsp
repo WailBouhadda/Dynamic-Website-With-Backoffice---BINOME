@@ -33,7 +33,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Ajouter Blog</title>
+<title>Ajouter Article</title>
 
     <!-- Style File -->
 		
@@ -73,7 +73,7 @@
 				
 			</div>
 			
-			<h2>Ajouter un poste</h2>
+			<h2>Ajouter un Article</h2>
 			<div class="boxpack">	
 			<form action="addBlog" method="post" enctype="multipart/form-data">
 			
