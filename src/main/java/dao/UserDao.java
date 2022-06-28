@@ -4,20 +4,22 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 import entities.User;
+import entities.admin;
 import tools.DBconnection;
 
 public class UserDao {
 	
 	
-	private static final String INSERT_USERS_SQL = "INSERT INTO users " + " (nom, prenom, email, telephone) VALUES  " + "(?, ?, ?,?);";
-	private static final String SELECT_USER_BY_ID = "select idUser, nom, prenom, email, telephone from users where idUser =?";
+	private static final String INSERT_USERS_SQL = "INSERT INTO users " + " (nom, prenom, email, telephone, password) VALUES  " + "(?, ?, ?, ?, ?);";
+	private static final String SELECT_USER_BY_ID = "select idUser, nom, prenom, email, telephone, password from users where idUser =?";
 	private static final String SELECT_ALL_USERS = "select * from users";
 	private static final String DELETE_USERS_SQL = "delete from users where idUser = ?";
-	private static final String UPDATE_USERS_SQL = "update users set nom = ?, prenom = ?, email = ?, telephone = ? where idUser = ?";
+	private static final String UPDATE_USERS_SQL = "update users set nom = ?, prenom = ?, email = ?, telephone = ?, password = ? where idUser = ?";
 	public UserDao() {
 	
 	}
@@ -33,6 +35,7 @@ public class UserDao {
 			preparedStatement.setString(2, user.getPrenom());
 			preparedStatement.setString(3, user.getEmail());
 			preparedStatement.setString(4, user.getTelephone());
+			preparedStatement.setString(5, user.getPassword());
 			System.out.println(preparedStatement);
 			preparedStatement.executeUpdate();
 			
@@ -62,7 +65,8 @@ public class UserDao {
 				String prenom = rs.getString("prenom");
 				String email = rs.getString("email");
 				String telephone = rs.getString("telephone");
-				user = new User(idUser, nom, prenom, email, telephone);
+				String password = rs.getString("password");
+				user = new User(idUser, nom, prenom, email, telephone, password);
 			}
 			
 		} catch (SQLException e) {
@@ -89,7 +93,8 @@ public class UserDao {
 				String prenom = rs.getString("prenom");
 				String email = rs.getString("email");
 				String telephone = rs.getString("telephone");
-				users.add(new User(idUser, nom, prenom, email, telephone));
+				String password = rs.getString("password");
+				users.add(new User(idUser, nom, prenom, email, telephone, password));
 			}
 			
 			
@@ -111,6 +116,7 @@ public class UserDao {
 			statement.setString(2, user.getPrenom());
 			statement.setString(3, user.getEmail());
 			statement.setString(4, user.getTelephone());
+			statement.setString(5, user.getPassword());
 			statement.setInt(5, user.getIdUser());
 			
 			rowUpdated = statement.executeUpdate();
@@ -159,6 +165,43 @@ public class UserDao {
 				}
 			}
 		}
+	}
+	
+	
+	
+public User userLogin(String email, String password) {
+		
+		User u = new User();
+		
+		try {
+			Connection con = DBconnection.connect();
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery("select * from users where email = '"+email+"' and password = '"+password+"'");
+			
+			
+			if(rs.next()) {
+				
+				u.setIdUser(rs.getInt(1));
+				u.setNom(rs.getString(2));
+				u.setPrenom(rs.getString(3));
+				u.setEmail(rs.getString(4));
+				u.setTelephone(rs.getString(5));
+				u.setPassword(rs.getString(6));
+			}else {
+				
+				u = null;
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return u;
+		
+		
 	}
 
 }

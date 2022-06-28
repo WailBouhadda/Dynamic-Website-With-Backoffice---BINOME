@@ -36,6 +36,7 @@
 					<li><a href="#"><i class="fa-solid fa-list"></i><span class="showSpan">E-BOOKs</span></a></li>
 				</ul>
 			</li>
+			<li><a href="offresEmplois.jsp"><i class="fa-solid fa-briefcase"></i><span class="showSpan">OFFRES D'EMPLOI</span></a></li>
 			<li><a href="Utilisateurs.jsp"><i class="fa-solid fa-users"></i></i><span class="showSpan">UTILISATEURS</span></a></li>
 			<li><a href="Profile.jsp"><i class="fa-solid fa-user"></i><span class="showSpan">PROFILE</span></a></li>
 		</ul>

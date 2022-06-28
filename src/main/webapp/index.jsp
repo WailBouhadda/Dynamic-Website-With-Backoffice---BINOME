@@ -23,7 +23,7 @@
 				<div class="title">
 					<h1>CABINET BINOME</h1>
 				</div>
-				<a href="#">
+				<a href="Biographie.jsp">
 					<div class="parent biographie">
 						<div class="BContent">
 							<h2>BIOGRAPHIE</h2>
@@ -39,7 +39,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="#">
+				<a href="#service">
 					<div class="parent services">
 						<div class="SContent">
 							<h2>SERVICES</h2>
@@ -54,7 +54,7 @@
 
 <!--Start service-->
 
-    <div class="services" id="service">
+    <div class="services" id="services">
         <div class="box">
         	<div class="title">
         			<h1>SERVICES</h1>

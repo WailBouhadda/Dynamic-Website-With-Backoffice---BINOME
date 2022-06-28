@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -77,17 +77,17 @@
 					<li><a href="index.jsp#accueil">ACCUEIL</a></li>
 					<li><a href="index.jsp#cabinetBinome">CABINET BINOME</a> <i class="fa-solid fa-caret-down"></i>
 						<ul>
-							<li><a href="#biographie">BIOGRAPHIE</a></li>
-							<li><a href="#savoirFaire">SAVOIR FAIRE</a></li>
-							<li><a href="#nosServices">NOS SERVICES</a></li>
+							<li><a href="Biographie.jsp">BIOGRAPHIE</a></li>
+							<li><a href="savoirefaire.jsp">SAVOIR FAIRE</a></li>
+							<li><a href="index.jsp#services">NOS SERVICES</a></li>
 						</ul>
 					</li>
-					<li><a href="index.jsp#formation">FORMATION</a><i class="fa-solid fa-caret-down"></i></li>
+					<li><a href="">FORMATION</a><i class="fa-solid fa-caret-down"></i></li>
 					<li><a href="blog.jsp">BLOG</a></li>
 					<li><a href="index.jsp#contact">CONTACT</a></li>
 					<li><a href="#plus">PLUS</a><i class="fa-solid fa-caret-down" onclick="dropDown()"></i>
 						<ul>
-							<li><a href="#espaceClient">ESPACE CLIENT</a></li>
+							<li><a href="espaceclient.jsp">ESPACE CLIENT</a></li>
 							<li><a href="#recrutement">RECRUTEMENT</a></li>
 							<li><a href="index.jsp#nosReferences">NOS REFERENCES</a></li>
 						</ul>

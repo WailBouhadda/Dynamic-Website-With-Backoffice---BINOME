@@ -5,34 +5,18 @@
 			<div class="links">
 				<div class="container">
 					<div class="footerleft">
-						<div class="contactUS">
-							<h2>CONTACT US</h2>
-							<p>Avenue Yacoub el Mansour <br>
-							- 28810 Mohammedia</p>
-							<button>Nous contacter</button>
-						</div>
-						<div class="accesRapide">
-							<h2>Acces Rapide</h2>
-							<a>Formation 1</a>
-							<a>Formation 2</a>
-							<a>Services</a>
-							<a>Blog</a>
-						</div>
-						<div class="suivezNous">
-							<h2>Suivez Nous</h2>
-							<i class="fa-brands fa-facebook-f"></i>
-							<i class="fa-brands fa-instagram"></i>
-							<i class="fa-brands fa-twitter"></i>
-						</div>
+						
 					</div>
 					<div class="newsletter">
-						<h4>INSCRIVER-VOUS A NOTRE NEWSLETTER </h4>
-						<form action="newsLetter" method="post">
-							<input type="email" name="email" required>
-							<input type="submit" name="action" value="S'abonner">
-						</form>
-						<span></span>
-						
+						<div class="newsletterform">
+							<h4>INSCRIVER-VOUS A NOTRE NEWSLETTER </h4>
+							<form action="newsLetter" method="post">
+								<i class="fa-solid fa-envelope"></i>
+								<input type="email" name="email" required>
+								<input type="submit" name="action" value="S'abonner">
+							</form>
+							<span>En renseignant votre adresse email, vous acceptez de recevoir nos dernières actualités ainsi que des offres commerciales par courrier électronique</span>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -7,24 +7,28 @@ public class User {
 	private String prenom;
 	private String email;
 	private String telephone;
+	private String password;
 	
 	public User() {
 	}
 	
-	public User(String nom, String prenom, String email, String telephone) {
+	public User(String nom, String prenom, String email, String telephone, String password) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.telephone = telephone;
+		this.password = password;
 	}
-	public User(int idUser, String nom, String prenom, String email, String telephone) {
+	public User(int idUser, String nom, String prenom, String email, String telephone, String password) {
 		super();
 		this.idUser = idUser;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.telephone = telephone;
+		this.password = password;
+
 	}
 	public int getIdUser() {
 		return idUser;
@@ -55,6 +59,14 @@ public class User {
 	}
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	

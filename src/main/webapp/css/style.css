@@ -59,7 +59,7 @@
 	justify-content: space-between;
 	padding: 20px;
 	position: relative;
-	
+	gap: 20px;
 }
 .container{
 	
@@ -1815,6 +1815,8 @@ html{
 	
 	width:80%;
 	font-family: var(--font-fredoka);
+	box-shadow: 1px 2px 12px 3px #0000002b;
+	padding: 10px;
 	
 }
 
@@ -2268,7 +2270,7 @@ html{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-	
+	box-shadow: 1px 2px 12px 3px #0000002b;
 	
 }
 
@@ -2586,6 +2588,369 @@ border: 1px solid #00000014;
 
 
 
+/* --- Start biographie --- */
+
+
+.pageContainer .container .pageContent .blog .biographie{
+	
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+	
+}
+
+.pageContainer .container .pageContent .blog .biographie .logoBio{
+	
+	margin-bottom: 25px;
+}
+
+.pageContainer .container .pageContent .blog .biographie .titleBio{
+	
+	margin-top: 15px;
+	margin-bottom: 20px;
+	font-size: 25px;
+}
+.pageContainer .container .pageContent .blog .biographie .bioBio{
+	
+	margin-top: 25px;
+	
+	
+}
+/* --- End biographie --- */
+
+
+
+
+/* --- Start savoirefaire --- */
+
+
+.pageContainer .container .pageContent .blog .savoirefaire{
+	
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+	
+}
+
+.pageContainer .container .pageContent .blog .savoirefaire .titleBio{
+	
+	margin-top: 25px;
+	margin-bottom: 30px;
+	font-size: 25px;
+}
+
+.pageContainer .container .pageContent .blog .savoirefaire .SFB{
+	
+	width: 95%;
+    margin-left: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	
+}
+
+.pageContainer .container .pageContent .blog .savoirefaire .SFB span{
+    font-family: var(--font-cairo);
+    font-weight: 800;
+    color: var(--green-color);
+    margin: 15px;
+}
+
+
+.pageContainer .container .pageContent .blog .savoirefaire .SFB p:first-of-type{
+	
+	margin-top: 25px;
+}
+
+.pageContainer .container .pageContent .blog .savoirefaire .SFB p{
+	
+	margin-bottom: 5px;
+}
+
+/* --- End savoirfaire --- */
+
+
+
+
+/* --- Start espace client --- */
+
+
+
+.pageContainer .container .pageContent .blog .espaceclient{
+	
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+	
+}
+
+.pageContainer .container .pageContent .blog .espaceclient form{
+	
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.pageContainer .container .pageContent .blog .espaceclient form .userlogin{
+	
+	width: 90%;
+	
+}
+
+.pageContainer .container .pageContent .blog .espaceclient form .userlogin h1{
+	
+		text-align:  center;
+	margin-bottom:  40px;
+	color: var(--dark-color);
+}
+
+.pageContainer .container .pageContent .blog .espaceclient form .userlogin div{
+
+	margin: 31px auto;
+	width:  80%;
+	border-bottom: 1px solid var(--dark-color);
+	padding-top:  10px;
+	padding-bottom: 5px;
+	
+}
+
+.pageContainer .container .pageContent .blog .espaceclient form .userlogin div input{
+	
+		width:  90%;
+	border: none;
+	outline: none;
+	background: transparent;
+	color: var(--dark-color);
+}
+
+
+.pageContainer .container .pageContent .blog .espaceclient form .userlogin div input::placeholder{
+	color:  var(--dark-color);
+}
+
+
+
+.pageContainer .container .pageContent .blog .espaceclient form .userlogin .fa{
+	margin-right: 10px;
+	color: var(--dark-color);
+}
+
+
+.pageContainer .container .pageContent .blog .espaceclient form .userlogin .eye{
+	position: absolute;
+	color: var(--dark-color);
+}
+
+.pageContainer .container .pageContent .blog .espaceclient form .userlogin #eyeShow{
+	display:  none;
+}
+
+.pageContainer .container .pageContent .blog .espaceclient form .userlogin .loginBtn{
+	margin: 40px auto 20px;
+	width:  80%;
+	display: block;
+	outline:  none;
+	padding: 10px 0;
+	border: 1px solid var(--dark-color);
+	cursor: pointer;
+	background: transparent;
+	color: var(--dark-color);
+	font-size: 16px;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in;
+}
+
+.pageContainer .container .pageContent .blog .espaceclient form .userlogin .loginBtn:hover{
+	
+	color: var(--white-color);
+	background-color: var(--dark-color);
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in;
+}
+
+
+
+/* --- Start espace client --- */
+
+
+/* --- Start Recrutement --- */
+
+
+.pageContainer .container .pageContent .blog .recrutement{
+	
+		display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+.pageContainer .container .pageContent .blog .recrutement .demandeemploi {
+	
+	    width: 100%;
+    padding: 20px;
+    box-shadow: 1px 1px 7px 1px #00000024;
+    border-radius: 15px;
+}
+
+.pageContainer .container .pageContent .blog .recrutement .demandeemploi h3{
+	
+	font-size: 30px;
+	
+}
+
+.pageContainer .container .pageContent .blog .recrutement .demandeemploi .addoffre{
+	
+	width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-wrap: nowrap;
+    padding: 10px;
+    
+}
+	
+.pageContainer .container .pageContent .blog .recrutement .demandeemploi .addoffre .jobtop{
+	
+	
+	width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+	
+}
+
+.pageContainer .container .pageContent .blog .recrutement .demandeemploi .addoffre .jobtop > input{
+
+	flex: 1;
+	padding: 10px;
+	
+}
+.pageContainer .container .pageContent .blog .recrutement .demandeemploi .addoffre .jobdown{
+	
+		width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 30px;
+	
+}
+
+.pageContainer .container .pageContent .blog .recrutement .demandeemploi .addoffre .jobdown > input{
+
+	flex: 1;
+	padding: 10px;
+	
+}
+
+
+.pageContainer .container .pageContent .blog .recrutement .demandeemploi .addoffre > input{
+	
+	padding: 10px;
+	color: var(--green-color);
+	border: 2px solid var(--green-color);
+	background-color: white;
+	
+}
+
+
+.pageContainer .container .pageContent .blog .recrutement .demandeemploi .addoffre > input:hover{
+	
+	color: white;
+	border: 2px solid var(--green-color);
+	background-color:  var(--green-color);
+	
+}
+
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois{
+	
+	width: 100%;
+    padding: 20px;
+    box-shadow: 1px 1px 7px 1px #00000024;
+    border-radius: 15px;
+	margin-top: 60px;
+	
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois h3{
+	
+	
+	font-size: 30px;
+	margin-bottom: 50px;
+	
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a{
+	
+	text-decoration: none;
+    width: 100%;
+  
+
+    
+    
+}
+
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre{
+	
+	
+	padding: 15px;
+	border-radius: 5px;
+	margin-bottom: 15px;
+    margin-top: 15px;
+	box-shadow: 1px 1px 7px 1px #00000024;
+}
+
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre > span:first-of-type{
+	
+	color: var(--mauve-trans);
+    font-size: 30px;
+    font-weight: 800;
+    font-family: var(--font-cairo);
+	
+}
+
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .infos{
+	
+	
+	
+	display: flex;
+    color: black;
+    font-family: var(--font-cairo);
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+	
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .infos i{
+	
+		color: var(--mauve-trans);
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre > span:last-of-type{
+	
+	
+	    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: var(--fa-font-solid);
+	
+	
+}
+
+/* --- End Recrutement --- */
+
+
+
+
 
 /* --- Start footer --- */
 
@@ -2611,86 +2976,102 @@ border: 1px solid #00000014;
 	padding:10px;
 }
 
-/* --- Start  contact --- */
 
-.footer .links .contactUS{
-	
-	padding: 10px;
-    text-align: center;
-}
 
-.footer .links .contactUS > *{
-	
-	margin:10px;
-}
-.footer .links .contactUS h2{
-	
-	color: white;
-}
+/* --- Start newsletter --- */
 
-.footer .links .contactUS button{
-	
-	font-weight: 900;
-    border-radius: 10px;
-    border: 0px;
-	padding: 10px;
-	color: var(--green-color);
-	
-}
 
-/* --- End  contact --- */
-
-/* --- Start  accesRapide --- */
-
-.footer .links .accesRapide{
-	
-	padding: 10px;
-    text-align: center;
+.footer .links .newsletter{
+    width: 45%;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.footer .links .newsletter .newsletterform{
+
+	display: flex;
     flex-direction: column;
-}
-.footer .links .accesRapide > *{
-	
-	margin:10px;
-}
-.footer .links .accesRapide h2{
-	
-	color: white;
-}
-/* --- End  accesRapide --- */
+    justify-content: space-between;
+    padding: 28px;
+    background-color: white;
+    border-radius: 15px;	
 
-/* --- Start suivezNous --- */
+}
 
-.footer .links .suivezNous{
+.footer .links .newsletter .newsletterform h4{
 	
+	 margin-bottom: 10px;
+    
+}
+
+.footer .links .newsletter .newsletterform form	{
+	
+		 margin-top: 10px;
+		 	 margin-bottom: 10px;
+		 	 display: flex;
+		 	 align-items: center;
+		 
+}
+.footer .links .newsletter .newsletterform form i{
+	
+	font-size: 25px;
+    color: white;
+    background-color: var(--green-color);
+    padding: 7px;
+}
+.footer .links .newsletter .newsletterform form	input:first-of-type{
+
 	padding: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-   	align-items:center;
-}
-.footer .links .suivezNous > *{
+    flex: 1;
+
+	}
+.footer .links .newsletter .newsletterform form	input:last-of-type{
 	
-	margin:10px;
-}
-.footer .links .suivezNous h2{
 	
-	color: white;
-}
-.footer .links .suivezNous i{
+    padding: 10px;
+    background-color: var(--green-color);
+    border: 2px solid var(--green-color);
+    color: white;
 	
-	background-color:white;
-	display:flex;
-	align-items:center;
-	justify-content:center;
-	width:30px;
-	height:30px;
-	border: 1px solid black;
-	border-radius:10px;
-	font-size:15px;
 }
 
-/* --- End suivezNous --- */
+.footer .links .newsletter .newsletterform span{
+	
+		 margin-top: 5px;
+	
+}
+
+
+
+
+
+@media (max-width: 1450px){
+   
+   
+}
+@media (max-width: 920px){
+   
+      .footer .links .newsletter{
+   
+   	width: 100%;
+   }
+    
+
+}
+@media (max-width: 767px){
+   
+   .footer .links .newsletter{
+   
+   	width: 80%;
+   }
+   
+
+}
+
+
+
 
 /* --- End links --- */
 

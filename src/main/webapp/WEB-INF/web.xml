@@ -159,6 +159,16 @@
     <servlet-name>updateUser</servlet-name>
     <url-pattern>/administrateur/updateUser</url-pattern>
   </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>addOffre</display-name>
+    <servlet-name>addOffre</servlet-name>
+    <servlet-class>controlers.addOffre</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addOffre</servlet-name>
+    <url-pattern>/administrateur/addOffre</url-pattern>
+  </servlet-mapping>
    <servlet>
     <description></description>
     <display-name>newsLetter</display-name>
@@ -169,4 +179,35 @@
     <servlet-name>newsLetter</servlet-name>
     <url-pattern>/newsLetter</url-pattern>
   </servlet-mapping>
+     <servlet>
+    <description></description>
+    <display-name>userLogin</display-name>
+    <servlet-name>userLogin</servlet-name>
+    <servlet-class>controlers.userLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userLogin</servlet-name>
+    <url-pattern>/userLogin</url-pattern>
+  </servlet-mapping>
+       <servlet>
+    <description></description>
+    <display-name>demandeEmploi</display-name>
+    <servlet-name>demandeEmploi</servlet-name>
+    <servlet-class>controlers.demandeEmploi</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>demandeEmploi</servlet-name>
+    <url-pattern>/demandeEmploi</url-pattern>
+  </servlet-mapping>
+         <servlet>
+    <description></description>
+    <display-name>offrepdf</display-name>
+    <servlet-name>offrepdf</servlet-name>
+    <servlet-class>controlers.offrepdf</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>offrepdf</servlet-name>
+    <url-pattern>/offrepdf</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
