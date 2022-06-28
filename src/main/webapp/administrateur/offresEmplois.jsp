@@ -7,6 +7,7 @@
         <%@page import="dao.UserDao"%>
   		 <%@page import="dao.offreDAO"%>
          <%@page import="entities.offre"%>
+          <%@page import="entities.Demande"%>
          <%@page import="dao.posteDAO"%>
          
            <%
@@ -84,6 +85,7 @@ offreDAO odao = new offreDAO();
 
 ArrayList<offre> offres = odao.getOffres();
 
+ArrayList<Demande> demandes = odao.geteemandes();
 
 %>
 
@@ -199,8 +201,69 @@ ArrayList<offre> offres = odao.getOffres();
 				<div class="demandes">			
 				<h2>Demandes d'emploi</h2>
 				<div class="boxpack">
+					<div class="demandesliste">
+						<%
+					if(demandes != null){
+						for(int i = 0 ; i < demandes.size() ; i++) {	
+
+
+							
+							Demande d = new Demande();
+							d = demandes.get(i);
+							
+							int iddemande = d.getIddemande();
+							
+							
+							String nom =  d.getNom();
+							
+							String prenom = d.getPrenom();
+							
+							String email = d.getEmail();
+							
+							
+							 Calendar cal = Calendar.getInstance();
+							    cal.setTime(d.getSubmitDate());
+							
+							int day =  cal.get(Calendar.DAY_OF_MONTH);
+							
+							String month = null;
+							
+							int mo =  d.getSubmitDate().getMonth();
+							
+							int year =  d.getSubmitDate().getYear() + 1900;
+							
+							month = pdao.getMonth(mo);
+							
+							
+					
+					%>
 					
 					
+							<a href="demandepdf?id=<%=iddemande%>">
+								<div class="demande">
+									
+									<div class="name">
+										<span><%=nom %></span>
+										<span> <%=prenom %></span>
+									</div>
+									<div class="date">
+										<i class="fa-solid fa-calendar-days"></i>
+										<span><%=day%>,<%=month%> <%=year%></span>
+									</div>
+									<div class="email">
+										<span><%=email %></span>
+									</div>
+									<div class="plus">
+										<i class="fa-solid fa-file-arrow-down"></i>
+									</div>
+									
+								</div>
+							</a>
+					
+					
+					<%}} %>
+				
+					</div>
 					
 				</div>
 

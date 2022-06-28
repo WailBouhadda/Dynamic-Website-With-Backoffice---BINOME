@@ -39,6 +39,16 @@
     <servlet-name>actionPoste</servlet-name>
     <url-pattern>/administrateur/actionPoste</url-pattern>
   </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>demandepdf</display-name>
+    <servlet-name>demandepdf</servlet-name>
+    <servlet-class>controlers.demandepdf</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>demandepdf</servlet-name>
+    <url-pattern>/administrateur/demandepdf</url-pattern>
+  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>actionCategorie</display-name>

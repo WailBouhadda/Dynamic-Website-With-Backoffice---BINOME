@@ -70,7 +70,7 @@ ArrayList<offre> offres = odao.getOffres();
 						for(int i = 0 ; i < offres.size() ; i++) {	
 
 							byte[] imgdata = null;
-
+b
 							
 							offre p = new offre();
 							p = offres.get(i);

@@ -1031,6 +1031,77 @@ display: flex;
 
 
 	/*End admin offre */
+	
+	
+	
+/*Start admin demamde */
+	
+.demandes .boxpack .demandesliste{
+	
+	display: flex;
+	gap: 10px;
+	
+}	
+	
+.demandes .boxpack .demandesliste a{
+	
+	text-decoration: none;
+}
+	
+.demandes .boxpack .demandesliste a .demande{
+	
+	padding: 15px;
+	border-radius: 10px;
+	background-color: var(--mauve-trans);
+    color: white;
+    box-shadow: -1px 2px 14px 2px #00000047;
+	
+}
+
+
+.demandes .boxpack .demandesliste a .demande .name{
+	
+	font-weight: 600;
+}	
+	
+	
+.demandes .boxpack .demandesliste a .demande .date{
+	
+	font-size: 10px;
+}
+
+.demandes .boxpack .demandesliste a .demande .email{
+	
+	font-weight: 600;
+	
+}
+
+.demandes .boxpack .demandesliste a .demande .date i{
+	
+	margin-right: 10px;
+    color: var(--white-trans);
+
+}	
+
+.demandes .boxpack .demandesliste a .demande .plus{
+	
+	width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: var(--white-trans);
+}
+
+.demandes .boxpack .demandesliste a .demande .plus i{
+	
+	    color: var(--mauve-trans);
+}
+/*End admin demamde */
+
+
 
 
 .alertG{

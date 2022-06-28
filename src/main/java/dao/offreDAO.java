@@ -262,7 +262,7 @@ public class offreDAO {
 	
 	/* --- Start Get demande by id --- */
 
-	public Demande geteemandeById( int id){
+	public Demande getedemandeById(int id){
 		
 		Demande o = new Demande();
 
@@ -271,7 +271,7 @@ public class offreDAO {
 			try {
 				
 				st = con.createStatement();
-				rs = st.executeQuery("select * from demadeemploi where iddemande = "+id);
+				rs = st.executeQuery("select * from demandeemploi where iddemande = "+id);
 				
 				while(rs.next()) {
 					
