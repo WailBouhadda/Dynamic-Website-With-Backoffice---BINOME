@@ -524,6 +524,12 @@
     height: 100%;
 	
 }
+
+.navBar .navList .profile:hover i{
+	
+	color: var(--green-color);
+}
+
 /* --- End profile --- */
 
 /* --- Start search --- */
@@ -536,9 +542,73 @@
     align-items: center;
     width: fit-content;
     border-left: 1px solid #c8c8c8;
-    
+    position: relative;	
 	
 }
+
+.navBar .navList .search .searchlist{
+	
+	color: #00000094; 
+	background-color: #ffffff;	
+	
+}
+
+.searchlist{
+	
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+        top: 100%;
+    opacity: 100%;
+    left: 0;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    list-style: none;
+    position: absolute;
+	
+}
+
+.searchlistNC{
+	
+    width: 150px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+        top: 100%;
+    opacity: 100%;
+    left: 0;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    list-style: none;
+    position: absolute;
+	
+}
+
+.navBar .navList .search .searchlist li{
+	
+	background-color: white;
+	padding: 15px;
+	
+}
+
+
+.navBar .navList .search .searchlist li a{
+	
+	text-decoration: none;
+	    color: #00000094;
+	
+	
+}
+
+.navBar .navList .search .searchlist li:hover a{
+	
+	text-decoration: none;
+	    color: var(--green-color);
+	
+	
+}
+
 .navBar .navList .search input::placeholder{
 	
 	font-family: var(--font-fredoka);
@@ -1119,7 +1189,7 @@ html{
    
 }
 .services .box .container .service h2{
-    font-size: 35px;
+    font-size: 27px;
     padding: 20px;
     position: relative;
 
@@ -1651,6 +1721,7 @@ html{
     flex-wrap: nowrap;
     padding: 10px;
     align-items:center;
+    position: relative;
     
 }
 .sideBar .sideSearch input{
@@ -1799,6 +1870,75 @@ html{
     transition-duration: 0.2s;
     transition-timing-function: ease-out;
 }
+
+
+
+
+
+.sidesearch{
+	
+    width: 195px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    top: 100%;
+    opacity: 100%;
+    left: 10px;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    list-style: none;
+    position: absolute;
+    z-index: 50;
+    box-shadow: 4px 11px 12px 2px #0000001f;
+
+	
+}
+
+.sidesearchNC{
+	
+    width: 195px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    top: 100%;
+    opacity: 100%;
+    left: 10px;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    list-style: none;
+    position: absolute;
+    z-index: 50;
+    box-shadow: 4px 11px 12px 2px #0000001f;
+}
+
+
+
+.sideBar .sideSearch .sidesearch li{
+	
+	background-color: white;
+	padding: 15px;
+	
+}
+
+
+.sideBar .sideSearch .sidesearch li a{
+	
+	text-decoration: none;
+	    color: #00000094;
+	    font-family: var(--font-fredoka);
+	
+	
+}
+
+.sideBar .sideSearch .sidesearch li:hover a{
+	
+	text-decoration: none;
+	    color: var(--green-color);
+	
+	
+}
+
+
 
 /* --- End sideBar --- */
 
@@ -2277,6 +2417,7 @@ html{
 
 
 
+
 .pageContainer .container .pageContent .poste hr{
 border: 1px solid #00000014;
 }
@@ -2519,6 +2660,9 @@ border: 1px solid #00000014;
  
  .pageContainer .container .pageContent .poste{
  width:100%;
+ padding: 20px;
+ 
+ font-size: 13px;
  }
  
  .pageContainer .container .pageContent .poste .posteImg{
@@ -2562,6 +2706,8 @@ border: 1px solid #00000014;
 	
 	font-size: 15px;
 	padding-right: 20px;
+	
+	width: 88%;
 }
 
 
@@ -2695,7 +2841,10 @@ border: 1px solid #00000014;
 
 .pageContainer .container .pageContent .blog .espaceclient form .userlogin{
 	
-	width: 90%;
+	    width: 100%;
+    padding: 20px;
+    box-shadow: 1px 1px 7px 1px #00000024;
+    border-radius: 15px;
 	
 }
 
@@ -2821,6 +2970,7 @@ border: 1px solid #00000014;
     gap: 5px;
     margin-top: 50px;
     margin-bottom: 30px;
+    flex-wrap: wrap;
 	
 }
 
@@ -2877,6 +3027,8 @@ border: 1px solid #00000014;
 	
 }
 
+
+
 .pageContainer .container .pageContent .blog .recrutement .offresemplois h3{
 	
 	
@@ -2904,10 +3056,67 @@ border: 1px solid #00000014;
 	margin-bottom: 15px;
     margin-top: 15px;
 	box-shadow: 1px 1px 7px 1px #00000024;
+	transition-duration: 0.1s;
+    transition-timing-function: ease-in;
+        display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
 }
 
 
-.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre > span:first-of-type{
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a:hover .offre {
+	
+	    background-color: var(--green-trans);
+	    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
+    
+	
+}
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .right{
+	 
+	 display: flex;
+    align-items: center;
+    justfy-content: center;
+    justify-content: center;
+    width: 50px;
+    height: 100%;
+    background-color: var(--green-trans);
+    position: absolute;
+    right: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+	
+	
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a:hover .offre .right{
+	
+	background-color: white;
+	
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .right i{
+	
+	color: var(--dark-trans);
+    font-size: x-large;
+	
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a:hover .offre .right i{
+	
+		color: var(--green-trans);
+	
+	
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .left{
+	
+	width: 90%;
+	
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .left > span:first-of-type{
 	
 	color: var(--mauve-trans);
     font-size: 30px;
@@ -2917,7 +3126,8 @@ border: 1px solid #00000014;
 }
 
 
-.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .infos{
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .left .infos{
 	
 	
 	
@@ -2930,12 +3140,23 @@ border: 1px solid #00000014;
 	
 }
 
-.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .infos i{
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .left .infos i{
 	
 		color: var(--mauve-trans);
 }
 
-.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre > span:last-of-type{
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a:hover .offre .left .infos{
+
+	color: white;
+	
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a:hover .offre .left .infos i{
+	
+		color: var(--mauve-trans);
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .left > span:last-of-type{
 	
 	
 	    color: black;
@@ -2946,7 +3167,267 @@ border: 1px solid #00000014;
 	
 }
 
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a:hover .offre .left > span:last-of-type{
+
+	color: var(--mauve-trans);
+}
+
+
+
+
+
+
+@media (max-width: 1450px){
+   
+  
+   
+}
+@media (max-width: 920px){
+   
+.pageContainer .container .pageContent .blog .recrutement .demandeemploi h3 {
+	
+	font-size: 25px;
+}
+.pageContainer .container .pageContent .blog .recrutement .offresemplois h3 {
+	font-size: 25px;
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .left > span:first-of-type {
+	font-size: 25px;
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .left > span:last-of-type {
+	
+	font-size: 12px;
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .left .infos {
+	
+	font-size: 10px;
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .left {
+    width: 85%;
+}
+
+}
+@media (max-width: 767px){
+   
+   
+   .pageContainer .container .pageContent .blog .recrutement .demandeemploi h3 {
+	
+	font-size: 20px;
+}
+.pageContainer .container .pageContent .blog .recrutement .offresemplois h3 {
+	font-size: 20px;
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .left > span:first-of-type {
+	font-size: 20px;
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .left > span:last-of-type {
+	
+	font-size: 11px;
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .left .infos {
+	
+	font-size: 8px;
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .left {
+    width: 80%;
+}
+   
+
+
+}
+
+@media (max-width: 570px){
+	
+	   .pageContainer .container .pageContent .blog .recrutement .demandeemploi h3 {
+	
+	font-size: 17px;
+}
+.pageContainer .container .pageContent .blog .recrutement .offresemplois h3 {
+	font-size: 17px;
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .left > span:first-of-type {
+	font-size: 17px;
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .left > span:last-of-type {
+	
+	font-size: 9px;
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .left .infos {
+	
+	font-size: 7px;
+}
+
+.pageContainer .container .pageContent .blog .recrutement .offresemplois a .offre .left {
+    width: 70%;
+}
+   
+	
+	
+}
+
 /* --- End Recrutement --- */
+
+
+
+
+
+
+
+
+
+
+
+/* --- Start formations --- */
+
+
+.pageContent .blog .formations .formation{
+	
+	width: 95%;
+    box-shadow: 1px 2px 12px 3px #0000002b;
+    padding: 20px;
+    border-radius: 10px;
+    margin:auto;
+    margin-top:30px;
+    margin-bottom: 50px;
+	
+}	
+
+.pageContent .blog .formations .formation img{
+	
+	width: 100%;
+    border-radius: 5px;
+    border: 5px solid var(--green-trans);
+    position: relative;
+    filter: brightness(0.5);
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.3s;
+    margin-bottom: 30px;
+    
+	
+	
+}
+	
+.pageContent .blog .formations .formation:hover img{
+	
+	 filter: brightness(1);
+	 transition-timing-function: ease-in-out;
+    transition-duration: 0.3s;
+}
+
+
+
+
+.pageContent .blog .formations .formation h3{
+	
+	    font-family: var(--font-noto);
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 30px;
+	
+}
+
+
+.pageContent .blog .formations .formation .FD{
+	
+	display: flex;
+	flex-direction: column;
+	
+	
+}
+
+.pageContent .blog .formations .formation .FD span{
+	
+	    font-size: 15px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 15px;
+	
+}
+
+.pageContent .blog .formations .formation .FD p{
+	
+	
+    font-size: 15px;
+    font-weight: 100;
+    margin-left: 50px;
+	
+	
+}
+
+
+
+
+@media (max-width: 950px){
+	
+	
+.pageContent .blog .formations .formation h3{
+	
+    font-size: 20px;
+   
+}
+.pageContent .blog .formations .formation .FD span{
+	
+	    font-size: 13px;
+	
+}
+
+.pageContent .blog .formations .formation .FD p{
+	
+	
+    font-size: 13px;
+  
+}
+	
+}
+
+@media (max-width: 700px){
+	
+	
+		
+.pageContent .blog .formations .formation h3{
+	
+    font-size: 18px;
+   
+}
+.pageContent .blog .formations .formation .FD span{
+	
+	    font-size: 11px;
+	
+}
+
+.pageContent .blog .formations .formation .FD p{
+	
+	
+    font-size: 11px;
+  
+}
+	
+	
+}
+
+
+
+/* --- End formations --- */
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2967,13 +3448,14 @@ border: 1px solid #00000014;
 	font-family: var(--font-cairo);
 }
 
-.footer .links .container{
+.footer .links .container .NLTM{
 	
 	display: flex;
 	justify-content: space-between;
 	align-items:center;
-	flex-wrap: nowrap;
-	padding:10px;
+	flex-wrap: wrap;
+	padding:20px;
+	gap: 15px;
 }
 
 
@@ -2981,15 +3463,15 @@ border: 1px solid #00000014;
 /* --- Start newsletter --- */
 
 
-.footer .links .newsletter{
-    width: 45%;
+.footer .links .NLTM .newsletter{
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
+    height: 220px;
 }
 
-.footer .links .newsletter .newsletterform{
+.footer .links .NLTM .newsletter .newsletterform{
 
 	display: flex;
     flex-direction: column;
@@ -3000,13 +3482,13 @@ border: 1px solid #00000014;
 
 }
 
-.footer .links .newsletter .newsletterform h4{
+.footer .links .NLTM .newsletter .newsletterform h4{
 	
 	 margin-bottom: 10px;
     
 }
 
-.footer .links .newsletter .newsletterform form	{
+.footer .links .NLTM .newsletter .newsletterform form	{
 	
 		 margin-top: 10px;
 		 	 margin-bottom: 10px;
@@ -3014,20 +3496,20 @@ border: 1px solid #00000014;
 		 	 align-items: center;
 		 
 }
-.footer .links .newsletter .newsletterform form i{
+.footer .links .NLTM .newsletter .newsletterform form i{
 	
 	font-size: 25px;
     color: white;
     background-color: var(--green-color);
     padding: 7px;
 }
-.footer .links .newsletter .newsletterform form	input:first-of-type{
+.footer .links .NLTM .newsletter .newsletterform form	input:first-of-type{
 
 	padding: 10px;
     flex: 1;
 
 	}
-.footer .links .newsletter .newsletterform form	input:last-of-type{
+.footer .links .NLTM .newsletter .newsletterform form	input:last-of-type{
 	
 	
     padding: 10px;
@@ -3037,43 +3519,246 @@ border: 1px solid #00000014;
 	
 }
 
-.footer .links .newsletter .newsletterform span{
+.footer .links .NLTM .newsletter .newsletterform span{
 	
 		 margin-top: 5px;
 	
 }
 
 
+@keyframes slider {
+
+0%{
+left:0%;
+}
+
+8%{
+	left:-100%;
+}
+16%{
+	left: -200%
+}
+25%{
+	left: -300%;
+}
+35%{
+	left: -407%;
+}
+45%{
+	left: -509%;
+}
+54%{
+	left: -509%;
+}
+63%{
+	left: -407%;
+}
+72%{
+	left: -300%;
+}
+81%{
+	left: -200%
+}
+91%{
+	left:-100%;
+}
+100%{
+	left: 0%;
+}
+
+
+}
+
+
+
+
+
+
+.footer .links .NLTM .temoin{
+	
+	    flex: 1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 220px;
+}
+
+.footer .links .NLTM .temoin .slider{
+	
+	 overflow: hidden;
+    display: flex;
+    width: 609%;
+    justify-content: space-between;
+    gap: 41px;
+    position: relative;
+    animation: 150s slider infinite;
+	
+}
+
+.footer .links .NLTM .temoin .slider .temi{
+	
+	    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 5px;
+    	
+    
+	
+}
+
+.footer .links .NLTM .temoin .slider .temi h3{
+	
+	color: var(--green-color);
+	text-align: center;
+}
+
+.footer .links .NLTM .temoin .slider .temi p{
+	
+	    font-family: var(--font-fredoka);
+    font-size: 14px;
+    font-weight: 100;
+	
+}
+
+
+.footer .links .contact{
+	
+	    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 0;
+    margin-top: 0;
+	
+}
+
+
+.footer .links .contact .c{
+	
+	padding: 10px;
+    background-color: var(--white-color);
+    border-radius: 15px;
+}
+
+
+
+.footer .links .contact .c i{
+	
+	    color: var(--green-color);
+    margin-right: 20px;
+    font-weight: 600;
+	
+}
+
+.footer .links .contact .c span{
+	
+	font-family: var(--font-fredoka);
+    font-weight: 100;
+}
 
 
 
 @media (max-width: 1450px){
    
+      .footer .links .NLTM .temoin{
+   
+   	width: 100%;
+   	flex: auto;
+   }
+    
    
 }
 @media (max-width: 920px){
    
-      .footer .links .newsletter{
+      .footer .links .NLTM .newsletter{
    
    	width: 100%;
+   }
+   
+   .footer .links .contact {
+   
+   	display: none;
+   }
+   
+   
+   .footer .links .NLTM .temoin{
+   
+   	width: 100%;
+   	flex: auto;
    }
     
 
 }
 @media (max-width: 767px){
    
-   .footer .links .newsletter{
+   .footer .links .NLTM .newsletter{
    
    	width: 80%;
+   }
+   
+    .footer .links .NLTM .temoin{
+   
+   	width: 100%;
+   	flex: auto;
+   }
+   
+   .footer .links .NLTM .newsletter .newsletterform span {
+   		font-size: 10px;
+   }
+   
+    .footer .links .NLTM .newsletter .newsletterform {
+   		width: 100%;
    }
    
 
 }
 
+@media (max-width: 570px){
+	
+	  .footer .links .NLTM .temoin{
+   
+   	   	display: none;
+
+   }
+   
+      .footer .links .contact {
+   
+   	display: none;
+   }
+   
+     .footer .links .NLTM .newsletter .newsletterform span {
+   		font-size: 10px;
+   }
+   .footer .links .NLTM .newsletter .newsletterform {
+   		width: 100%;
+   }
+   .footer .links .NLTM .newsletter .newsletterform form i {
+   	
+   	font-size: 18px;
+   	padding: 5px;
+   }
+   
+   .footer .links .NLTM .newsletter .newsletterform form input:first-of-type {
+   		
+   		padding: 5px;
+   }
+   
+   .footer .links .NLTM .newsletter .newsletterform form input:last-of-type {
+   		
+   		padding: 5px;
+   }
+   
+}
+
+
 
 
 
 /* --- End links --- */
+
 
 /* --- Start copyright --- */
 
@@ -3101,5 +3786,9 @@ border: 1px solid #00000014;
 }
 /* --- End copyright --- */
 /* --- End footer --- */
+
+
+
+
 
 

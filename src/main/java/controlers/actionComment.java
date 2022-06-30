@@ -52,7 +52,7 @@ public class actionComment extends HttpServlet {
 				
 				result = cdao.deleteCommentById(idcomment);
 				
-				request.getRequestDispatcher("commentaires.jsp?result="+result).forward(request, response);
+				request.getRequestDispatcher("Commentaires?result="+result).forward(request, response);
 				
 				
 				
@@ -60,13 +60,13 @@ public class actionComment extends HttpServlet {
 				
 				result = cdao.acceptCommentById(idcomment);
 				
-				request.getRequestDispatcher("commentaires.jsp?result="+result).forward(request, response);
+				request.getRequestDispatcher("Commentaires?result="+result).forward(request, response);
 				
 				
 				
 			}else {
 				
-				response.sendRedirect("commentaires.jsp");
+				response.sendRedirect("Commentaires");
 			}
 			
 		}

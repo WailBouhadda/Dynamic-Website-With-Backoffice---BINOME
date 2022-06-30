@@ -10,8 +10,25 @@
 
 	<div class=sideBar>
 		<div class="sideSearch">
-			<input type="text" placeholder="Search...">
+			<input type="text" placeholder="Rechercher..." id="SBI">
 			<i class="fa-solid fa-magnifying-glass"></i>
+			<ul class="sidesearchNC" id="SBul">
+							<li style="display:none;" ><a href="Biographie">BIOGRAPHIE</a></li>
+							<li style="display:none;"><a href="SavoirFaire">SAVOIR FAIRE</a></li>
+							<li style="display:none;"><a href="Home#services">NOS SERVICES</a></li>
+							<li style="display:none;"><a href="EspaceClient">ESPACE CLIENT</a></li>
+							<li style="display:none;"><a href="Recrutement">RECRUTEMENT</a></li>
+							<li style="display:none;"><a href="Recrutement">OFFRES EMPLOI</a></li>
+							<li style="display:none;"><a href="Recrutement">DEPOSER CV</a></li>
+							<li style="display:none;"><a href="Home#nosReferences">NOS REFERENCES</a></li>
+							<li style="display:none;"><a href="Formations">FORMATION</a></li>
+							<li style="display:none;"><a href="Formations">GESTION DU QUOTIDIEN</a></li>
+							<li style="display:none;"><a href="Formations">DEVELOPPEMENT PERSONNEL</a></li>
+							<li style="display:none;"><a href="Formations">BINOME ASSISTANTE / MANAGER</a></li>
+							<li style="display:none;"><a href="Blog">BLOG</a></li>
+							<li style="display:none;"><a href="Home#contact">CONTACT</a></li>
+							<li style="display:none;"><a href="Home#cabinetBinome">CABINET BINOME</a></i>
+						</ul>
 		</div>
 		<div class="postRecent">
 			<div class="sideTitle">
@@ -81,7 +98,7 @@ ArrayList<categorie> categos = cdao.getcategories();
 		  	
 		%>
 				
-					<a href="poste.jsp?p=<%=idPoste%>">
+					<a href="Article?p=<%=idPoste%>">
 						<div class="post">
 							<div class="image">
 								<img src="<%=image%>">
@@ -94,7 +111,7 @@ ArrayList<categorie> categos = cdao.getcategories();
 						</div>
 					</a>
 			<% }}else{ %>
-				<p style="color:red;">Un error est servenu, Pas d'article pour le moment !</p>
+				<p style="color:red;"><i style="margin-right:10px;" class="fa-solid fa-triangle-exclamation"></i>UNE ERREUR EST SURVENUE, PAS D'ARTICLE POUR LE MOMENT </p>
 			<%} %>
 			</div>
 			<div class="sideTitle">
@@ -111,14 +128,14 @@ ArrayList<categorie> categos = cdao.getcategories();
 										int idcategorie = c.getIdcategorie();
 										String nomcat = c.getNomcategorie();
 			%>
-				<a href="blogByCategorie.jsp?c=<%=idcategorie%>">
+				<a href="Categorie?c=<%=idcategorie%>">
 					<div class="categorie">
 						<i class="fa-solid fa-hashtag"></i>
 						<p><%=nomcat%><p>
 					</div>
 				</a>
 			<%}}else{ %>
-					<p style="color:red;">Un error est servenu, Pas de poste pour le moment !</p>
+					<p style="color:red;"><i style="margin-right:10px;" class="fa-solid fa-triangle-exclamation"></i>UNE ERREUR EST SURVENUE</p>
 			<%} %>
 			</div>
 		</div>

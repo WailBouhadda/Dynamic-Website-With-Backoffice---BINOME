@@ -118,7 +118,7 @@ String action = String.valueOf(request.getAttribute("action"));
 					
 				<%}else{%>
 					
-					<p style="color:red;">Un error est servenu, Pas de poste pour le moment !</p>
+					<p style="color:red;"><i style="margin-right:10px;" class="fa-solid fa-triangle-exclamation"></i>UNE ERREUR EST SURVENUE, PAS D'ARTICLE POUR LE MOMENT</p>
 				<% }%>	
 				
 				
@@ -147,39 +147,44 @@ String action = String.valueOf(request.getAttribute("action"));
 						
 						<%
 						ArrayList<comment> comments = codao.getCommentsByStatutId(1,po);
-						if(comments.size() >0){
-						for(int i = 0 ; i < comments.size() ; i++){
-							
-							comment cm = comments.get(i);
-						
-							Calendar cal = Calendar.getInstance();
-						    cal.setTime(cm.getPublishDate());
-						
-						int day =  cal.get(Calendar.DAY_OF_MONTH);
-						
-						String month = null;
-						
-						int mo =  poste.getPublishDate().getMonth();
-						
-						month = pdao.getMonth(mo);
-						
-						int year =  cm.getPublishDate().getYear() + 1900;
-						%>
-						<div class="comment">
-							<div class="dateIcon">
-								<i class="fa-solid fa-circle-user"></i>	
-								<p><%=day%> <%=month %>, <%=year %> </p>
-							</div>
-							<div class="com">
-								<p><%=cm.getOwner() %></p>
-								<p><%=cm.getComment() %></p>
-							</div>
-						
-						</div>
-						
-						<%}}else{ %>
-							<p style="color:red;"> <i class="fa-solid fa-hexagon-exclamation"></i> PAS DE COMMENTAIRE</p>
-						<%} %>
+							if(comments != null){
+								if(comments.size() >0){
+									
+									for(int i = 0 ; i < comments.size() ; i++){
+										
+										comment cm = comments.get(i);
+									
+										Calendar cal = Calendar.getInstance();
+									    cal.setTime(cm.getPublishDate());
+									
+									int day =  cal.get(Calendar.DAY_OF_MONTH);
+									
+									String month = null;
+									
+									int mo =  poste.getPublishDate().getMonth();
+									
+									month = pdao.getMonth(mo);
+									
+									int year =  cm.getPublishDate().getYear() + 1900;
+									
+								%>
+								<div class="comment">
+									<div class="dateIcon">
+										<i class="fa-solid fa-circle-user"></i>	
+										<p><%=day%> <%=month %>, <%=year %> </p>
+									</div>
+									<div class="com">
+										<p><%=cm.getOwner() %></p>
+										<p><%=cm.getComment() %></p>
+									</div>
+								
+								</div>
+								
+								<%}}else{ %>
+									<p style="color:red;"> <i style="margin-right:10px;" class="fa-solid fa-circle-exclamation"></i> PAS DE COMMENTAIRE POUR LE MOMENT</p>
+								<%}}else{ %>
+									<p style="color:red;"> <i style="margin-right:10px;" class="fa-solid fa-triangle-exclamation"></i>UNE ERREUR EST SURVENUE, PAS D'ARTICLE POUR LE MOMENT</p>
+								<%} %>
 					</div>
 				</div>
 				

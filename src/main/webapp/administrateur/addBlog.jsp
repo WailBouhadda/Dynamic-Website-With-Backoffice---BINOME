@@ -10,7 +10,7 @@
         
            <%
     if(session.getAttribute("admin")==null){
-    	response.sendRedirect("adminLogin.jsp");
+    	response.sendRedirect("Login");
     	
     	
     }
@@ -95,7 +95,7 @@ ArrayList<categorie> categos = cdao.getcategories();
 HttpSession s = request.getSession();
 
 
-s.setAttribute("source", "addBlog.jsp");
+s.setAttribute("source", "AjouterArticle");
 
 %>
 							 <label for="categorie">Categorie : </label>

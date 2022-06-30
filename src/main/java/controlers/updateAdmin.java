@@ -65,7 +65,7 @@ public class updateAdmin extends HttpServlet {
 					
 					s.setAttribute("admin", a);
 					
-					request.getRequestDispatcher("Profile.jsp?result="+result).forward(request, response);
+					request.getRequestDispatcher("Profile?result="+result).forward(request, response);
 					
 						
 					
@@ -73,7 +73,7 @@ public class updateAdmin extends HttpServlet {
 					
 					result = -1;
 					
-					request.getRequestDispatcher("Profile.jsp?result="+result).forward(request, response);
+					request.getRequestDispatcher("Profile?result="+result).forward(request, response);
 					
 					
 				}
@@ -94,12 +94,12 @@ public class updateAdmin extends HttpServlet {
 				
 				s.setAttribute("admin", a);
 				
-				request.getRequestDispatcher("Profile.jsp?result="+result).forward(request, response);
+				request.getRequestDispatcher("Profile?result="+result).forward(request, response);
 			}else {
 				
 				result = -1;
 				
-				request.getRequestDispatcher("Profile.jsp?result="+result).forward(request, response);
+				request.getRequestDispatcher("Profile?result="+result).forward(request, response);
 				
 				
 			}
@@ -108,7 +108,7 @@ public class updateAdmin extends HttpServlet {
 			
 			result = -1;
 			
-			request.getRequestDispatcher("Profile.jsp?result="+result).forward(request, response);
+			request.getRequestDispatcher("Profile?result="+result).forward(request, response);
 			
 			
 		}

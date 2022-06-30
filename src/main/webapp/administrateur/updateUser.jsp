@@ -11,7 +11,7 @@
  
            admin a= new admin();
            if(session.getAttribute("admin")==null){
-           	response.sendRedirect("adminLogin.jsp");
+           	response.sendRedirect("Login");
            	
            	
            }else{
@@ -50,7 +50,7 @@ int id = Integer.parseInt(request.getParameter("id"));
 
 HttpSession s = request.getSession();
 
-s.setAttribute("source", "userUpdate.jsp");
+s.setAttribute("source", "ModifierUtilisateur");
 
 UserDao udao = new UserDao();
 
@@ -142,6 +142,14 @@ ArrayList<User> users = (ArrayList<User>)udao.selectAllUsers();
 								 <i class="fa-solid fa-phone-flip"></i>
 							 </span>
 						</div>	
+						<div class="passwordInput">
+						 <span>Mot De Passe</span>
+						 <input type="password" placeholder="..." name="password" id="password" required>
+						 <span class="eye" onclick="showPassword('password')">
+						 <i id="eyeShowpassword" style="display:none;" class="fa fa-eye"></i>
+						 <i id="eyeHidepassword"  style="display:block;" class="fa fa-eye-slash"></i>
+						 </span>
+					</div>
 						<button type="submit" name="action"  value="Modifier">MODIFIER</button>
 					</form>
 				</div>

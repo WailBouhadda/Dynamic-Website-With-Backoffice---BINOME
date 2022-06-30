@@ -93,7 +93,7 @@ HttpSession s = request.getSession();
 	
 					result = pdao.updatePoste(p1);
 					
-					request.getRequestDispatcher("posteListe.jsp?result="+result).forward(request, response);
+					request.getRequestDispatcher("Articles?result="+result).forward(request, response);
 					
 				
 				}

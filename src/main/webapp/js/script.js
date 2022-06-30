@@ -2,18 +2,30 @@
 
 
 let search = document.getElementById("SE");
-let input = document.getElementById("si");
 
+if(search !== null){
+	
+let input = document.getElementById("si");
+var sL = document.getElementById("siul");
+	
+	
+	
 search.onclick = function(){
+		
+
 		
 	search.classList.toggle("se");
 	search.classList.toggle("seClicked");
+	
+	sL.classList.toggle("searchlistNC");
+	sL.classList.toggle("searchlist");
+	
 	
 	input.classList.toggle("SI");
 	input.classList.toggle("SIH");
 	}
 
-
+}
 /*Start --- Change navigation Bar to responsive on small screen --- */
 
 let burger = document.getElementById("burger");
@@ -106,6 +118,116 @@ if(scroll >0){
 			}
 			
 
+
+
+
+	/* --- Start filter/search navbar function --- */
+	
+	var searchNB = document.getElementById("si");
+	
+	if(searchNB !== null){
+		
+		
+	searchNB.onkeyup = function(){
+		
+		
+		
+		
+		var value = this.value.toLowerCase();
+		
+		var ul = document.getElementById("siul");
+		var lis = ul.getElementsByTagName("li");
+		var as = ul.getElementsByTagName("a");
+		
+				
+		
+		for(var i = 0 ; i < lis.length ; i++){
+			
+			if(lis[i]){
+				var li = lis[i];
+				var a = as[i].innerHTML;
+				
+				if(a.toLowerCase().indexOf(value) > -1 ){
+			
+					li.style.display ="";				
+				}else{
+					li.style.display ="none";				
+
+				}
+			}
+			}
+		
+		
+	}}
+	
+	
+		/* --- End filter/search navbar function --- */
+		
+		
+
+	/* --- Start filter/search sidebar function --- */
+	
+	var searchSB = document.getElementById("SBI");
+	
+	if(searchSB !== null){
+		
+		
+	searchSB.onkeyup = function(){
+		
+		var valuesb = this.value.toLowerCase();
+		
+		var ulSB = document.getElementById("SBul");
+		var lisSB = ulSB.getElementsByTagName("li");
+		var asSB = ulSB.getElementsByTagName("a");
+		
+		
+		for(var i = 0 ; i < lisSB.length ; i++){
+			
+			if(lisSB[i]){
+				var liSB = lisSB[i];
+				var aSB = asSB[i].innerHTML;
+				
+				if(aSB.toLowerCase().indexOf(valuesb) > -1 ){
+			
+					liSB.style.display ="";				
+				}else{
+					liSB.style.display ="none";				
+
+				}
+			}
+			}
+		
+		
+	}}
+	
+	
+		/* --- End filter/search sidebar function --- */
+		
+
+
+	/* --- Start filter/search sidebar function --- */
+	
+	var searchNB = document.getElementById("SBI");
+
+	if(searchNB !== null){
+			
+		var ul = document.getElementById("SBul");
+
+		
+		
+	searchNB.onfocus = function(){
+		
+		ul.classList.toggle("sidesearch");		
+		ul.classList.toggle("sidesearchNC");	
+	
+		
+	}
+	
+	}
+	
+	
+		/* --- End filter/search sidebar function --- */
+		
 
 
 

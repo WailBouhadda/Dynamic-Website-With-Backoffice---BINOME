@@ -54,7 +54,7 @@ public class userLogin extends HttpServlet {
 			
 			
 			
-			response.sendRedirect("espaceclient.jsp");
+			response.sendRedirect("EspaceClient");
 			LoginFailed = "false";
 			request.setAttribute("Failed", LoginFailed);
 			
@@ -64,7 +64,7 @@ public class userLogin extends HttpServlet {
 			LoginFailed = "true";
 			
 			request.setAttribute("Failed", LoginFailed);
-			request.getRequestDispatcher("espaceclient.jsp").forward(request, response);
+			request.getRequestDispatcher("EspaceClient").forward(request, response);
 
 		}
 		

@@ -93,12 +93,12 @@ public class offrepdf extends HttpServlet {
             inputStream.close();
             outStream.close();     
             
-  			response.sendRedirect("recrutement.jsp");
+  			response.sendRedirect("Recrutement");
 
               
 		}else {
 			
-			response.sendRedirect("recrutement.jsp");
+			response.sendRedirect("Recrutement");
 		}
 		
 		

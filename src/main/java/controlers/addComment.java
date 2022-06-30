@@ -50,7 +50,7 @@ public class addComment extends HttpServlet {
 		if(action != null) {
 		
 		c1dao.addComment(c1);
-		response.sendRedirect("poste.jsp?p="+idposte);
+		response.sendRedirect("Article?p="+idposte);
 		
 		
 		}

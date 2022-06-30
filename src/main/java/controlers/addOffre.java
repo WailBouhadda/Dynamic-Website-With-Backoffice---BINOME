@@ -78,7 +78,7 @@ public class addOffre extends HttpServlet {
 			
 			result = odao.addoffre(o);
 			
-			request.getRequestDispatcher("offresEmplois.jsp?result="+result).forward(request, response);
+			request.getRequestDispatcher("OffresEmploi?result="+result).forward(request, response);
 			
 		}else if(action.equals("Supprimer")){
 			
@@ -87,13 +87,13 @@ public class addOffre extends HttpServlet {
 			
 			result = odao.deleteOffreById(idoffre);
 			
-			request.getRequestDispatcher("offresEmplois.jsp?result="+result).forward(request, response);
+			request.getRequestDispatcher("OffresEmploi?result="+result).forward(request, response);
 			
 
 		}else {
 			
 			result = -1;
-			request.getRequestDispatcher("offresEmplois.jsp?result="+result).forward(request, response);
+			request.getRequestDispatcher("OffresEmploi?result="+result).forward(request, response);
 		}
 	
 

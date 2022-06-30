@@ -68,7 +68,7 @@ public class actionPoste extends HttpServlet {
 			}else if(action.equals("Modifier")) {
 				
 				
-				response.sendRedirect("updatePoste.jsp?id="+id);
+				response.sendRedirect("ModifierArticle?id="+id);
 				
 			}else {
 				

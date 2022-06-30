@@ -71,7 +71,7 @@ ArrayList<poste> postes = pdao.getPostes();
 		  	
 				%>
 						<div class="postes">
-							<a class="posteLink" href="poste.jsp?p=<%=idPoste%>">
+							<a class="posteLink" href="Article?p=<%=idPoste%>">
 							<div class="posteBG">
 								<img src="<%=image%>">
 								<div class="posteDate">
@@ -111,7 +111,7 @@ ArrayList<poste> postes = pdao.getPostes();
 				
 				<%}}else{%>
 					
-					<p style="color:red;">Un error est servenu, Pas de poste pour le moment !</p>
+					<p style="color:red;"><i style="margin-right:10px;" class="fa-solid fa-triangle-exclamation"></i>UNE ERREUR EST SURVENUE, PAS D'ARTICLE POUR LE MOMENT</p>
 				<% }%>		
 			</div>
 			<jsp:include page="sideBar.jsp"></jsp:include>

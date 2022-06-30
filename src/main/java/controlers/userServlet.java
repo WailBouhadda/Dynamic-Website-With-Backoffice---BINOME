@@ -78,7 +78,7 @@ public class userServlet extends HttpServlet {
 				
 				int id = Integer.parseInt(request.getParameter("id"));
 
-				response.sendRedirect("updateUser.jsp?id="+id);
+				response.sendRedirect("ModifierUtilisateur?id="+id);
 				
 				
 				
@@ -98,6 +98,9 @@ public class userServlet extends HttpServlet {
 					
 					String tele = request.getParameter("tele");
 					u.setTelephone(tele);
+					
+					String password = request.getParameter("password");
+					u.setPassword(password);
 					
 					try {
 						res = udao.insertUser(u);

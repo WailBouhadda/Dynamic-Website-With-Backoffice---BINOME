@@ -14,7 +14,7 @@
  
            admin a= new admin();
            if(session.getAttribute("admin")==null){
-           	response.sendRedirect("adminLogin.jsp");
+           	response.sendRedirect("Login");
            	
            	
            }else{

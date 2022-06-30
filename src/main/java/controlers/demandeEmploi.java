@@ -81,13 +81,13 @@ public class demandeEmploi extends HttpServlet {
 			
 			 odao.adddemande(o);
 			
-			request.getRequestDispatcher("recrutement.jsp").forward(request, response);
+			request.getRequestDispatcher("Recrutement").forward(request, response);
 			
 
 		}else {
 			
 		
-			request.getRequestDispatcher("recrutement.jsp").forward(request, response);
+			request.getRequestDispatcher("Recrutement").forward(request, response);
 		}
 	
 		

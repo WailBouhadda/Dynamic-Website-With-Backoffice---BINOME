@@ -46,10 +46,10 @@
 								if(LoFai.equals("true")){
 								
 							%>
-								<p style="color:red;">*email ou Mot de passe est incorrect !</p>
+								<p style="color:red; text-align:center;"><i style="margin-right:10px;" class="fa-solid fa-triangle-exclamation"></i> Email ou Mot de passe est incorrect !</p>
 								<% 
 							}else if(LoFai.equals("false")){%>
-								<p style="color:red; display:none;">*email ou Mot de passe est incorrect !</p>
+								<p style="color:red; display:none; text-align:center;"><i style="margin-right:10px;" class="fa-solid fa-triangle-exclamation"></i>Email ou Mot de passe est incorrect !</p>
 							<% }
 								}
 							%>

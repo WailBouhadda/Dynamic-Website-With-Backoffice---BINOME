@@ -10,7 +10,7 @@
         
            <%
     if(session.getAttribute("admin")==null){
-    	response.sendRedirect("adminLogin.jsp");
+    	response.sendRedirect("Login");
     	
     	
     }
@@ -38,7 +38,7 @@
  
 HttpSession s = request.getSession();
 
-s.setAttribute("source", "posteListe.jsp");
+s.setAttribute("source", "Articles");
 
 posteDAO pdao = new posteDAO();
 
@@ -167,7 +167,7 @@ ArrayList<categorie> categos = cdao.getcategories();
 						</tr>
 						
 						<%}}else{ %>
-							<p style="color:red;">Un error est servenu, Pas de poste pour le moment !</p>
+							<p style="color:red;"> <i style="margin-right:10px;" class="fa-solid fa-triangle-exclamation"></i>UNE ERREUR EST SURVENUE</p>
 						<%} %>
 						</tbody>
 						</table>
@@ -226,7 +226,7 @@ ArrayList<categorie> categos = cdao.getcategories();
 						
 						</tr>
 						<%}}else{ %>
-								<p style="color:red;">Un error est servenu, Pas de categorie pour le moment !</p>
+								<p style="color:red;"> <i style="margin-right:10px;" class="fa-solid fa-triangle-exclamation"></i>UNE ERREUR EST SURVENUE</p>
 						<%} %>
 						</tbody>
 						</table>

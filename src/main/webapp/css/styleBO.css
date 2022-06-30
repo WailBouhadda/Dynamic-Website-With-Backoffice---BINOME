@@ -640,6 +640,7 @@ padding: 15px;
     flex-direction: column;
     align-items: center;
     margin-top: 40px;
+    flex: 1;
     gap: 15px;
     padding: 20px;
     border-radius: 10px;
@@ -819,6 +820,37 @@ display: flex;
 	padding-left: 5px;
 
 }
+
+
+.boxpack .user{
+	
+	    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: var(--font-fredoka);
+    font-size: 13px;
+    background-color: var(--green-trans);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.boxpack .user:hover{
+	
+	background-color: var(--green-color);
+	
+	}
+
+.boxpack .user span{
+	margin-bottom: 5px;
+    color: var(--mauve-color);
+}
+
+
+.boxpack .user span i{
+    margin-right: 15px;
+    color: white;
+}
+
 
 
 /*END dashboard */
@@ -1036,19 +1068,35 @@ display: flex;
 	
 /*Start admin demamde */
 	
-.demandes .boxpack .demandesliste{
+.demandes  .demandesliste{
 	
 	display: flex;
 	gap: 10px;
 	
 }	
+
+.demandes > a{
+	    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: #007bff;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.demandes > a:hover{
 	
-.demandes .boxpack .demandesliste a{
+	background-color: #007bff;
+	color: white;
+}
+	
+.demandes  .demandesliste a{
 	
 	text-decoration: none;
 }
 	
-.demandes .boxpack .demandesliste a .demande{
+.demandes  .demandesliste a .demande{
 	
 	padding: 15px;
 	border-radius: 10px;
@@ -1059,31 +1107,37 @@ display: flex;
 }
 
 
-.demandes .boxpack .demandesliste a .demande .name{
+.demandes  .demandesliste a:hover .demande{
+	
+	background-color: var(--green-trans);
+	
+}
+
+.demandes  .demandesliste a .demande .name{
 	
 	font-weight: 600;
 }	
 	
 	
-.demandes .boxpack .demandesliste a .demande .date{
+.demandes  .demandesliste a .demande .date{
 	
 	font-size: 10px;
 }
 
-.demandes .boxpack .demandesliste a .demande .email{
+.demandes  .demandesliste a .demande .email{
 	
 	font-weight: 600;
 	
 }
 
-.demandes .boxpack .demandesliste a .demande .date i{
+.demandes  .demandesliste a .demande .date i{
 	
 	margin-right: 10px;
     color: var(--white-trans);
 
 }	
 
-.demandes .boxpack .demandesliste a .demande .plus{
+.demandes  .demandesliste a .demande .plus{
 	
 	width: 100%;
     display: flex;
@@ -1095,10 +1149,16 @@ display: flex;
     background-color: var(--white-trans);
 }
 
-.demandes .boxpack .demandesliste a .demande .plus i{
+.demandes  .demandesliste a .demande .plus i{
 	
 	    color: var(--mauve-trans);
 }
+
+.demandes  .demandesliste a:hover .demande .plus i{
+	
+	    color: var(--green-trans);
+}
+
 /*End admin demamde */
 
 

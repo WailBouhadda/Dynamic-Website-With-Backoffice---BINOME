@@ -9,7 +9,7 @@
         
      <% 
            if(session.getAttribute("admin")==null){
-    	response.sendRedirect("adminLogin.jsp");
+    	response.sendRedirect("Login");
     	
     	
     }
@@ -122,7 +122,7 @@ HttpSession s = request.getSession();
 				
 				<div class="decision">
 					<input type="submit" name="decision" value="Valider">
-					<input type="button" name="decision" value="Annuler" onclick="location.href='posteListe.jsp';">
+					<input type="button" name="decision" value="Annuler" onclick="location.href='ModiferArticle';">
 				</div>
 			
 				</form>

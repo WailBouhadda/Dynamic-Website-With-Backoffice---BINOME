@@ -100,14 +100,14 @@ public class demandepdf extends HttpServlet {
             
             result = 1;
             
-  			response.sendRedirect("offresEmplois.jsp?Result="+result);
+  			response.sendRedirect("OffresEmploi?Result="+result);
 
               
 		}else {
 			
 			result = -1;
 			
-			response.sendRedirect("offresEmplois.jsp?Result="+result);
+			response.sendRedirect("OffresEmploi?Result="+result);
 		}
 		
 		

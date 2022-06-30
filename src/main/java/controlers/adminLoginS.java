@@ -51,7 +51,7 @@ public class adminLoginS extends HttpServlet {
 			
 			
 			
-			response.sendRedirect("Dashboard.jsp");
+			response.sendRedirect("Dashboard");
 			LoginFailed = "false";
 			request.setAttribute("Failed", LoginFailed);
 			
@@ -61,7 +61,7 @@ public class adminLoginS extends HttpServlet {
 			LoginFailed = "true";
 			
 			request.setAttribute("Failed", LoginFailed);
-			request.getRequestDispatcher("adminLogin.jsp").forward(request, response);
+			request.getRequestDispatcher("Login").forward(request, response);
 
 		}
 		

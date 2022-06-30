@@ -9,11 +9,18 @@
         <%@page import="dao.categorieDAO"%>  
         <%@page import="entities.comment"%>
         <%@page import="dao.commentDAO"%>
+        <%@page import="dao.offreDAO"%>
+         <%@page import="entities.offre"%>
+          <%@page import="entities.Demande"%>
+          <%@page import="entities.User"%>
+         <%@page import="entities.admin"%>
+        <%@page import="dao.UserDao"%>
+  
    
     
     <%
     if(session.getAttribute("admin")==null){
-    	response.sendRedirect("adminLogin.jsp");
+    	response.sendRedirect("Login");
     }
     
     %>
@@ -86,6 +93,20 @@ int nbrlikes = pdao.totalLikes();
 int nbrcomments = pdao.totalComments();
 int nbrpostes = pdao.totalPostes();
 
+
+offreDAO odao = new offreDAO();
+
+UserDao udao = new UserDao();
+
+
+ArrayList<User> users = (ArrayList<User>)udao.selectAllUsers();
+
+
+ArrayList<offre> offres = odao.getOffres();
+
+ArrayList<Demande> demandes = odao.geteemandes();
+
+
 ArrayList<poste> postes = pdao.getPostes();
 
 ArrayList<categorie> categos = cdao.getcategories();
@@ -112,7 +133,7 @@ ArrayList<categorie> categos = cdao.getcategories();
                   <div class="progress-bar" style="width: 70%"></div>
                 </div>
                 <span class="progress-description">
-                   <a style="color:white;" href="posteListe.jsp"> Voir plus <i class="fa-solid fa-circle-plus"></i></a>
+                   <a style="color:white;" href="Articles"> Voir plus <i class="fa-solid fa-circle-plus"></i></a>
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -132,7 +153,7 @@ ArrayList<categorie> categos = cdao.getcategories();
                   <div class="progress-bar" style="width: 70%"></div>
                 </div>
                 <span class="progress-description">
-                 <a style="color:white;" href="posteListe.jsp"> Voir plus  <i class="fa-solid fa-circle-plus"></i></a>
+                 <a style="color:white;" href="Articles"> Voir plus  <i class="fa-solid fa-circle-plus"></i></a>
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -152,7 +173,7 @@ ArrayList<categorie> categos = cdao.getcategories();
                   <div class="progress-bar" style="width: 70%"></div>
                 </div>
                 <span class="progress-description">
-                  <a style="color:white;" href="commentaires.jsp"> Voir plus <i class="fa-solid fa-circle-plus"></i></a>
+                  <a style="color:white;" href="Commentaires"> Voir plus <i class="fa-solid fa-circle-plus"></i></a>
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -172,7 +193,7 @@ ArrayList<categorie> categos = cdao.getcategories();
                   <div class="progress-bar" style="width: 70%"></div>
                 </div>
                 <span class="progress-description">
-                   <a style="color:white;" href="commentaires.jsp"> Voir plus <i class="fa-solid fa-circle-plus"></i></a>
+                   <a style="color:white;" href="Commentaires"> Voir plus <i class="fa-solid fa-circle-plus"></i></a>
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -305,7 +326,7 @@ ArrayList<categorie> categos = cdao.getcategories();
 							<p style="color:red;"> <i class="fa-solid fa-hexagon-exclamation"></i> PAS DE COMMENTAIRE</p>
 						<%} %>
 						
-					<a href="commentaires.jsp">Voir Plus <i class="fa-solid fa-circle-chevron-right"></i></a>	
+					<a href="Commentaires">Voir Plus <i class="fa-solid fa-circle-chevron-right"></i></a>	
 				</div>
 				
 				</div>
@@ -315,13 +336,145 @@ ArrayList<categorie> categos = cdao.getcategories();
 			
 				<div class="boxpack">
 				
-					<h3>Ebooks Récents</h3>
+										
+				<div class="demandes">			
+				<h2>Demandes d'emploi</h2>
+					<div class="demandesliste">
+						<%
+					if(demandes != null){
+						
+						if(demandes.size() >0){
+							
+							int size = 0; 
+							
+							if(demandes.size() > 3){
+								
+								size = 3;
+							}else{
+								size = demandes.size();
+							}
+						
+						
+						
+						for(int i = 0 ; i < size ; i++) {	
+
+
+							
+							Demande d = new Demande();
+							d = demandes.get(i);
+							
+							int iddemande = d.getIddemande();
+							
+							
+							String nom =  d.getNom();
+							
+							String prenom = d.getPrenom();
+							
+							String email = d.getEmail();
+							
+							
+							 Calendar cal = Calendar.getInstance();
+							    cal.setTime(d.getSubmitDate());
+							
+							int day =  cal.get(Calendar.DAY_OF_MONTH);
+							
+							String month = null;
+							
+							int mo =  d.getSubmitDate().getMonth();
+							
+							int year =  d.getSubmitDate().getYear() + 1900;
+							
+							month = pdao.getMonth(mo);
+							
+							
+					
+					%>
+					
+					
+							<a href="demandepdf?id=<%=iddemande%>">
+								<div class="demande">
+									
+									<div class="name">
+										<span><%=nom %></span>
+										<span> <%=prenom %></span>
+									</div>
+									<div class="date">
+										<i class="fa-solid fa-calendar-days"></i>
+										<span><%=day%>,<%=month%> <%=year%></span>
+									</div>
+									<div class="email">
+										<span><%=email %></span>
+									</div>
+									<div class="plus">
+										<i class="fa-solid fa-file-arrow-down"></i>
+									</div>
+									
+								</div>
+							</a>
+					
+					
+					<%}}}else{ %>
+							<p style="color:red;"> <i class="fa-solid fa-hexagon-exclamation"></i> PAS DE DEMANDES</p>
+						<%} %>
+						
+					</div>
+						<a href="OffresEmploi">Voir Plus <i class="fa-solid fa-circle-chevron-right"></i></a>	
+					
+
+</div>	
 				
 				</div>
 				
 				<div class="boxpack">
 				
 					<h3>Utilisateurs</h3>
+					
+					<% 
+						if(users != null){		
+								
+							if(users.size() >0){
+								
+								int size = 0; 
+								
+								if(users.size() > 2){
+									
+									size = 2;
+								}else{
+									size = users.size();
+								}
+											
+							
+								for(int i = 0 ; i < size ; i++) {	
+	
+									
+									User u = new User();
+									u = users.get(i);
+									
+									int idUser = u.getIdUser();
+									
+									String prenom =  u.getPrenom();
+									
+									String nom = u.getNom();
+									
+									String email = u.getEmail();
+									
+									String tele = u.getTelephone();
+									
+	 
+			  	
+					%>
+					<a href="Utilisateurs">
+					<div class="user">
+							<span><i class="fa-solid fa-user"></i> <%=prenom %> <%=nom %></span>
+							<span><i class="fa-solid fa-phone"></i> <%=tele %></span>
+							<span><i class="fa-solid fa-envelope"></i><%=email %></span>
+					</div>
+					
+					</a>
+					
+						<%}}}else{ %>
+							<p style="color:red;"> <i class="fa-solid fa-hexagon-exclamation"></i> PAS DE UTILISATEUR</p>
+						<%} %>
 				
 				</div>
 			</div>

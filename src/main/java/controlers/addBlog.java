@@ -109,7 +109,7 @@ public class addBlog extends HttpServlet {
 				
 				result = pdao.addPoste(p1);;
 				
-				request.getRequestDispatcher("addBlog.jsp?result="+result).forward(request, response);
+				request.getRequestDispatcher("AjouterArticle?result="+result).forward(request, response);
 				
 			}else if(decision.equals("Ajouter")){
 				

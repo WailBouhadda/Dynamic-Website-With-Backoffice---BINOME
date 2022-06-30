@@ -69,38 +69,57 @@
 		<div class="navList">
 		
 			<div class="logo">
-				<img class="logo" src="images/logo.png">
+				<img onclick="window.location.href = 'Home';" class="logo" src="images/logo.png">
 			</div>
 			<div class="list">
 				<i class="fa-solid fa-bars" id="burger"></i>
 				<ul class="test" id="Nlist">
-					<li><a href="index.jsp#accueil">ACCUEIL</a></li>
-					<li><a href="index.jsp#cabinetBinome">CABINET BINOME</a> <i class="fa-solid fa-caret-down"></i>
+					<li><a href="Home#accueil">ACCUEIL</a></li>
+					<li><a href="Home#cabinetBinome">CABINET BINOME</a> <i class="fa-solid fa-caret-down"></i>
 						<ul>
-							<li><a href="Biographie.jsp">BIOGRAPHIE</a></li>
-							<li><a href="savoirefaire.jsp">SAVOIR FAIRE</a></li>
-							<li><a href="index.jsp#services">NOS SERVICES</a></li>
+							<li><a href="Biographie">BIOGRAPHIE</a></li>
+							<li><a href="SavoirFaire">SAVOIR FAIRE</a></li>
+							<li><a href="Home#services">NOS SERVICES</a></li>
 						</ul>
 					</li>
-					<li><a href="">FORMATION</a><i class="fa-solid fa-caret-down"></i></li>
-					<li><a href="blog.jsp">BLOG</a></li>
-					<li><a href="index.jsp#contact">CONTACT</a></li>
+					<li><a href="Formations">FORMATION</a></li>
+					<li><a href="Blog">BLOG</a></li>
+					<li><a href="Home#contact">CONTACT</a></li>
 					<li><a href="#plus">PLUS</a><i class="fa-solid fa-caret-down" onclick="dropDown()"></i>
 						<ul>
-							<li><a href="espaceclient.jsp">ESPACE CLIENT</a></li>
-							<li><a href="#recrutement">RECRUTEMENT</a></li>
-							<li><a href="index.jsp#nosReferences">NOS REFERENCES</a></li>
+							<li><a href="EspaceClient">ESPACE CLIENT</a></li>
+							<li><a href="Recrutement">RECRUTEMENT</a></li>
+							<li><a href="Home#nosReferences">NOS REFERENCES</a></li>
 						</ul>
 					</li>
 				</ul>
 			</div>
 			<div class="profile_search">
 				<div class="profile">
-					<i class="fa-solid fa-user"></i>
+					<i onclick="window.location.href = 'EspaceClient';" class="fa-solid fa-user"></i>
 				</div>
-				<div class="search">
+				<div class="search" id="searchNB">
 					<i class="se fa-solid fa-magnifying-glass" id="SE"></i>
 					<input class="SIH" type="text" placeholder="search..." id="si">
+					
+						<ul class="searchlistNC" id="siul">
+							<li style="display:none;" ><a href="Biographie">BIOGRAPHIE</a></li>
+							<li style="display:none;"><a href="SavoirFaire">SAVOIR FAIRE</a></li>
+							<li style="display:none;"><a href="Home#services">NOS SERVICES</a></li>
+							<li style="display:none;"><a href="EspaceClient">ESPACE CLIENT</a></li>
+							<li style="display:none;"><a href="Recrutement">RECRUTEMENT</a></li>
+							<li style="display:none;"><a href="Recrutement">OFFRES EMPLOI</a></li>
+							<li style="display:none;"><a href="Recrutement">DEPOSER CV</a></li>
+							<li style="display:none;"><a href="Home#nosReferences">NOS REFERENCES</a></li>
+							<li style="display:none;"><a href="Formations">FORMATION</a></li>
+							<li style="display:none;"><a href="Formations">GESTION DU QUOTIDIEN</a></li>
+							<li style="display:none;"><a href="Formations">DEVELOPPEMENT PERSONNEL</a></li>
+							<li style="display:none;"><a href="Formations">BINOME ASSISTANTE / MANAGER</a></li>
+							<li style="display:none;"><a href="Blog">BLOG</a></li>
+							<li style="display:none;"><a href="Home#contact">CONTACT</a></li>
+							<li style="display:none;"><a href="Home#cabinetBinome">CABINET BINOME</a></li>
+						</ul>
+				
 				</div>
 			</div>
 		

@@ -51,7 +51,7 @@
 
    <%
     if(session.getAttribute("admin")==null){
-    	response.sendRedirect("adminLogin.jsp");
+    	response.sendRedirect("Login");
     	
     	
     }
@@ -164,7 +164,7 @@ if(request.getParameter("result") != null){
 						</tr>
 						
 						<%}}else{ %>
-							<p style="color:red;">Un error est servenu, Pas de poste pour le moment !</p>
+							<p style="color:red;"> <i style="margin-right:10px;" class="fa-solid fa-triangle-exclamation"></i>UNE ERREUR EST SURVENUE</p>
 						<%} %>
 						</tbody>
 						</table>
@@ -247,7 +247,7 @@ if(request.getParameter("result") != null){
 						</tr>
 						
 						<%}}else{ %>
-							<p style="color:red;">Un error est servenu, Pas de poste pour le moment !</p>
+							<p style="color:red;"> <i style="margin-right:10px;" class="fa-solid fa-triangle-exclamation"></i>UNE ERREUR EST SURVENUE</p>
 						<%} %>
 						</tbody>
 						</table>

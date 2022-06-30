@@ -67,55 +67,65 @@ ArrayList<offre> offres = odao.getOffres();
 					
 					<%
 					if(offres != null){
-						for(int i = 0 ; i < offres.size() ; i++) {	
-
-							byte[] imgdata = null;
-b
-							
-							offre p = new offre();
-							p = offres.get(i);
-							int id = p.getIdoffre();
-							
-							
-							String title =  p.getTitre();
-							
-							String local = p.getLocal();
-							
-							String details = p.getDetails();
-							
-							
-							 Calendar cal = Calendar.getInstance();
-							    cal.setTime(p.getPublishdate());
-							
-							int day =  cal.get(Calendar.DAY_OF_MONTH);
-							
-							String month = null;
-							
-							int mo =  p.getPublishdate().getMonth();
-							
-							int year =  p.getPublishdate().getYear() + 1900;
-							
-							month = pdao.getMonth(mo);
-							
-							
-					
-					%>
-					
-					
-						<a href="offrepdf?id=<%=id%>">
-							<div class="offre">
+						if(offres.size() > 0){	
+							for(int i = 0 ; i < offres.size() ; i++) {	
+	
 								
-								<span> <%=title %></span>
-								<div class="infos">
-									<span><%=day%>,<%=month%> <%=year%> | </span>
-									<i class="fa-solid fa-location-dot"></i>
-									<span><%=local %></span>
+								offre p = new offre();
+								p = offres.get(i);
+								int id = p.getIdoffre();
+								
+								
+								String title =  p.getTitre();
+								
+								String local = p.getLocal();
+								
+								String details = p.getDetails();
+								
+								
+								 Calendar cal = Calendar.getInstance();
+								    cal.setTime(p.getPublishdate());
+								
+								int day =  cal.get(Calendar.DAY_OF_MONTH);
+								
+								String month = null;
+								
+								int mo =  p.getPublishdate().getMonth();
+								
+								int year =  p.getPublishdate().getYear() + 1900;
+								
+								month = pdao.getMonth(mo);
+								
+								
+						
+						%>
+						
+						
+							<a href="offrepdf?id=<%=id%>">
+								<div class="offre">
+									
+									<div class="left">
+										<span> <%=title %></span>
+										<div class="infos">
+											<span><%=day%>,<%=month%> <%=year%> | </span>
+											<i class="fa-solid fa-location-dot"></i>
+											<span><%=local %></span>
+										</div>
+										<span><%=details %></span>
+										
+									</div >
+									<div class="right">
+										<i class="fa-solid fa-file-arrow-down"></i>
+									</div>
+									
 								</div>
-								<span><%=details %></span>
-							</div>
-						</a>
-					
-					<%}} %>
+							</a>
+						
+						<%}}else{ %>
+									<p style="color:red;"> <i style="margin-right:10px;" class="fa-solid fa-circle-exclamation"></i> PAS D'OFFRE POUR LE MOMENT</p>
+						<%}}else{ %>
+									<p style="color:red;"> <i style="margin-right:10px;" class="fa-solid fa-triangle-exclamation"></i>UNE ERREUR EST SURVENUE, PAS D'OFFRE POUR LE MOMENT</p>
+						<%} %>
 					</div>
 					
 				</div>

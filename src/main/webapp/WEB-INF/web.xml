@@ -17,7 +17,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>addBlog</servlet-name>
-    <url-pattern>/administrateur/addBlog</url-pattern>
+    <url-pattern>/ADMIN/addBlog</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -27,7 +27,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>adminLoginS</servlet-name>
-    <url-pattern>/administrateur/adminLoginS</url-pattern>
+    <url-pattern>/ADMIN/adminLoginS</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -37,7 +37,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>actionPoste</servlet-name>
-    <url-pattern>/administrateur/actionPoste</url-pattern>
+    <url-pattern>/ADMIN/actionPoste</url-pattern>
   </servlet-mapping>
     <servlet>
     <description></description>
@@ -47,7 +47,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>demandepdf</servlet-name>
-    <url-pattern>/administrateur/demandepdf</url-pattern>
+    <url-pattern>/ADMIN/demandepdf</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -57,7 +57,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>actionCategorie</servlet-name>
-    <url-pattern>/administrateur/actionCategorie</url-pattern>
+    <url-pattern>/ADMIN/actionCategorie</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -97,7 +97,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>actionComment</servlet-name>
-    <url-pattern>/administrateur/actionComment</url-pattern>
+    <url-pattern>/ADMIN/actionComment</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -127,7 +127,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>LogoutS</servlet-name>
-    <url-pattern>/administrateur/LogoutS</url-pattern>
+    <url-pattern>/ADMIN/LogoutS</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -137,7 +137,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>updateAdmin</servlet-name>
-    <url-pattern>/administrateur/updateAdmin</url-pattern>
+    <url-pattern>/ADMIN/updateAdmin</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -147,7 +147,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>updateposte</servlet-name>
-    <url-pattern>/administrateur/updateposte</url-pattern>
+    <url-pattern>/ADMIN/updateposte</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -157,7 +157,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>userServlet</servlet-name>
-    <url-pattern>/administrateur/userServlet</url-pattern>
+    <url-pattern>/ADMIN/userServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -167,7 +167,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>updateUser</servlet-name>
-    <url-pattern>/administrateur/updateUser</url-pattern>
+    <url-pattern>/ADMIN/updateUser</url-pattern>
   </servlet-mapping>
     <servlet>
     <description></description>
@@ -177,7 +177,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>addOffre</servlet-name>
-    <url-pattern>/administrateur/addOffre</url-pattern>
+    <url-pattern>/ADMIN/addOffre</url-pattern>
   </servlet-mapping>
    <servlet>
     <description></description>
@@ -219,5 +219,250 @@
     <servlet-name>offrepdf</servlet-name>
     <url-pattern>/offrepdf</url-pattern>
   </servlet-mapping>
+  
+  
+  
+  <!-- Start jsp files mapping FRONT OFFICE -->
+  
+  
+
+ <servlet>
+    <servlet-name>index</servlet-name>
+    <jsp-file>/index.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>index</servlet-name>
+    <url-pattern>/Home</url-pattern>
+  </servlet-mapping>
+
+
+   <servlet>
+    <servlet-name>blog</servlet-name>
+    <jsp-file>/blog.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>blog</servlet-name>
+    <url-pattern>/Blog</url-pattern>
+  </servlet-mapping>
+  
+  
+     <servlet>
+    <servlet-name>article</servlet-name>
+    <jsp-file>/poste.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>article</servlet-name>
+    <url-pattern>/Article</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+   <servlet>
+    <servlet-name>recrutement</servlet-name>
+    <jsp-file>/recrutement.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>recrutement</servlet-name>
+    <url-pattern>/Recrutement</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+     <servlet>
+    <servlet-name>espaceclient</servlet-name>
+    <jsp-file>/espaceclient.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>espaceclient</servlet-name>
+    <url-pattern>/EspaceClient</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+     <servlet>
+    <servlet-name>savoirfaire</servlet-name>
+    <jsp-file>/savoirefaire.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>savoirfaire</servlet-name>
+    <url-pattern>/SavoirFaire</url-pattern>
+  </servlet-mapping>
+  
+  
+     <servlet>
+    <servlet-name>blogByCategorie</servlet-name>
+    <jsp-file>/blogByCategorie.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>blogByCategorie</servlet-name>
+    <url-pattern>/Categorie</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+     <servlet>
+    <servlet-name>Biographie</servlet-name>
+    <jsp-file>/Biographie.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Biographie</servlet-name>
+    <url-pattern>/Biographie</url-pattern>
+  </servlet-mapping>
+  
+  
+      <servlet>
+    <servlet-name>Formations</servlet-name>
+    <jsp-file>/formation.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Formations</servlet-name>
+    <url-pattern>/Formations</url-pattern>
+  </servlet-mapping>
+  
+   <!-- End jsp files mapping FRONT OFFICE -->
+  
+  
+  
+  <servlet>
+  	<servlet-name>adminLogin</servlet-name>
+    <jsp-file>/administrateur/adminLogin.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminLogin</servlet-name>
+    <url-pattern>/ADMIN/Login</url-pattern>
+  </servlet-mapping>
+  
+  
+    <servlet>
+  	<servlet-name>Dashboard</servlet-name>
+    <jsp-file>/administrateur/Dashboard.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Dashboard</servlet-name>
+    <url-pattern>/ADMIN/Dashboard</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+      <servlet>
+  	<servlet-name>SideBar</servlet-name>
+    <jsp-file>/administrateur/adminSideBar.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SideBar</servlet-name>
+    <url-pattern>/ADMIN/adminSideBar.jsp</url-pattern>
+  </servlet-mapping>
+  
+  
+       <servlet>
+  	<servlet-name>addblog</servlet-name>
+    <jsp-file>/administrateur/addBlog.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addblog</servlet-name>
+    <url-pattern>/ADMIN/AjouterArticle</url-pattern>
+  </servlet-mapping> 
+  
+  
+  
+         <servlet>
+  	<servlet-name>updatePoste</servlet-name>
+    <jsp-file>/administrateur/updatePoste.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updatePoste</servlet-name>
+    <url-pattern>/ADMIN/ModifierArticle</url-pattern>
+  </servlet-mapping> 
+  
+  
+  
+       <servlet>
+  	<servlet-name>posteListe</servlet-name>
+    <jsp-file>/administrateur/posteListe.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>posteListe</servlet-name>
+    <url-pattern>/ADMIN/Articles</url-pattern>
+  </servlet-mapping> 
+  
+  
+  
+  
+  
+  
+       <servlet>
+  	<servlet-name>comments</servlet-name>
+    <jsp-file>/administrateur/commentaires.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>comments</servlet-name>
+    <url-pattern>/ADMIN/Commentaires</url-pattern>
+  </servlet-mapping> 
+  
+  
+  
+  
+    
+       <servlet>
+  	<servlet-name>offresEmplois</servlet-name>
+    <jsp-file>/administrateur/offresEmplois.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>offresEmplois</servlet-name>
+    <url-pattern>/ADMIN/OffresEmploi</url-pattern>
+  </servlet-mapping> 
+  
+  
+  
+        <servlet>
+  	<servlet-name>Utilisateurs</servlet-name>
+    <jsp-file>/administrateur/Utilisateurs.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Utilisateurs</servlet-name>
+    <url-pattern>/ADMIN/Utilisateurs</url-pattern>
+  </servlet-mapping> 
+  
+  
+  
+  
+    
+        <servlet>
+  	<servlet-name>updateuser</servlet-name>
+    <jsp-file>/administrateur/updateUser.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateuser</servlet-name>
+    <url-pattern>/ADMIN/ModifierUtilisateur</url-pattern>
+  </servlet-mapping> 
+  
+  
+  
+  
+       <servlet>
+  	<servlet-name>profile</servlet-name>
+    <jsp-file>/administrateur/Profile.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>profile</servlet-name>
+    <url-pattern>/ADMIN/Profile</url-pattern>
+  </servlet-mapping> 
+  
+  
+   <!-- Start jsp files mapping BACK OFFICE -->
+   
+   
+   
+   
+   
+   
+   
+  
+   <!-- End jsp files mapping BACK OFFICE -->
+  
   
 </web-app>

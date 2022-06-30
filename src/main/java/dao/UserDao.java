@@ -117,7 +117,7 @@ public class UserDao {
 			statement.setString(3, user.getEmail());
 			statement.setString(4, user.getTelephone());
 			statement.setString(5, user.getPassword());
-			statement.setInt(5, user.getIdUser());
+			statement.setInt(6, user.getIdUser());
 			
 			rowUpdated = statement.executeUpdate();
 			

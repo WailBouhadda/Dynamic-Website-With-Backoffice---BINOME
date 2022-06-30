@@ -71,6 +71,9 @@ HttpSession s = request.getSession();
 				String tele = request.getParameter("tele");
 				u.setTelephone(tele);
 				
+				String password = request.getParameter("password");
+				u.setPassword(password);
+				
 				try {
 					res = udao.updateUser(u);
 				} catch (SQLException e) {
@@ -79,7 +82,7 @@ HttpSession s = request.getSession();
 					res =-1;
 				}
 				
-				request.getRequestDispatcher("Utilisateurs.jsp?result="+res).forward(request, response);
+				request.getRequestDispatcher("Utilisateurs?result="+res).forward(request, response);
 				
 								
 

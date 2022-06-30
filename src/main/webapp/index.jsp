@@ -1,4 +1,5 @@
-
+  <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <jsp:include page="navBar.jsp"></jsp:include>    
 
 <!-- Start accueil -->
@@ -8,7 +9,7 @@
 			<div class="headContent">
 				<div class="img"><img src="images/leadership.png"></div>
 				<h1>SERVICE  DES  ASSISTANTES DE DIRECTION</h1>
-				<p>Avec l'efficacit� du <span style="color: var(--green-color); font-weight:bold;"> < </span> sur-mesure <span style="color: var(--green-color); font-weight:bold;"> > </span></p>
+				<p>Avec l'efficacité du <span style="color: var(--green-color); font-weight:bold;"> < </span> sur-mesure <span style="color: var(--green-color); font-weight:bold;"> > </span></p>
 			</div>
 		</div>
 		<a href="#cabinetBinome"> <i class="fa-solid fa-angles-down"></i></a>
@@ -23,7 +24,7 @@
 				<div class="title">
 					<h1>CABINET BINOME</h1>
 				</div>
-				<a href="Biographie.jsp">
+				<a href="Biographie">
 					<div class="parent biographie">
 						<div class="BContent">
 							<h2>BIOGRAPHIE</h2>
@@ -31,7 +32,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="#">
+				<a href="SavoireFaire">
 					<div class="parent savoirFaire">
 						<div class="SFContent">
 							<h2>SAVOIR FAIRE</h2>
@@ -39,7 +40,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="#service">
+				<a href="#services">
 					<div class="parent services">
 						<div class="SContent">
 							<h2>SERVICES</h2>
@@ -64,25 +65,25 @@
                     <div class="img-holder">
                         <img src="images/service1.jpg" alt="">
                     </div>
-                    <h2>Service 1</h2>
-                    <p>Une petit description de service 1</p>
-                    <a href="#">PLUS</a>
+                    <h2>Gestion du quotidien</h2>
+                    <p>Rôle de l’assistante dans l’entreprise </p>
+                    <a href="Formations#Gestionduquotidien">PLUS</a>
                 </div>
                 <div class="service">
                     <div class="img-holder">
                         <img src="images/service2.jpg" alt="">
                     </div>
-                    <h2>Service 2</h2>
-                    <p>Une petit description de service 2</p>
-                    <a href="#">PLUS</a>
+                    <h2>Développement personnel</h2>
+                    <p>Cultiver l’excellence relationnelle </p>
+                    <a href="Formations#Developpementpersonnel">PLUS</a>
                 </div>
                 <div class="service">
                     <div class="img-holder">
                         <img src="images/service3.jpg" alt="">
                     </div>
-                    <h2>Service 3</h2>
-                    <p>Une petit description de service 2</p>
-                    <a href="#">PLUS</a>
+                    <h2>Binôme assistante / manager</h2>
+                    <p>Optimiser la relation avec son patron </p>
+                    <a href="Formations#Binomeassistante/manager">PLUS</a>
                 </div>
             </div>    
         </div>
@@ -116,7 +117,7 @@
 				</div>
 				<div class="contactForm">
 					<div class="text">
-						<p>N'h�sitez pas � nous contacter que vous cherchiez des r�ponses.</p>
+						<p>N'hésitez pas à nous contacter que vous cherchiez des réponses.</p>
 					</div>
 					<div class="form">
 						 	<form action="newsLetter" method="post">
