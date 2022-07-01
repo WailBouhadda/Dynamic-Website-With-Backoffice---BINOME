@@ -2,8 +2,30 @@
     pageEncoding="UTF-8"%>
   <%@page import="java.util.*"%>
   <%@page import="java.io.*"%>
+  <%@page import="dao.posteDAO"%>
+           <%@page import="entities.ebook"%>
+         <%@page import="dao.ebookDAO"%>
        
 <jsp:include page="navBar.jsp"></jsp:include>
+<%
+
+
+HttpSession s = request.getSession();
+
+s.setAttribute("source", "EspaceClient");
+
+ 
+posteDAO pdao = new posteDAO();
+
+ebookDAO ebdao = new ebookDAO();
+
+
+
+
+ArrayList<ebook> ebooks = ebdao.getEbooks();
+
+
+%>
 
 
 <jsp:include page="header.jsp"></jsp:include>
@@ -55,7 +77,53 @@
 							%>
 								</div>
 						</form>	
-					<%} %>	
+					<%}else{
+							
+									
+				
+							
+				if(ebooks != null){			
+					for(int i = 0 ; i < ebooks.size() ; i++) {	
+			
+						
+						ebook e = new ebook();
+						e = ebooks.get(i);
+						
+						int idoffre = e.getIdEbook();
+						
+						String title =  e.getTitle();
+										
+						
+						
+						
+						 Calendar cal = Calendar.getInstance();
+						    cal.setTime(e.getDatePubli());
+						
+						int day =  cal.get(Calendar.DAY_OF_MONTH);
+						
+						String month = null;
+						
+						int mo =  e.getDatePubli().getMonth();
+						
+						int year =  e.getDatePubli().getYear() + 1900;
+						
+						month = pdao.getMonth(mo);
+						
+	 
+			  	
+					%>
+				<a href="">
+					<div class="ebook">
+						<span><%=title %></span>
+						<span><%=day%>,<%=month%> <%=year%></span>
+						
+					</div>
+				</a>				
+					
+					<%}}else{%>
+					
+					
+					<%}} %>
 				</div>
 			</div>
 			<jsp:include page="sideBar.jsp"></jsp:include>

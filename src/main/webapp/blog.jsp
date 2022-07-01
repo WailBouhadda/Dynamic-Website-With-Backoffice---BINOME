@@ -5,9 +5,13 @@
         <%@page import="dao.posteDAO"%>
         <%@page import="dao.categorieDAO"%>
         
- <%
- 
-HttpSession ss = request.getSession();
+<%
+
+
+HttpSession s = request.getSession();
+
+s.setAttribute("source", "Blog");
+
 
 posteDAO pdao = new posteDAO();
 

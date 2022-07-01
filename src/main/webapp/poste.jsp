@@ -7,9 +7,13 @@
         <%@page import="dao.commentDAO"%>
         <%@page import="dao.categorieDAO"%>
         
- <%
- 
-HttpSession ss = request.getSession();
+<%
+
+
+HttpSession s = request.getSession();
+
+
+
 
 posteDAO pdao = new posteDAO();
 
@@ -49,6 +53,9 @@ String action = String.valueOf(request.getAttribute("action"));
 
 						
 			int idPoste = poste.getId();
+			
+			
+			s.setAttribute("source", "Article?p="+idPoste);
 			
 			String title =  poste.getTitle();
 			

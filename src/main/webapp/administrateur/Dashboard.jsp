@@ -15,6 +15,9 @@
           <%@page import="entities.User"%>
          <%@page import="entities.admin"%>
         <%@page import="dao.UserDao"%>
+         <%@page import="entities.Newsletter"%>
+         <%@page import="dao.newsletterDAO"%>
+        
   
    
     
@@ -111,6 +114,10 @@ ArrayList<poste> postes = pdao.getPostes();
 
 ArrayList<categorie> categos = cdao.getcategories();
 
+newsletterDAO nldao = new newsletterDAO();
+
+ArrayList<Newsletter> inscrits = nldao.getInscrits();
+
 %>
 		
 		
@@ -163,17 +170,17 @@ ArrayList<categorie> categos = cdao.getcategories();
           <!-- /.col -->
           <div class="col-md-3 col-sm-6 col-12">
             <div class="info-box bg-warning">
-              <span style="color:white;" class="info-box-icon"><i class="fa-solid fa-book"></i></i></span>
+              <span style="color:white;" class="info-box-icon"><i class="fa-solid fa-paper-plane"></i></span>
 
               <div class="info-box-content">
-                <span style="color:white;" class="info-box-text">EBOOKS</span>
-                <span style="color:white;" class="info-box-number">41,410</span>
+                <span style="color:white;" class="info-box-text">NEWSLETTER</span>
+                <span style="color:white;" class="info-box-number"><%=inscrits.size() %></span>
 
                 <div class="progress">
                   <div class="progress-bar" style="width: 70%"></div>
                 </div>
                 <span class="progress-description">
-                  <a style="color:white;" href="Commentaires"> Voir plus <i class="fa-solid fa-circle-plus"></i></a>
+                  <a style="color:white;" href="NewsLetter"> Voir plus <i class="fa-solid fa-circle-plus"></i></a>
                 </span>
               </div>
               <!-- /.info-box-content -->

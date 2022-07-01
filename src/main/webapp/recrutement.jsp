@@ -14,9 +14,14 @@
 
 <jsp:include page="header.jsp"></jsp:include>
 
-
 <%
- 
+
+
+HttpSession s = request.getSession();
+
+s.setAttribute("source", "Recrutement");
+
+
 posteDAO pdao = new posteDAO();
 
 

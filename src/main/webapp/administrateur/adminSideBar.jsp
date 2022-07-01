@@ -29,15 +29,10 @@
 				</ul>
 			</li>
 			<li><a href="Commentaires"><i class="fa-regular fa-comments"></i><span class="showSpan">COMMENTAIRES</span></a></li>
-			<li class="li" id="ebookli">
-				<div class="dropDown" id="ebook"><i class="fa-solid fa-book"></i><span class="showSpan">E-BOOK<i class="normal fa-solid fa-caret-down" id="ebooki"></i></span></div>
-				<ul class="subList" id="ebookul">
-					<li><a href="#"><i class="fa-solid fa-plus"></i><span class="showSpan">AJOUTER E-BOOK</span></a></li>
-					<li><a href="#"><i class="fa-solid fa-list"></i><span class="showSpan">E-BOOKs</span></a></li>
-				</ul>
-			</li>
+			<li><a href="Ebook"><i class="fa-solid fa-book"></i><span class="showSpan">EBOOK</span></a></li>
 			<li><a href="OffresEmploi"><i class="fa-solid fa-briefcase"></i><span class="showSpan">OFFRES D'EMPLOI</span></a></li>
 			<li><a href="Utilisateurs"><i class="fa-solid fa-users"></i></i><span class="showSpan">UTILISATEURS</span></a></li>
+			<li><a href="NewsLetter"><i class="fa-solid fa-paper-plane"></i><span class="showSpan">NEWSLETTER</span></a></li>
 			<li><a href="Profile"><i class="fa-solid fa-user"></i><span class="showSpan">PROFILE</span></a></li>
 		</ul>
 	</div>

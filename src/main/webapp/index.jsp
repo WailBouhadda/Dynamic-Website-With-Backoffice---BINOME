@@ -2,6 +2,16 @@
     pageEncoding="UTF-8"%>
 <jsp:include page="navBar.jsp"></jsp:include>    
 
+<%
+
+
+HttpSession s = request.getSession();
+
+s.setAttribute("source", "Home");
+
+%>
+
+
 <!-- Start accueil -->
 
 	<div class="accueil" id="accueil">

@@ -6,6 +6,16 @@
 <jsp:include page="navBar.jsp"></jsp:include>
 
 
+<%
+
+
+HttpSession s = request.getSession();
+
+s.setAttribute("source", "Formations");
+
+%>
+
+
 <jsp:include page="header.jsp"></jsp:include>
 
 <div class="pageContainer">

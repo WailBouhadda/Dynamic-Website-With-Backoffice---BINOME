@@ -5,8 +5,13 @@
         <%@page import="dao.posteDAO"%>
         <%@page import="dao.categorieDAO"%>
         
- <%
- 
+<%
+
+
+HttpSession s = request.getSession();
+
+
+
 HttpSession ss = request.getSession();
 
 posteDAO pdao = new posteDAO();
@@ -20,6 +25,9 @@ categorie c = cdao.getcategorieById(idca);
 String nomCat = c.getNomcategorie();
 
 ArrayList<poste> postes = pdao.getPostesByIdCategorie(idca);
+
+s.setAttribute("source", "Categorie?c="+idca);
+
 
 %>
 <jsp:include page="navBar.jsp"></jsp:include>
@@ -70,6 +78,8 @@ ArrayList<poste> postes = pdao.getPostesByIdCategorie(idca);
 			month = pdao.getMonth(mo);
 			
 			String content = p.getContent(); 
+			
+
 			
 			byte[] imageBytes=p.getImage().getBytes(1, (int)p.getImage().length());
 		  	String encodedImage=Base64.getEncoder().encodeToString(imageBytes);

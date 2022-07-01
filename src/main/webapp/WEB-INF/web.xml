@@ -159,6 +159,16 @@
     <servlet-name>userServlet</servlet-name>
     <url-pattern>/ADMIN/userServlet</url-pattern>
   </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>actionNewsLetter</display-name>
+    <servlet-name>actionNewsLetter</servlet-name>
+    <servlet-class>controlers.actionNewsLetter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>actionNewsLetter</servlet-name>
+    <url-pattern>/ADMIN/actionNewsLetter</url-pattern>
+  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>updateUser</display-name>
@@ -218,6 +228,16 @@
   <servlet-mapping>
     <servlet-name>offrepdf</servlet-name>
     <url-pattern>/offrepdf</url-pattern>
+  </servlet-mapping>
+  <servlet>
+      <description></description>
+    <display-name>actionEbook</display-name>
+    <servlet-name>actionEbook</servlet-name>
+    <servlet-class>controlers.actionEbook</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>actionEbook</servlet-name>
+    <url-pattern>/ADMIN/actionEbook</url-pattern>
   </servlet-mapping>
   
   
@@ -452,6 +472,28 @@
     <url-pattern>/ADMIN/Profile</url-pattern>
   </servlet-mapping> 
   
+  
+  
+  
+    
+       <servlet>
+  	<servlet-name>newsletter</servlet-name>
+    <jsp-file>/administrateur/newsletter.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>newsletter</servlet-name>
+    <url-pattern>/ADMIN/NewsLetter</url-pattern>
+  </servlet-mapping> 
+  
+  
+      <servlet>
+  	<servlet-name>ebook</servlet-name>
+    <jsp-file>/administrateur/ebook.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ebook</servlet-name>
+    <url-pattern>/ADMIN/Ebook</url-pattern>
+  </servlet-mapping> 
   
    <!-- Start jsp files mapping BACK OFFICE -->
    

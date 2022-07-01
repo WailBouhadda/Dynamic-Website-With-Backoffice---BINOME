@@ -5,6 +5,14 @@
        
 <jsp:include page="navBar.jsp"></jsp:include>
 
+<%
+
+
+HttpSession s = request.getSession();
+
+s.setAttribute("source", "SavoirFaire");
+
+%>
 
 <jsp:include page="header.jsp"></jsp:include>
 
