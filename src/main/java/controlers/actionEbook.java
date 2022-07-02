@@ -1,6 +1,7 @@
 package controlers;
 
 import java.io.IOException;
+
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Properties;
@@ -25,9 +26,15 @@ import dao.newsletterDAO;
 import entities.Newsletter;
 import entities.ebook;
 
+
+
+
 /**
  * Servlet implementation class actionEbook
  */
+
+
+
 @MultipartConfig
 public class actionEbook extends HttpServlet {
 	private static final long serialVersionUID = 1L;

@@ -242,6 +242,18 @@
   
   
   
+           <servlet>
+    <description></description>
+    <display-name>ebookViewer</display-name>
+    <servlet-name>ebookViewer</servlet-name>
+    <servlet-class>controlers.ebookViewer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ebookViewer</servlet-name>
+    <url-pattern>/ebookViewer</url-pattern>
+  </servlet-mapping>
+  
+  
   <!-- Start jsp files mapping FRONT OFFICE -->
   
   
@@ -341,6 +353,18 @@
   <servlet-mapping>
     <servlet-name>Formations</servlet-name>
     <url-pattern>/Formations</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+    
+      <servlet>
+    <servlet-name>Ebook</servlet-name>
+    <jsp-file>/Ebook.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ebook</servlet-name>
+    <url-pattern>/Ebook</url-pattern>
   </servlet-mapping>
   
    <!-- End jsp files mapping FRONT OFFICE -->

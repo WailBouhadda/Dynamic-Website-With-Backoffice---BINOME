@@ -5,6 +5,11 @@
   <%@page import="dao.posteDAO"%>
            <%@page import="entities.ebook"%>
          <%@page import="dao.ebookDAO"%>
+          <%@page import="dao.offreDAO"%>
+         <%@page import="entities.offre"%>
+         <%@page import="entities.User"%>
+         <%@page import="nl.siegmann.epublib.epub.EpubReader"%>
+         <%@page import="nl.siegmann.epublib.epub.EpubWriter"%>
        
 <jsp:include page="navBar.jsp"></jsp:include>
 <%
@@ -28,6 +33,7 @@ ArrayList<ebook> ebooks = ebdao.getEbooks();
 %>
 
 
+
 <jsp:include page="header.jsp"></jsp:include>
 
 <div class="pageContainer">
@@ -41,6 +47,9 @@ ArrayList<ebook> ebooks = ebdao.getEbooks();
 		<div class="pageContent">
 			<div class="blog" id="blog">
 				<div class="espaceclient">
+				
+				
+				
 				<% 
 					
 				if(session.getAttribute("user") == null){
@@ -79,17 +88,32 @@ ArrayList<ebook> ebooks = ebdao.getEbooks();
 						</form>	
 					<%}else{
 							
+						User u = (User)session.getAttribute("user");
+						
+						String nom = u.getNom();
+						String prenom = u.getPrenom();
 									
+				%>
 				
+				<div class="UNP">
+								<span>Bonjour </span>
+								<span><%=prenom %></span>
+								<span><%=nom %></span>
+				</div>
+				
+				<div class="ebooks">
+				<h3>EBOOKS</h3>
+				<%
 							
 				if(ebooks != null){			
 					for(int i = 0 ; i < ebooks.size() ; i++) {	
 			
+						byte[] imgdata = null;
 						
 						ebook e = new ebook();
 						e = ebooks.get(i);
 						
-						int idoffre = e.getIdEbook();
+						int idebook = e.getIdEbook();
 						
 						String title =  e.getTitle();
 										
@@ -109,24 +133,47 @@ ArrayList<ebook> ebooks = ebdao.getEbooks();
 						
 						month = pdao.getMonth(mo);
 						
-	 
-			  	
-					%>
-				<a href="">
-					<div class="ebook">
-						<span><%=title %></span>
-						<span><%=day%>,<%=month%> <%=year%></span>
 						
-					</div>
-				</a>				
+						byte[] ebookdata = null;
+						
+						byte[] ebookBytes=e.getEbook().getBytes(1, (int)e.getEbook().length());
+					  	String encodedEbook=Base64.getEncoder().encodeToString(ebookBytes);
+					  	String ebook = "data:application/pdf;base64,"+encodedEbook;
+						
 					
+					%>
+				<a href="Ebook?e=<%=idebook %>">
+					<div class="ebook">
+					
+						<iframe src="<%=ebook %>"   style="width:130px; " ></iframe>
+						<div class="Einfos">
+							<span><%=title %></span>
+							<span><%=day%>,<%=month%> <%=year%></span>
+						</div>
+						<div class="icon">
+							<i class="fa-solid fa-bookmark"></i>
+						</div>
+					</div>
+				</a>
+				
+			
+				
+				
 					<%}}else{%>
 					
+						<p style="color:red;"><i style="margin-right:10px;" class="fa-solid fa-triangle-exclamation"></i>UNE ERREUR EST SURVENUE, PAS D'EBOOK POUR LE MOMENT</p>
+						
+					<%}%>
 					
-					<%}} %>
+					</div>
+					<%} %>
+				
+
 				</div>
 			</div>
+			
 			<jsp:include page="sideBar.jsp"></jsp:include>
+			
 		</div>
 	</div>
 
@@ -138,5 +185,8 @@ ArrayList<ebook> ebooks = ebdao.getEbooks();
 
 
 
-
 <jsp:include page="footer.jsp"></jsp:include>
+
+
+
+

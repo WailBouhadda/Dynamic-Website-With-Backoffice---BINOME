@@ -111,6 +111,46 @@ public class ebookDAO {
 	}
 	
 	
+
+	public ebook getEbookById(int id){
+		
+		
+		ebook c1 = new ebook();
+
+		if(con != null) {
+		
+			
+			try {
+				st = con.createStatement();
+				rs = st.executeQuery("select * from ebook where idebook = "+id);
+				
+				if(rs.next()) {
+					
+					
+					
+					c1.setIdEbook(rs.getInt(1));		
+					c1.setTitle(rs.getString(2));
+					c1.setEbook(rs.getBlob(3));
+					c1.setDatePubli(rs.getDate(4));
+					
+					
+				}
+				
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+		}
+		
+		
+		return c1; 
+		
+	}
+	
+	
 	
 	public int deletEbook(int id) {
 		

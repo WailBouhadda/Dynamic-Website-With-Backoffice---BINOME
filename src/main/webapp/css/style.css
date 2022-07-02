@@ -9,6 +9,8 @@
 }
 
 
+
+
 :root{
 	
 	--green-color:#7BA74C;
@@ -3427,10 +3429,124 @@ border: 1px solid #00000014;
 
 
 
+.espaceclient a{
+	
+	width: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+.espaceclient a:hover .ebook{
+	
+	
+	background-color: var(--green-color);
+	margin-bottom:20px;
+}
+
+.espaceclient a .ebook{
+	
+	width: 100%;
+    padding: 20px;
+    display: flex;
+    background-color: var(--green-trans);
+    border-radius: 30px;
+    box-shadow: 2px 2px 14px 2px #00000042;
+	
+}
+
+
+.espaceclient a .ebook iframe{
+	
+	filter: blur(2px) drop-shadow(2px 5px 3px #00000042);
+	
+}
+
+
+.espaceclient a .ebook .Einfos{
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+
+.espaceclient a .ebook .Einfos span:first-of-type{
+	
+	    font-family: var(--font-rolway);
+    font-size: 30px;
+    color: var(--white-trans);
+    margin-bottom: 20px;
+	
+}
+
+
+.espaceclient a .ebook .Einfos span:last-of-type{
+	
+	font-size: 13px;
+    color: var(--white-trans);
+    margin-left: 5px;
+
+}
+
+.espaceclient a .ebook .icon{
+
+    display: flex;
+    align-items: center;
+    background-color: var(--white-trans);
+    padding: 10px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+}
+
+
+.espaceclient a .ebook .icon{
+	
+	font-size: 25px;
+    color: var(--green-trans);
+	
+}
+.espaceclient a:hover .ebook .icon{
+	
+	
+    color: var(--green-color);
+	
+}
+
+
+
+.espaceclient .UNP{
+
+width: 100%;
+    display: flex;
+    gap: 6px;
+    margin-bottom: 50px;
+    background-color: var(--mauve-trans);
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
 
 
 
 
+.espaceclient .ebooks{
+
+    width: 100%;
+    padding: 20px;
+    box-shadow: 1px 1px 7px 1px #00000024;
+    border-radius: 15px;
+
+}
+
+.espaceclient .ebooks h3{
+	
+	font-size: 30px;
+	
+	margin-bottom: 30px;
+}
 
 
 /* --- Start footer --- */
