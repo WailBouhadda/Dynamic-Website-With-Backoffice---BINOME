@@ -1,5 +1,7 @@
 package controlers;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import java.io.InputStream;
@@ -84,7 +86,7 @@ public class actionEbook extends HttpServlet {
 				String title = request.getParameter("titre");
 				eb.setTitle(title);
 				
-			
+		
 				delete = ebdao.addEbook(eb);
 				
 
@@ -113,5 +115,7 @@ public class actionEbook extends HttpServlet {
 		
 		
 	}
+	
+	
 
 }

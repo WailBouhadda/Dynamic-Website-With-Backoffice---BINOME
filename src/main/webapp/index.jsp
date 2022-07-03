@@ -42,7 +42,7 @@ s.setAttribute("source", "Home");
 						</div>
 					</div>
 				</a>
-				<a href="SavoireFaire">
+				<a href="SavoirFaire">
 					<div class="parent savoirFaire">
 						<div class="SFContent">
 							<h2>SAVOIR FAIRE</h2>
@@ -150,11 +150,14 @@ s.setAttribute("source", "Home");
 		</div>
 		<div class="container">
 			<div class="reference">
-			
+				<div class="ref">
+					<img src="images/logo.png">
+				</div>
+				<div class="ref">
+					<img src="images/logo.png">
+				</div>
 			</div>
-			<div class="temoin">
-			
-			</div>
+		
 		</div>
 	</div>
 

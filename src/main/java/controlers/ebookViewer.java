@@ -21,6 +21,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.tomcat.util.http.fileupload.IOUtils;
+
 import dao.offreDAO;
 import entities.offre;
 import nl.siegmann.epublib.epub.EpubReader;
@@ -62,27 +64,24 @@ public class ebookViewer extends HttpServlet {
         Blob blob =  o.getPdf();
         InputStream inputStream = null;
 		
+	
 		
+		
+		Blob blobPdf =  o.getPdf();
+		File outputFile = new File("/tmp/blah/whatever.pdf");
+		FileOutputStream fout = new FileOutputStream(outputFile);
 		try {
-			filedata = blob.getBytes(1,(int) blob.length());
+			IOUtils.copy(blobPdf.getBinaryStream(), fout);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		
-		
-		response.setContentType("application/pdf");
-		
-		response.setHeader("Content-Disposition", "inline#toolbar=0");
-		response.setContentLength(filedata.length);
-		
-		
-		OutputStream output = response.getOutputStream();
-		
-		output.write(filedata);
-		output.flush();
-		
+
  		
 	}
 

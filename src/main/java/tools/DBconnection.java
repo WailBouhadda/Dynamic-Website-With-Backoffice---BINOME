@@ -15,16 +15,16 @@ public class DBconnection {
 	
 		private static Connection con;
 		private static String driver	= "com.mysql.jdbc.Driver";
-		
+		/*
 		
 		private	static String url 		= "jdbc:mysql://localhost:3306/binome";
 		private	static String username = "root";
 		private	static String pass 	= "";	
-			/*
+		*/
 		private	static String url 		= "jdbc:mysql://uttiudbmpgckk5bm:ocsg5an1UGscxikV4Nen@b8rafwcoozfgwpk0zxvh-mysql.services.clever-cloud.com:3306/b8rafwcoozfgwpk0zxvh";
 		private	static String username = "uttiudbmpgckk5bm";
 		private	static String pass 	= "ocsg5an1UGscxikV4Nen";	
-		*/
+		
 		public static  Connection connect()  {
 		
 		try {

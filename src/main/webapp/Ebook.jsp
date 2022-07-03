@@ -68,11 +68,14 @@ ArrayList<ebook> ebooks = ebdao.getEbooks();
 									
 				%>
 				
-				<div class="UNP">
-								<span>Bonjour, </span>
-								<span><%=prenom %></span>
-								<span><%=nom %></span>
-				</div>
+						<div class=userprofile>
+					<div class="UNP">
+							<span>Bonjour </span>
+							<span><%=prenom %></span>
+							<span><%=nom %></span>
+					</div>
+					<button onclick="window.location.href='Deconnection'">SE DECONNECTER</button>
+				</div>	
 				
 				
 				
@@ -115,22 +118,23 @@ ArrayList<ebook> ebooks = ebdao.getEbooks();
 						
 						byte[] ebookBytes=e.getEbook().getBytes(1, (int)e.getEbook().length());
 					  	String encodedEbook=Base64.getEncoder().encodeToString(ebookBytes);
-					  	String ebook = "data:application/pdf;base64,"+encodedEbook;
+					  	String ebook = "data:application/pdf;base64,"+encodedEbook;;
 						
 					
 					%>
 				
 					<h2 style="margin-top:30px; margin-bottom: 30px;"><%=title %></h2>
 					
-					<div style="width:100%; height: 900px;">
 					
+				
+					<div style="width:100%; height: 900px;">
+
 						<iframe src="<%=ebook %>#toolbar=0"   style="width:100%; height: 100%;" ></iframe>
-						
-						
+
+
 					</div>
 				
-				
-			
+
 				
 				
 					<%}else{%>

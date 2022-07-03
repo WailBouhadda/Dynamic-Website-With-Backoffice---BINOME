@@ -79,6 +79,16 @@
     <servlet-name>likeDislike</servlet-name>
     <url-pattern>/likeDislike</url-pattern>
   </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>deconnection</display-name>
+    <servlet-name>deconnection</servlet-name>
+    <servlet-class>controlers.deconnection</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deconnection</servlet-name>
+    <url-pattern>/Deconnection</url-pattern>
+  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>deleteComment</display-name>

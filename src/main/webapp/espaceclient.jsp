@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
   <%@page import="java.util.*"%>
   <%@page import="java.io.*"%>
+  <%@page import="java.sql.Blob"%>
+  <%@page import="java.sql.SQLException"%>
   <%@page import="dao.posteDAO"%>
            <%@page import="entities.ebook"%>
          <%@page import="dao.ebookDAO"%>
@@ -10,10 +12,14 @@
          <%@page import="entities.User"%>
          <%@page import="nl.siegmann.epublib.epub.EpubReader"%>
          <%@page import="nl.siegmann.epublib.epub.EpubWriter"%>
+         
+          <%@page import="java.awt.print.Book"%>
        
 <jsp:include page="navBar.jsp"></jsp:include>
 <%
 
+
+Book book = new Book();
 
 HttpSession s = request.getSession();
 
@@ -94,13 +100,14 @@ ArrayList<ebook> ebooks = ebdao.getEbooks();
 						String prenom = u.getPrenom();
 									
 				%>
-				
-				<div class="UNP">
-								<span>Bonjour </span>
-								<span><%=prenom %></span>
-								<span><%=nom %></span>
-				</div>
-				
+				<div class=userprofile>
+					<div class="UNP">
+							<span>Bonjour </span>
+							<span><%=prenom %></span>
+							<span><%=nom %></span>
+					</div>
+					<button onclick="window.location.href='Deconnection'">SE DECONNECTER</button>
+				</div>	
 				<div class="ebooks">
 				<h3>EBOOKS</h3>
 				<%
@@ -139,13 +146,17 @@ ArrayList<ebook> ebooks = ebdao.getEbooks();
 						byte[] ebookBytes=e.getEbook().getBytes(1, (int)e.getEbook().length());
 					  	String encodedEbook=Base64.getEncoder().encodeToString(ebookBytes);
 					  	String ebook = "data:application/pdf;base64,"+encodedEbook;
-						
+					  	
 					
 					%>
+					
+					
+					
+
 				<a href="Ebook?e=<%=idebook %>">
 					<div class="ebook">
 					
-						<iframe src="<%=ebook %>"   style="width:130px; " ></iframe>
+						<iframe src="<%=ebook %>"  ></iframe>
 						<div class="Einfos">
 							<span><%=title %></span>
 							<span><%=day%>,<%=month%> <%=year%></span>
@@ -156,8 +167,13 @@ ArrayList<ebook> ebooks = ebdao.getEbooks();
 					</div>
 				</a>
 				
-			
-				
+				<div id="area"></div>
+
+
+
+
+
+
 				
 					<%}}else{%>
 					
@@ -178,10 +194,6 @@ ArrayList<ebook> ebooks = ebdao.getEbooks();
 	</div>
 
 </div>
-
-
-
-
 
 
 
