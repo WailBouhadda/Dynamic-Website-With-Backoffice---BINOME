@@ -67,8 +67,8 @@ public class newsLetter extends HttpServlet {
 				
 				nldao.addNewsletterMembre(NL);
 				
-				final String username = "wailbouhadda31@gmail.com";
-				final String password = "gjsazcsikdddiimc";
+				final String username = "";
+				final String password = "";
 				Properties props = new Properties();
 				
 				props.put("mail.smtp.auth", "true");
@@ -84,7 +84,7 @@ public class newsLetter extends HttpServlet {
 				  });
 				try {
 					Message message = new MimeMessage(session);
-					message.setFrom(new InternetAddress("wailbouhadda31@gmail.com"));
+					message.setFrom(new InternetAddress());
 					message.setRecipients(Message.RecipientType.TO,
 					InternetAddress.parse(email));
 					message.setSubject("Binome no-Reply");
@@ -371,8 +371,8 @@ public class newsLetter extends HttpServlet {
 				String msg = request.getParameter("message");
 				
 				
-				final String username = "wailbouhadda31@gmail.com";
-				final String password = "gjsazcsikdddiimc";
+				final String username = "";
+				final String password = "";
 				Properties props = new Properties();
 				
 				props.put("mail.smtp.auth", "true");
@@ -388,9 +388,9 @@ public class newsLetter extends HttpServlet {
 				  });
 				try {
 					Message message = new MimeMessage(session);
-					message.setFrom(new InternetAddress("wailbouhadda31@gmail.com"));
+					message.setFrom(new InternetAddress(""));
 					message.setRecipients(Message.RecipientType.TO,
-					InternetAddress.parse("wailbouhadda31@gmail.com"));
+					InternetAddress.parse(""));
 					message.setSubject("Binome SiteWeb Contact Form");
 					message.setText(" From : "+name
 						+"\n\n EMAIL :"+email
